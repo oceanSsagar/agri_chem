@@ -18,10 +18,12 @@ The agriChem is far superior than traditional learning application as it is bund
 ##Security
 
 #Project CI/CD
+
 For the project development I will be using a github repo with continuous intergration with github actions along with jenkins pipeline for tests, builds and archiving of APk.
 
 
 #Tools
+
 - Github
 - Github Actions
 - Jenkins
