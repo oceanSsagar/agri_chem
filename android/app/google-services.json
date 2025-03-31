@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853999405886",
+    "project_id": "project-agrichem",
+    "storage_bucket": "project-agrichem.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853999405886:android:27e9e6baf905d0e0723a6f",
+        "android_client_info": {
+          "package_name": "com.example.agri_chem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcJdYc-7s-26fmI5pkiOmHg8KO8bINVxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
