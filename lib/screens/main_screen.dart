@@ -18,7 +18,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  String appName = dotenv.get('APP_NAME', fallback: "MyApp");
   int _selectedIndex = 0;
 
   _onItemTapped(int index) {
@@ -27,6 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
+  // as list of screens for bottomnavigationbar
   final List<Widget> _screens = [
     HomeScreen(),
     FeedScreen(),
@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         //AppBar Name
-        title: Text(appName),
+        title: Text("AgriChem"),
         backgroundColor: Theme.of(context).colorScheme.surface,
       ),
       //App Drawer
@@ -62,7 +62,8 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         ],
       ),
-      body: _screens[_selectedIndex],
+      body:
+          _screens[_selectedIndex], //using the index to toggle btw the screens
     );
   }
 }
