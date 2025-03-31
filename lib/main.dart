@@ -1,4 +1,5 @@
 import 'package:agri_chem/authentication/auth_gate.dart';
+import 'package:agri_chem/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart'; //dotenv
 import 'package:agri_chem/themes/app_theme.dart'; //theme import
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme, //My theme
       darkTheme: AppTheme.darkTheme,
       home:
-          AuthGate(), //The app starts with the user being getting authenticating.
+          MainScreen(), //The app starts with the user being getting authenticating.
     );
   }
 }
