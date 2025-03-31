@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 //screens
-import 'package:agri_chem/screens/home_screen.dart';
-import 'package:agri_chem/screens/feed_screen.dart';
-import 'package:agri_chem/screens/modules_screen.dart';
-import 'package:agri_chem/screens/chat_screen.dart';
+import 'package:agri_chem/screens/application_screens/home_screen.dart';
+import 'package:agri_chem/screens/application_screens/feed_screen.dart';
+import 'package:agri_chem/screens/application_screens/modules_screen.dart';
+import 'package:agri_chem/screens/application_screens/chat_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

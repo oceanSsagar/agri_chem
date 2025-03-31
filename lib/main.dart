@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme, //My theme
       darkTheme: AppTheme.darkTheme,
       home:
-          MainScreen(), //The app starts with the user being getting authenticating.
+          AuthGate(), //The app starts with the user being getting authenticating.
     );
   }
 }
