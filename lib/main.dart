@@ -1,6 +1,6 @@
 import 'package:agri_chem/authentication/auth_gate.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart'; //dotenv
+// import 'package:flutter_dotenv/flutter_dotenv.dart'; //dotenv
 import 'package:agri_chem/themes/app_theme.dart'; //theme import
 import 'package:flutter/foundation.dart'; // for example of provider
 import 'package:provider/provider.dart';

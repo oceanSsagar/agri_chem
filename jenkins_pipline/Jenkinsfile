@@ -1,0 +1,20 @@
+pipeline {
+    agent any //agent specification
+    stages {
+        stage('Build') { //build step
+            steps {
+                sh 'flutter build' 
+            }
+        }
+        stage('Test') { //for testing
+            steps {
+                sh 'echo flutter test"' 
+            }
+        }
+        stage('Deploy') { //deployment
+            steps {
+                sh 'echo "Deploying..."' 
+            }
+        }
+    }
+}
