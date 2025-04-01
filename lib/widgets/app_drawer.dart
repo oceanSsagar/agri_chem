@@ -14,13 +14,13 @@ class AppDrawer extends StatelessWidget {
             accountEmail: Text("useremail"),
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                "https://appmaking.co/wp-content/uploads/2021/08/appmaking-logo-colored.png", //for dummy
+                "", //for dummy --------------------------- need to add
               ),
             ),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                  "https://appmaking.co/wp-content/uploads/2021/08/android-drawer-bg.jpeg", //for dummy
+                  "", //for dummy ------------------------ need to add
                 ),
                 fit: BoxFit.fill,
               ),
