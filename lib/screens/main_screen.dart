@@ -1,6 +1,6 @@
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart'; // for later-> dotenv package
 
 //screens
 import 'package:agri_chem/screens/application_screens/home_screen.dart';

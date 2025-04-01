@@ -10,8 +10,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:agri_chem/firebase_options.dart';
 
 Future main() async {
-  await dotenv.load(fileName: ".env"); //dotenv
-  WidgetsFlutterBinding.ensureInitialized(); //firebase
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // await dotenv.load(fileName: ".env"); //dotenv
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     /// Providers are above [MyApp] instead of inside it, so that tests
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme, //My theme
       darkTheme: AppTheme.darkTheme,
       home:
-          AuthGate(), //The app starts with the user being getting authenticating.
+          AuthGate(), //The app starts with the user being getting authenticated
     );
   }
 }

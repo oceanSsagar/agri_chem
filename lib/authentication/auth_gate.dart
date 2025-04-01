@@ -4,6 +4,7 @@ import 'package:agri_chem/screens/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart'; //google provider
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -15,11 +16,17 @@ class AuthGate extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return SignInScreen(
-            providers: [EmailAuthProvider()],
+            providers: [
+              EmailAuthProvider(),
+              GoogleProvider(clientId: "YOUR_WEBCLIENT_ID"),
+            ],
             headerBuilder: (context, constraints, shrinkOffset) {
               return Padding(
                 padding: const EdgeInsets.all(20),
-                child: AspectRatio(aspectRatio: 1, child: Image.asset('')),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: Image.asset('assets/images/icon.png', height: 100),
+                ),
               );
             },
             subtitleBuilder: (context, action) {
