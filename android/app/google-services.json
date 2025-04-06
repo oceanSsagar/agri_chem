@@ -12,7 +12,20 @@
           "package_name": "com.example.agri_chem"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "853999405886-dqvclsjrf6aerld0i80loikjsseo4d1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agri_chem",
+            "certificate_hash": "4821ad3b745fded052ff35b4048ef24f56e1731a"
+          }
+        },
+        {
+          "client_id": "853999405886-4pgqjekhr56eim9gm5o92vldds3okfta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDcJdYc-7s-26fmI5pkiOmHg8KO8bINVxc"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853999405886-4pgqjekhr56eim9gm5o92vldds3okfta.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "853999405886-0b8afp3m33rohomusm5kob4n26qseh4a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.agriChem"
+              }
+            }
+          ]
         }
       }
     }
