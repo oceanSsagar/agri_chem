@@ -1,3 +1,4 @@
+import 'package:agri_chem/screens/notification_screen.dart';
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_dotenv/flutter_dotenv.dart'; // for later-> dotenv package
@@ -19,10 +20,25 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
+  String _title = "Agri Chem"; //default
 
   _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      switch (_selectedIndex) {
+        case 0:
+          _title = "Home";
+          break;
+        case 1:
+          _title = "Feeds";
+          break;
+        case 2:
+          _title = "Modules";
+          break;
+        case 3:
+          _title = "Chat";
+          break;
+      }
     });
   }
 
@@ -39,8 +55,23 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         //AppBar Name
-        title: Text("AgriChem"),
+        title: Text(_title),
         backgroundColor: Theme.of(context).colorScheme.surface,
+        actions: [
+          Container(
+            height: 8,
+            width: 8,
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NotificationScreen()),
+                );
+              },
+              icon: Icon(Icons.notifications),
+            ),
+          ),
+        ],
       ),
       //App Drawer
       drawer: AppDrawer(),

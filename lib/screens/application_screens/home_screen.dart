@@ -1,3 +1,4 @@
+import 'package:agri_chem/widgets/search_input.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +11,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const Center(child: Text("HOme Screen")));
+    return Scaffold(body: Column(children: [SearchInput()]));
   }
 }
