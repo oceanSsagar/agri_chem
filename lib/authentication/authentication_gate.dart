@@ -1,4 +1,5 @@
 import 'package:agri_chem/screens/main_screen.dart';
+import 'package:agri_chem/screens/my_forgot_password.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:agri_chem/utility/sign_in_with_google.dart';
@@ -202,6 +203,16 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
                       Buttons.Google,
                       onPressed: () => signInWithGoogle(),
                       // mini: true,
+                    ),
+                    ElevatedButton(
+                      onPressed:
+                          () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MYForgotPasswordScreen(),
+                            ),
+                          ),
+                      child: Text("Forgot Password?"),
                     ),
                   ],
                 ),

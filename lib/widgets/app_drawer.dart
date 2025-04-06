@@ -1,5 +1,4 @@
 import 'package:agri_chem/utility/sign_out.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
