@@ -1,45 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:agri_chem/themes/my_colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchInput extends StatelessWidget {
   const SearchInput({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Expanded(
       child: Stack(
         children: [
           Container(
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              border: Border(),
+              border: Border.all(color: kFontLight.withAlpha(75)),
               borderRadius: BorderRadius.circular(20),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: TextField(
-                cursorColor: Theme.of(context).colorScheme.onSecondary,
                 decoration: InputDecoration(
-                  fillColor: Colors.grey,
+                  fillColor: kFontLight.withAlpha(30),
                   filled: true,
                   contentPadding: EdgeInsets.all(18),
                   border: InputBorder.none,
-                  hintText: "Search anything ...",
-                  hintStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.onTertiary,
-                  ),
+                  hintText: "Search for history, classes,...",
+                  hintStyle: TextStyle(fontSize: 16, color: kFontLight),
                 ),
               ),
             ),
           ),
           Positioned(
-            right: 50,
-            top: 42,
+            right: 30,
+            top: 25,
             child: Container(
+              padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Colors.grey.shade300,
+                color: kAccent,
+                borderRadius: BorderRadius.circular(10),
               ),
-              child: Icon(Icons.search),
+              child: SvgPicture.asset(
+                'assets/icons/search.svg',
+                colorFilter: ColorFilter.mode(kBackground, BlendMode.srcIn),
+              ),
             ),
           ),
         ],
