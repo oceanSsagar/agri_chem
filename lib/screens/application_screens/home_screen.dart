@@ -1,6 +1,8 @@
 import 'package:agri_chem/models/course.dart';
+import 'package:agri_chem/widgets/active_course.dart';
 import 'package:agri_chem/widgets/category_title.dart';
 import 'package:agri_chem/widgets/course_item.dart';
+import 'package:agri_chem/widgets/feature_course.dart';
 import 'package:agri_chem/widgets/search_input.dart';
 import 'package:flutter/material.dart';
 
@@ -20,15 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SearchInput(),
           SizedBox(height: 10),
-          CategoryTitle("Top of the Week", "view all"),
-          CourseItem(
-            course: Course(
-              author: "Sagar Salgar",
-              authorImg: "assets/authors/sagar_salgar.jpg",
-              title: "Types of Agro Chemicals",
-              imageUrl: "assets/courses/course1/course1.png",
-            ),
-          ),
+          FeatureCourse(),
+          ActiveCourse(),
         ],
       ),
     );

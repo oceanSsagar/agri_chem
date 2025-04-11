@@ -37,6 +37,7 @@ class CourseItem extends StatelessWidget {
                     children: [
                       Row(
                         children: [
+                          SizedBox(width: 10),
                           Container(
                             width: 20,
                             height: 20,
@@ -55,17 +56,24 @@ class CourseItem extends StatelessWidget {
                           SizedBox(width: 5),
                           Text(
                             course.author,
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: kFontLight,
+                              fontWeight: FontWeight.bold,
+                              // fontSize: 14,
+                            ),
                           ),
                         ],
                       ),
                       Row(
                         children: [
+                          SizedBox(width: 10),
                           Expanded(
                             child: Text(
                               course.title,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color: kFont,
                               ),
