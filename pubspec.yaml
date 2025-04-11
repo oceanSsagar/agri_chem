@@ -70,6 +70,16 @@ flutter:
     - .env
     - assets/images/icon.png
     - assets/icons/search.svg
+    - assets/authors/sagar_salgar.jpg
+    - assets/authors/john_doe.jpg
+    - assets/authors/jane_smith.jpg
+    - assets/authors/emily_johnson.jpg
+    - assets/authors/michael_brown.jpg
+    - assets/courses/course1/course1.png
+    - assets/courses/course2/course2.jpg
+    - assets/courses/course3/course3.jpg
+    - assets/courses/course4/course4.png
+    - assets/courses/course5/course5.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

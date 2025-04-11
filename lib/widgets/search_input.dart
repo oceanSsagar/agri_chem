@@ -7,7 +7,7 @@ class SearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
       child: Stack(
         children: [
           Container(
