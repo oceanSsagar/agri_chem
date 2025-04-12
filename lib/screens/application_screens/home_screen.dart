@@ -1,9 +1,6 @@
-import 'package:agri_chem/models/course.dart';
 import 'package:agri_chem/widgets/active_course.dart';
-import 'package:agri_chem/widgets/category_title.dart';
-import 'package:agri_chem/widgets/course_item.dart';
 import 'package:agri_chem/widgets/feature_course.dart';
-import 'package:agri_chem/widgets/search_input.dart';
+import 'package:agri_chem/widgets/my_search_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SearchInput(),
+          MySearchInput(),
           SizedBox(height: 10),
           FeatureCourse(),
           ActiveCourse(),

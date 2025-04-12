@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:agri_chem/themes/my_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SearchInput extends StatelessWidget {
-  const SearchInput({super.key});
+class MySearchInput extends StatelessWidget {
+  const MySearchInput({super.key});
 
   @override
   Widget build(BuildContext context) {
