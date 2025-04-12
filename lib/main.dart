@@ -13,8 +13,15 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // await dotenv.load(fileName: ".env"); //dotenv
+  if (Firebase.apps.isEmpty) {
+    print("Firebase is empty");
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } else {
+    print("Firebase is not empty");
+  }
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     /// Providers are above [MyApp] instead of inside it, so that tests
     /// can use [MyApp] while mocking the providers

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 //screens
 import 'package:agri_chem/screens/application_screens/home_screen.dart';
 import 'package:agri_chem/screens/application_screens/feed_screen.dart';
-import 'package:agri_chem/screens/application_screens/modules_screen.dart';
+import 'package:agri_chem/screens/application_screens/courses_screen.dart';
 import 'package:agri_chem/screens/application_screens/chat_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     FeedScreen(),
-    ModulesScreen(),
+    CoursesScreen(),
     ChatScreen(),
   ];
 

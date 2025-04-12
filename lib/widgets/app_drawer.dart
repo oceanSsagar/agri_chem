@@ -1,3 +1,4 @@
+import 'package:agri_chem/screens/application_screens/profile_screen.dart';
 import 'package:agri_chem/utility/sign_out.dart';
 import 'package:flutter/material.dart';
 
@@ -43,8 +44,13 @@ class AppDrawer extends StatelessWidget {
 
           ListTile(
             leading: Icon(Icons.person),
-            title: Text("Account"),
-            onTap: () {},
+            title: Text("Profile"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileHomeScreen()),
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.attribution_outlined),

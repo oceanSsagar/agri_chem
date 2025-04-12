@@ -4,16 +4,6 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -50,11 +40,12 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDcJdYc-7s-26fmI5pkiOmHg8KO8bINVxc',
-    appId: '1:853999405886:android:27e9e6baf905d0e0723a6f',
-    messagingSenderId: '853999405886',
-    projectId: 'project-agrichem',
-    storageBucket: 'project-agrichem.firebasestorage.app',
+    apiKey: 'AIzaSyBuABRbSkQRe_4RMb6hg32E3h8k8Os6AVY',
+    appId: '1:156206724245:android:1b048de82aa601ea2fd79c',
+    messagingSenderId: '156206724245',
+    projectId: 'interns25-saffronedge-samarth',
+    databaseURL: 'https://interns25-saffronedge-samarth-default-rtdb.firebaseio.com',
+    storageBucket: 'interns25-saffronedge-samarth.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
