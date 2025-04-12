@@ -22,7 +22,13 @@ class CategoryTitle extends StatelessWidget {
               color: kFont,
             ),
           ),
-          Text(rightText, style: TextStyle(fontSize: 16, color: kFontLight)),
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              rightText,
+              style: TextStyle(fontSize: 16, color: kFontLight),
+            ),
+          ),
         ],
       ),
     );
