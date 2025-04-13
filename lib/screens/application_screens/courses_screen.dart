@@ -37,7 +37,6 @@ class _CoursesScreenState extends State<CoursesScreen> {
         padding: const EdgeInsets.all(16.0),
         itemCount: modules.length,
         itemBuilder: (context, index) {
-          final module = modules[index];
           return CourseCard();
         },
       ),

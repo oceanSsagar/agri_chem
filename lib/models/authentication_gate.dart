@@ -201,7 +201,7 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
 
                     SignInButton(
                       Buttons.Google,
-                      onPressed: () => signInWithGoogle(),
+                      onPressed: () => signInWithGoogle(context),
                       // mini: true,
                     ),
                     ElevatedButton(
