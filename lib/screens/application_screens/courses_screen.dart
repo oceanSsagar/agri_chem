@@ -1,4 +1,5 @@
 import 'package:agri_chem/widgets/course_card.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class CoursesScreen extends StatefulWidget {
@@ -37,7 +38,10 @@ class _CoursesScreenState extends State<CoursesScreen> {
         padding: const EdgeInsets.all(16.0),
         itemCount: modules.length,
         itemBuilder: (context, index) {
-          return CourseCard();
+          return CourseCard(
+            courseStream:
+                FirebaseFirestore.instance.collection('courses').snapshots(),
+          );
         },
       ),
     );

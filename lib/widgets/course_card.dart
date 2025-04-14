@@ -1,54 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CourseCard extends StatelessWidget {
-  const CourseCard({super.key});
+  final Stream<QuerySnapshot> courseStream;
+
+  const CourseCard({Key? key, required this.courseStream}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      // margin: const EdgeInsets.only(bottom: 16.0),
-      // shape: RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.circular(12.0),
-      // ),
-      // elevation: 4,
-      // child: Padding(
-      //   padding: const EdgeInsets.all(16.0),
-      //   child: Column(
-      //     crossAxisAlignment: CrossAxisAlignment.start,
-      //     children: [
-      //       Text(
-      //         module["title"]!,
-      //         style: const TextStyle(
-      //           fontSize: 18,
-      //           fontWeight: FontWeight.bold,
-      //         ),
-      //       ),
-      //       const SizedBox(height: 8),
-      //       Text(
-      //         module["description"]!,
-      //         style: const TextStyle(fontSize: 14, color: Colors.grey),
-      //       ),
-      //       const SizedBox(height: 16),
-      //       Align(
-      //         alignment: Alignment.centerRight,
-      //         child: ElevatedButton(
-      //           onPressed: () {
-      //             // Handle module action
-      //             ScaffoldMessenger.of(context).showSnackBar(
-      //               SnackBar(
-      //                 content: Text("Opening ${module["title"]}..."),
-      //               ),
-      //             );
-      //           },
-      //           style: ElevatedButton.styleFrom(
-      //             backgroundColor: Colors.green,
-      //           ),
-      //           child: const Text("Start"),
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
+    return StreamBuilder<QuerySnapshot>(
+      stream: courseStream,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        }
+
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          return Center(child: Text('No courses available.'));
+        }
+
+        final courses = snapshot.data!.docs;
+
+        return ListView.builder(
+          itemCount: courses.length,
+          itemBuilder: (context, index) {
+            final course = courses[index];
+            final courseData = course.data() as Map<String, dynamic>;
+
+            return Card(
+              margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: ListTile(
+                title: Text(courseData['title'] ?? 'No Title'),
+                subtitle: Text(courseData['description'] ?? 'No Description'),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  // Handle course tap
+                },
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

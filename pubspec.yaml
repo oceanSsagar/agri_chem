@@ -74,9 +74,6 @@ flutter:
   assets:
     - .env
     - assets/images/icon.png
-<<<<<<< Updated upstream
-  #   - images/a_dot_ham.jpeg
-=======
     - assets/icons/search.svg
     - assets/authors/sagar_salgar.jpg
     - assets/authors/john_doe.jpg
@@ -90,7 +87,6 @@ flutter:
     - assets/courses/course5/course5.jpg
     - assets/images/default_avatar.jpg
     - assets/images/default_background.jpg
->>>>>>> Stashed changes
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

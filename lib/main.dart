@@ -14,13 +14,14 @@ import 'package:agri_chem/onboarding/onboarding_screen.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Check if Firebase is already initialized
   if (Firebase.apps.isEmpty) {
-    print("Firebase is empty");
+    print("Initializing Firebase...");
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
   } else {
-    print("Firebase is not empty");
+    print("Firebase already initialized.");
   }
 
   runApp(

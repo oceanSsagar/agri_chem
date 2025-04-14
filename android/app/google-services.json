@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "156206724245-3j5e2hhto27098qthk1fh38vgnq44bp6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agri_chem",
+            "certificate_hash": "ef852a41a6fc8a2c88eb4e862e5a910d80ab19ec"
+          }
+        },
+        {
           "client_id": "156206724245-i9tgjnvgve7o1hegj9tj2bt51rr7csbb.apps.googleusercontent.com",
           "client_type": 3
         }

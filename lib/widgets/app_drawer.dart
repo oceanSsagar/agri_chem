@@ -77,32 +77,42 @@ class AppDrawer extends StatelessWidget {
                           )
                           : null,
                 ),
+
+                // otherAccountsPictures: [
+                //   CircleAvatar(
+                //     backgroundColor: Colors.white,
+                //     backgroundImage: NetworkImage(
+                //       "https://randomuser.me/api/portraits/women/74.jpg",
+                //     ),
+                //   ),
+                //   CircleAvatar(
+                //     backgroundColor: Colors.white,
+                //     backgroundImage: NetworkImage(
+                //       "https://randomuser.me/api/portraits/men/47.jpg",
+                //     ),
+                //   ),
+                // ],
               ),
+
               ListTile(
-                leading: const Icon(Icons.person),
-                title: const Text("Profile"),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AccountScreen(),
-                    ),
-                  );
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.attribution_outlined),
-                title: const Text("About Us"),
+                leading: Icon(Icons.person),
+                title: Text("Account"),
                 onTap: () {},
               ),
               ListTile(
-                leading: const Icon(Icons.settings),
-                title: const Text("Settings"),
+                leading: Icon(Icons.attribution_outlined),
+                title: Text("About Us"),
+                onTap: () {},
+              ),
+
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Settings"),
                 onTap: () {},
               ),
               ListTile(
-                leading: const Icon(Icons.logout),
-                title: const Text("Logout"),
+                leading: Icon(Icons.logout),
+                title: Text("Logout"),
                 onTap: () => signOutUser(context),
               ),
             ],
