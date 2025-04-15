@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 //screens
 import 'package:agri_chem/screens/application_screens/home_screen.dart';
-import 'package:agri_chem/screens/application_screens/feed_screen.dart';
+import 'package:agri_chem/screens/application_screens/chemical_search_screen.dart';
 import 'package:agri_chem/screens/application_screens/modules_screen.dart';
 import 'package:agri_chem/screens/application_screens/chat_screen.dart';
 
@@ -27,7 +27,7 @@ class _MainScreenState extends State<MainScreen> {
           _title = "Home";
           break;
         case 1:
-          _title = "Feeds";
+          _title = "Chemical Search";
           break;
         case 2:
           _title = "Modules";
@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    FeedScreen(),
+    ChemicalSearchScreen(),
     ModulesScreen(),
     ChatScreen(),
   ];
@@ -90,10 +90,7 @@ class _MainScreenState extends State<MainScreen> {
         onTap: _onItemTapped,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.newspaper_rounded),
-            label: 'Feeds',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Modules'),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         ],

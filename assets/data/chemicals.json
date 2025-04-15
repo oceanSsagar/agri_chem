@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Urea",
+      "name_lower": "urea",
+      "usageGuidelines": "Apply as a nitrogen source during the vegetative growth stage.",
+      "safetyRating": "Low",
+      "soilImpact": "Enhances nitrogen content but may lead to leaching if overused.",
+      "compatibleCrops": ["Wheat", "Rice", "Maize", "Sugarcane"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Di-Ammonium Phosphate (DAP)",
+      "name_lower": "di-ammonium phosphate (dap)",
+      "usageGuidelines": "Apply during sowing to supply phosphorus and nitrogen.",
+      "safetyRating": "Low",
+      "soilImpact": "Improves root development; excessive use can cause phosphorus buildup.",
+      "compatibleCrops": ["Wheat", "Rice", "Pulses"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Potash (Muriate of Potash - MOP)",
+      "name_lower": "potash (muriate of potash - mop)",
+      "usageGuidelines": "Apply during soil preparation to enhance potassium levels.",
+      "safetyRating": "Low",
+      "soilImpact": "Improves drought resistance; overuse may affect soil structure.",
+      "compatibleCrops": ["Cotton", "Sugarcane", "Potato"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Glyphosate",
+      "name_lower": "glyphosate",
+      "usageGuidelines": "Use as a non-selective herbicide for weed control before planting.",
+      "safetyRating": "Moderate",
+      "soilImpact": "Minimal residual activity; overuse can affect microbial balance.",
+      "compatibleCrops": ["Tea", "Rubber", "Non-crop areas"],
+      "status": "Restricted"
+    },
+    {
+      "name": "Chlorpyrifos",
+      "name_lower": "chlorpyrifos",
+      "usageGuidelines": "Apply to control a wide range of insect pests.",
+      "safetyRating": "High",
+      "soilImpact": "Persistent in soil; toxic to non-target organisms.",
+      "compatibleCrops": ["Rice", "Cotton", "Maize"],
+      "status": "Restricted"
+    },
+    {
+      "name": "Monocrotophos",
+      "name_lower": "monocrotophos",
+      "usageGuidelines": "Use for controlling sucking and chewing insects.",
+      "safetyRating": "Very High",
+      "soilImpact": "Highly toxic; poses risks to humans and wildlife.",
+      "compatibleCrops": ["Cotton", "Paddy", "Sugarcane"],
+      "status": "Banned"
+    },
+    {
+      "name": "Imidacloprid",
+      "name_lower": "imidacloprid",
+      "usageGuidelines": "Apply to manage sucking pests like aphids and whiteflies.",
+      "safetyRating": "Moderate",
+      "soilImpact": "Low persistence; potential impact on pollinators.",
+      "compatibleCrops": ["Rice", "Cotton", "Vegetables"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Mancozeb",
+      "name_lower": "mancozeb",
+      "usageGuidelines": "Use as a protective fungicide against fungal diseases.",
+      "safetyRating": "Low",
+      "soilImpact": "Non-systemic; minimal soil impact.",
+      "compatibleCrops": ["Potato", "Tomato", "Grapes"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Carbendazim",
+      "name_lower": "carbendazim",
+      "usageGuidelines": "Apply to control a broad spectrum of fungal diseases.",
+      "safetyRating": "Moderate",
+      "soilImpact": "Can persist in soil; overuse may lead to resistance.",
+      "compatibleCrops": ["Wheat", "Rice", "Banana"],
+      "status": "Restricted"
+    },
+    {
+      "name": "2,4-D",
+      "name_lower": "2,4-d",
+      "usageGuidelines": "Use as a selective herbicide for broadleaf weed control.",
+      "safetyRating": "Moderate",
+      "soilImpact": "Low persistence; potential for drift to non-target plants.",
+      "compatibleCrops": ["Wheat", "Maize", "Sugarcane"],
+      "status": "Allowed"
+    }
+  ]
+  

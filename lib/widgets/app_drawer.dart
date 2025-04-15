@@ -1,4 +1,5 @@
 import 'package:agri_chem/screens/application_screens/aboutus_screen.dart';
+import 'package:agri_chem/screens/application_screens/settings_screen.dart';
 import 'package:agri_chem/utility/sign_out.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -98,7 +99,14 @@ class AppDrawer extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("Settings"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsScreen(),
+                    ),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.logout),
