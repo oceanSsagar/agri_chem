@@ -13,32 +13,90 @@ class ChemicalSearchScreen extends StatefulWidget {
 class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
   List<DocumentSnapshot> _results = [];
   bool _isLoading = false;
+  bool _hasMore = true;
+  DocumentSnapshot? _lastDoc;
+  final int _limit = 10;
+  final ScrollController _scrollController = ScrollController();
 
-  void _searchChemicals(String query) async {
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels >=
+              _scrollController.position.maxScrollExtent - 200 &&
+          !_isLoading &&
+          _hasMore) {
+        _searchChemicals(widget._search.text.trim());
+      }
+    });
+  }
+
+  void _searchChemicals(String query, {bool isNewSearch = false}) async {
     if (query.isEmpty) {
-      setState(() => _results = []);
+      setState(() {
+        _results = [];
+        _lastDoc = null;
+        _hasMore = true;
+      });
       return;
     }
 
+    if (isNewSearch) {
+      setState(() {
+        _results.clear();
+        _lastDoc = null;
+        _hasMore = true;
+      });
+    }
+
+    if (!_hasMore) return;
+
     setState(() => _isLoading = true);
 
-    final snapshot =
-        await FirebaseFirestore.instance
-            .collection('agri_chemicals')
-            .where('name_lower', isGreaterThanOrEqualTo: query)
-            .where('name_lower', isLessThanOrEqualTo: query + '\uf8ff')
-            .get();
+    Query queryRef = FirebaseFirestore.instance
+        .collection('agri_chemicals')
+        .where('name_lower', isGreaterThanOrEqualTo: query)
+        .where('name_lower', isLessThanOrEqualTo: query + '\uf8ff')
+        .orderBy('name_lower')
+        .limit(_limit);
 
-    setState(() {
-      _results = snapshot.docs;
-      _isLoading = false;
-    });
+    if (_lastDoc != null) {
+      queryRef = (queryRef as Query<Map<String, dynamic>>).startAfterDocument(
+        _lastDoc!,
+      );
+    }
+
+    final snapshot = await queryRef.get();
+
+    if (snapshot.docs.isNotEmpty) {
+      _lastDoc = snapshot.docs.last;
+      _results.addAll(snapshot.docs);
+    } else {
+      _hasMore = false;
+    }
+
+    setState(() => _isLoading = false);
   }
 
   @override
   void dispose() {
     widget._search.dispose();
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  Color getStatusColor(String status) {
+    switch (status.toLowerCase()) {
+      case 'allowed':
+        return Colors.green.shade100;
+      case 'restricted':
+        return Colors.orange.shade100;
+      case 'banned':
+        return Colors.red.shade100;
+      default:
+        return Colors.grey.shade200;
+    }
   }
 
   @override
@@ -51,7 +109,7 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
             SearchBar(
               controller: widget._search,
               onChanged: (value) {
-                _searchChemicals(value.trim());
+                _searchChemicals(value.trim(), isNewSearch: true);
               },
               hintText: "Search for Chemicals",
               keyboardType: TextInputType.name,
@@ -60,31 +118,27 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
             SizedBox(height: 15),
             Expanded(
               child:
-                  _isLoading
-                      ? Center(child: CircularProgressIndicator())
-                      : _results.isEmpty
+                  _results.isEmpty && !_isLoading
                       ? Center(child: Text('No chemicals found.'))
                       : ListView.builder(
-                        itemCount: _results.length,
+                        controller: _scrollController,
+                        itemCount: _results.length + 1,
                         itemBuilder: (context, index) {
+                          if (index == _results.length) {
+                            return _isLoading
+                                ? Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Center(
+                                    child: CircularProgressIndicator(),
+                                  ),
+                                )
+                                : SizedBox.shrink();
+                          }
+
                           final chem =
                               _results[index].data() as Map<String, dynamic>;
                           final status =
-                              (chem['status'] as String?)?.toLowerCase() ??
-                              'unknown';
-
-                          Color getStatusColor(String status) {
-                            switch (status) {
-                              case 'allowed':
-                                return Colors.green.shade100;
-                              case 'restricted':
-                                return Colors.orange.shade100;
-                              case 'banned':
-                                return Colors.red.shade100;
-                              default:
-                                return Colors.grey.shade200;
-                            }
-                          }
+                              (chem['status'] ?? 'unknown') as String;
 
                           return Container(
                             margin: EdgeInsets.symmetric(
@@ -95,7 +149,6 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(12),
                               ),
-
                               tileColor: getStatusColor(status),
                               title: Text(
                                 chem['name'],
@@ -105,16 +158,12 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
                                 "Status: ${chem['status'] ?? 'N/A'}",
                               ),
                               onTap: () {
-                                // You can open a detailed screen if needed
-                                final chemData =
-                                    _results[index].data()
-                                        as Map<String, dynamic>;
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder:
                                         (context) => ChemicalDetailScreen(
-                                          chemical: chemData,
+                                          chemical: chem,
                                         ),
                                   ),
                                 );
