@@ -1,149 +1,143 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:agri_chem/utils/account_utils.dart';
+import 'package:provider/provider.dart';
+import 'package:agri_chem/providers/user_provider.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'edit_profile_screen.dart';
 
-class AccountScreen extends StatefulWidget {
+class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
 
   @override
-  State<AccountScreen> createState() => _AccountScreenState();
-}
-
-class _AccountScreenState extends State<AccountScreen> {
-  File? _avatarImage;
-  File? _backgroundImage;
-  String? _avatarUrl;
-  String? _backgroundUrl;
-
-  final _usernameController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    _loadUserData();
-  }
-
-  Future<void> _loadUserData() async {
-    final user = FirebaseAuth.instance.currentUser;
-
-    if (user != null) {
-      final userDoc =
-          await FirebaseFirestore.instance
-              .collection('users')
-              .doc(user.uid)
-              .get();
-
-      if (userDoc.exists) {
-        final data = userDoc.data() ?? {}; // Get the document data as a Map
-        setState(() {
-          // Check if the fields exist, otherwise use default values
-          _avatarUrl =
-              data.containsKey('avatarUrl')
-                  ? data['avatarUrl']
-                  : 'assets/images/default_avatar.jpg';
-          _backgroundUrl =
-              data.containsKey('backgroundUrl')
-                  ? data['backgroundUrl']
-                  : 'assets/images/default_background.jpg';
-          _usernameController.text =
-              data.containsKey('username')
-                  ? data['username']
-                  : 'Anonymous User';
-        });
-      }
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).user;
+
     return Scaffold(
-      appBar: AppBar(title: const Text("Account")),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                _backgroundImage != null
-                    ? Image.file(
-                      _backgroundImage!,
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    )
-                    : _backgroundUrl != null &&
-                        !_backgroundUrl!.startsWith('assets/')
-                    ? Image.network(
-                      _backgroundUrl!,
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    )
-                    : Image.asset(
-                      _backgroundUrl ?? 'assets/images/default_background.jpg',
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
+      appBar: AppBar(
+        title: const Text("My Profile"),
+        backgroundColor: Colors.green[700],
+        foregroundColor: Colors.white,
+      ),
+      body:
+          user == null
+              ? const Center(child: CircularProgressIndicator())
+              : Column(
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Background Banner
+                      SizedBox(
+                        height: 180,
+                        width: double.infinity,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Colors.green[100]!, Colors.green[300]!],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 40,
+                        child: CircleAvatar(
+                          radius: 50,
+                          backgroundColor: Colors.white,
+                          child: ClipOval(
+                            child:
+                                user.avatarUrl != null
+                                    ? CachedNetworkImage(
+                                      imageUrl: user.avatarUrl!,
+                                      width: 96,
+                                      height: 96,
+                                      fit: BoxFit.cover,
+                                      placeholder:
+                                          (context, url) =>
+                                              const CircularProgressIndicator(),
+                                      errorWidget:
+                                          (context, url, error) => const Image(
+                                            image: AssetImage(
+                                              'assets/images/default_avatar.jpg',
+                                            ),
+                                            fit: BoxFit.cover,
+                                            width: 96,
+                                            height: 96,
+                                          ),
+                                    )
+                                    : const Image(
+                                      image: AssetImage(
+                                        'assets/images/default_avatar.jpg',
+                                      ),
+                                      fit: BoxFit.cover,
+                                      width: 96,
+                                      height: 96,
+                                    ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 60),
+                  Text(
+                    user.username ?? "Anonymous",
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
                     ),
-                CircleAvatar(
-                  backgroundImage:
-                      _avatarImage != null
-                          ? FileImage(_avatarImage!)
-                          : _avatarUrl != null &&
-                              !_avatarUrl!.startsWith('assets/')
-                          ? NetworkImage(_avatarUrl!)
-                          : AssetImage(
-                                _avatarUrl ??
-                                    'assets/images/default_avatar.jpg',
-                              )
-                              as ImageProvider,
-                  radius: 50,
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _usernameController,
-              decoration: const InputDecoration(
-                labelText: 'Username',
-                border: OutlineInputBorder(),
+                  ),
+                  const SizedBox(height: 10),
+                  _infoCard(Icons.email, "Email", user.email ?? "Not provided"),
+                  _infoCard(
+                    Icons.phone,
+                    "Phone Number",
+                    user.phoneNumber ?? "Not provided",
+                  ),
+                  _infoCard(Icons.person, "User Type", user.userType ?? "N/A"),
+                  _infoCard(
+                    Icons.language,
+                    "Language",
+                    user.languagePreference ?? "English",
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EditProfileScreen(),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.edit),
+                    label: const Text("Edit Profile"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green[600],
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 20,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () => updateUsername(context, _usernameController),
-              child: const Text("Update Username"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:
-                  () => pickImage(
-                    ImageSource.gallery,
-                    true,
-                    (file) => setState(() => _avatarImage = file),
-                  ),
-              child: const Text("Change Avatar"),
-            ),
-            ElevatedButton(
-              onPressed:
-                  () => pickImage(
-                    ImageSource.gallery,
-                    false,
-                    (file) => setState(() => _backgroundImage = file),
-                  ),
-              child: const Text("Change Background"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed:
-                  () => uploadImages(context, _avatarImage, _backgroundImage),
-              child: const Text("Upload Images"),
-            ),
-          ],
+    );
+  }
+
+  Widget _infoCard(IconData icon, String title, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
+      child: Card(
+        elevation: 2,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: ListTile(
+          leading: Icon(icon),
+          title: Text(title),
+          subtitle: Text(value),
         ),
       ),
     );

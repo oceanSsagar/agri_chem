@@ -1,9 +1,11 @@
+import 'package:agri_chem/screens/application_screens/aboutus_screen.dart';
 import 'package:agri_chem/utility/sign_out.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:agri_chem/screens/application_screens/account_screen.dart';
 import 'package:agri_chem/themes/my_colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -46,7 +48,6 @@ class AppDrawer extends StatelessWidget {
 
           final userData = snapshot.data ?? {};
           final avatarUrl = userData['avatarUrl'];
-          final backgroundUrl = userData['backgroundUrl'];
           final userName = userData['username'] ?? "User Name";
           final userEmail = userData['email'] ?? "useremail@example.com";
 
@@ -64,45 +65,34 @@ class AppDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(
                   backgroundImage:
                       avatarUrl != null
-                          ? NetworkImage(avatarUrl)
-                          : const AssetImage('assets/images/default_avatar.jpg')
+                          ? CachedNetworkImageProvider(avatarUrl)
+                          : const AssetImage('assets/images/default_avatar.png')
                               as ImageProvider,
                 ),
-                decoration: BoxDecoration(
-                  image:
-                      backgroundUrl != null
-                          ? DecorationImage(
-                            image: NetworkImage(backgroundUrl),
-                            fit: BoxFit.cover,
-                          )
-                          : null,
-                ),
-
-                // otherAccountsPictures: [
-                //   CircleAvatar(
-                //     backgroundColor: Colors.white,
-                //     backgroundImage: NetworkImage(
-                //       "https://randomuser.me/api/portraits/women/74.jpg",
-                //     ),
-                //   ),
-                //   CircleAvatar(
-                //     backgroundColor: Colors.white,
-                //     backgroundImage: NetworkImage(
-                //       "https://randomuser.me/api/portraits/men/47.jpg",
-                //     ),
-                //   ),
-                // ],
+                decoration: BoxDecoration(color: Colors.greenAccent),
               ),
 
               ListTile(
                 leading: Icon(Icons.person),
                 title: Text("Account"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AccountScreen()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.attribution_outlined),
                 title: Text("About Us"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AboutUsScreen(),
+                    ),
+                  );
+                },
               ),
 
               ListTile(

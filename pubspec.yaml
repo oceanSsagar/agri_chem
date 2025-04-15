@@ -47,6 +47,9 @@ dependencies:
   uuid: ^4.5.1
   firebase_storage: ^12.4.5
   image_picker: ^1.1.2
+  cached_network_image: ^3.4.1
+  flutter_image_compress: ^2.4.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -85,8 +88,7 @@ flutter:
     - assets/courses/course3/course3.jpg
     - assets/courses/course4/course4.png
     - assets/courses/course5/course5.jpg
-    - assets/images/default_avatar.jpg
-    - assets/images/default_background.jpg
+    - assets/images/default_avatar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

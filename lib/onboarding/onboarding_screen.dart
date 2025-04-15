@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -12,44 +11,79 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+  final _phoneNumberController = TextEditingController();
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
-  final _emailController = TextEditingController();
-  String _gender = "Male"; // Default gender
-  String _userType = "Farmer"; // Default user type
+  final _usernameController = TextEditingController(); // For custom username
+  String _gender = "Male";
+  String _userType = "Farmer";
+  String _languagePreference = "English";
 
-  String _generateRandomUsername() {
-    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    final random = Random();
-    return 'user_${List.generate(8, (index) => characters[random.nextInt(characters.length)]).join()}';
+  // Function to check if username exists in Firestore
+  Future<bool> _isUsernameTaken(String username) async {
+    final querySnapshot =
+        await FirebaseFirestore.instance
+            .collection('agri_users')
+            .where('username', isEqualTo: username)
+            .get();
+
+    return querySnapshot
+        .docs
+        .isNotEmpty; // Return true if the username is taken
   }
 
   Future<void> _saveUserData(BuildContext context) async {
     try {
       final user = FirebaseAuth.instance.currentUser;
+      if (user == null) throw Exception("No authenticated user found.");
 
-      if (user == null) {
-        throw Exception("No authenticated user found.");
+      final username = _usernameController.text.trim();
+
+      if (username.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Username cannot be empty.")),
+        );
+        return;
       }
 
-      // Generate a random username
-      final randomUsername = _generateRandomUsername();
+      // Check if the username is already taken
+      final usernameTaken = await _isUsernameTaken(username);
+      if (usernameTaken) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              "Username is already taken, please choose another one.",
+            ),
+          ),
+        );
+        return;
+      }
 
-      // Save user data to Firestore
-      await FirebaseFirestore.instance
-          .collection('agri_users')
-          .doc(user.uid)
-          .set({
-            'firstName': _firstNameController.text.trim(),
-            'lastName': _lastNameController.text.trim(),
-            'email': _emailController.text.trim(),
-            'gender': _gender,
-            'userType': _userType,
-            'username': randomUsername, // Save the random username
-            'createdAt': FieldValue.serverTimestamp(),
-          });
+      // Get email from FirebaseAuth (no need for email input now)
+      final email = user.email;
 
-      // Navigate to the main screen after saving
+      // Proceed to save user data
+      await FirebaseFirestore.instance.collection('agri_users').doc(user.uid).set({
+        'username': username,
+        'firstName': _firstNameController.text.trim(),
+        'lastName': _lastNameController.text.trim(),
+        'email': email, // Use the email from FirebaseAuth
+        'gender': _gender,
+        'userType': _userType,
+        'avatarUrl':
+            "https://firebasestorage.googleapis.com/v0/b/interns25-saffronedge-samarth.firebasestorage.app/o/agrichem%2Fimages%2Favatar%2Fdefault_avatar.png?alt=media&token=f55da4c2-d273-4154-a27b-d81081d5b10e",
+        'uid': user.uid,
+        'languagePreference': _languagePreference,
+        'phoneNumber': _phoneNumberController.text.trim(),
+        'profileCompleted': true,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      // Display success message and navigate
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Profile created successfully!")),
+      );
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const MainScreen()),
@@ -64,154 +98,111 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF6A11CB), Color(0xFF2575FC)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+      backgroundColor: const Color(0xFFEFF7EC),
+      body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
                     'Welcome to Agri Chem!',
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Color(0xFF388E3C),
                     ),
-                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 10),
                   const Text(
-                    'Please fill in your details to get started.',
-                    style: TextStyle(fontSize: 16, color: Colors.white70),
-                    textAlign: TextAlign.center,
+                    'Please tell us a bit about yourself.',
+                    style: TextStyle(fontSize: 16, color: Colors.black54),
                   ),
-                  const SizedBox(height: 30),
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    elevation: 8,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        children: [
-                          TextField(
-                            controller: _firstNameController,
-                            decoration: const InputDecoration(
-                              labelText: 'First Name',
-                              prefixIcon: Icon(Icons.person),
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextField(
-                            controller: _lastNameController,
-                            decoration: const InputDecoration(
-                              labelText: 'Last Name',
-                              prefixIcon: Icon(Icons.person_outline),
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextField(
-                            controller: _emailController,
-                            decoration: const InputDecoration(
-                              labelText: 'Email',
-                              prefixIcon: Icon(Icons.email),
-                              border: OutlineInputBorder(),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              const Text(
-                                'Gender:',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                              const SizedBox(width: 10),
-                              Expanded(
-                                child: DropdownButton<String>(
-                                  value: _gender,
-                                  isExpanded: true,
-                                  items: const [
-                                    DropdownMenuItem(
-                                      value: "Male",
-                                      child: Text("Male"),
-                                    ),
-                                    DropdownMenuItem(
-                                      value: "Female",
-                                      child: Text("Female"),
-                                    ),
-                                  ],
-                                  onChanged: (value) {
-                                    if (value != null) {
-                                      setState(() {
-                                        _gender = value;
-                                      });
-                                    }
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              const Text(
-                                'User Type:',
-                                style: TextStyle(fontSize: 16),
-                              ),
-                              const SizedBox(width: 10),
-                              Expanded(
-                                child: DropdownButton<String>(
-                                  value: _userType,
-                                  isExpanded: true,
-                                  items: const [
-                                    DropdownMenuItem(
-                                      value: "Farmer",
-                                      child: Text("Farmer"),
-                                    ),
-                                    DropdownMenuItem(
-                                      value: "Student",
-                                      child: Text("Student"),
-                                    ),
-                                  ],
-                                  onChanged: (value) {
-                                    if (value != null) {
-                                      _userType = value;
-                                    }
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 20),
-                          ElevatedButton(
-                            onPressed: () => _saveUserData(context),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 32,
-                                vertical: 16,
-                              ),
-                            ),
-                            child: const Text(
-                              'Submit',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                          ),
-                        ],
+                  const SizedBox(height: 25),
+
+                  // First name, last name, phone fields
+                  _buildTextField(
+                    "First Name",
+                    _firstNameController,
+                    Icons.person,
+                  ),
+                  const SizedBox(height: 10),
+                  _buildTextField(
+                    "Last Name",
+                    _lastNameController,
+                    Icons.person_outline,
+                  ),
+                  const SizedBox(height: 10),
+                  _buildTextField(
+                    "Phone Number",
+                    _phoneNumberController,
+                    Icons.phone,
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Username input field
+                  _buildTextField(
+                    "Username",
+                    _usernameController,
+                    Icons.person_add,
+                  ),
+
+                  const SizedBox(height: 20),
+                  _buildDropdown("Gender", _gender, ["Male", "Female"], (val) {
+                    setState(() => _gender = val!);
+                  }),
+                  const SizedBox(height: 10),
+                  _buildDropdown(
+                    "User Type",
+                    _userType,
+                    ["Farmer", "Student"],
+                    (val) {
+                      setState(() => _userType = val!);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  _buildDropdown(
+                    "Language",
+                    _languagePreference,
+                    ["English", "Marathi", "Hindi"],
+                    (val) {
+                      setState(() => _languagePreference = val!);
+                    },
+                  ),
+
+                  const SizedBox(height: 25),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () => _saveUserData(context),
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        backgroundColor: const Color(0xFF4CAF50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                      child: const Text(
+                        "Continue",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -219,6 +210,49 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(
+    String label,
+    TextEditingController controller,
+    IconData icon,
+  ) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        labelText: label,
+        prefixIcon: Icon(icon),
+        border: const OutlineInputBorder(),
+      ),
+    );
+  }
+
+  Widget _buildDropdown(
+    String label,
+    String value,
+    List<String> items,
+    ValueChanged<String?> onChanged,
+  ) {
+    return InputDecorator(
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: value,
+          isExpanded: true,
+          items:
+              items
+                  .map(
+                    (e) => DropdownMenuItem<String>(value: e, child: Text(e)),
+                  )
+                  .toList(),
+          onChanged: onChanged,
         ),
       ),
     );

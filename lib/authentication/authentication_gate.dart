@@ -1,21 +1,23 @@
+import 'package:agri_chem/onboarding/onboarding_screen.dart';
 import 'package:agri_chem/screens/main_screen.dart';
-import 'package:agri_chem/themes/my_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:agri_chem/utility/sign_in_with_google.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AuthenticationGate extends StatefulWidget {
   const AuthenticationGate({super.key});
 
   @override
-  State<AuthenticationGate> createState() => _AuthenticationGateState();
+  State<AuthenticationGate> createState() => AuthenticationGateState();
 }
 
-class _AuthenticationGateState extends State<AuthenticationGate> {
+class AuthenticationGateState extends State<AuthenticationGate> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  bool _isLoading = false; //why??
+  bool _isLoading = false;
+  bool? _isProfileComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +27,18 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         }
+
         if (snapshot.hasData) {
-          return const MainScreen();
+          if (_isProfileComplete == null) {
+            _checkProfileStatus(snapshot.data!);
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (_isProfileComplete == true) {
+            return const MainScreen();
+          } else {
+            return const OnboardingScreen();
+          }
         }
 
         return Scaffold(
@@ -42,22 +54,10 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
-
-                  // Google Sign-In Button
                   _isLoading
                       ? const CircularProgressIndicator()
-                      : SignInButtonBuilder(
-                        text: "Sign in with Google", // Custom text
-                        icon: Icons.g_mobiledata, // Optional: Use a custom icon
-                        backgroundColor: kPrimaryDark,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 5,
-                        ), // Custom background color
-                        elevation: 5,
+                      : SignInButton(
+                        Buttons.Google,
                         onPressed: () async {
                           setState(() => _isLoading = true);
                           try {
@@ -78,5 +78,25 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
         );
       },
     );
+  }
+
+  Future<void> _checkProfileStatus(User user) async {
+    try {
+      final doc =
+          await FirebaseFirestore.instance
+              .collection('agri_users')
+              .doc(user.uid)
+              .get();
+
+      final data = doc.data();
+      final isCompleted = data != null && data['profileCompleted'] == true;
+
+      setState(() {
+        _isProfileComplete = isCompleted;
+      });
+    } catch (e) {
+      print("Error checking profile status: $e");
+      setState(() => _isProfileComplete = false);
+    }
   }
 }

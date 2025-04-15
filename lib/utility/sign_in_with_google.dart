@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
-import 'package:agri_chem/providers/guser_provider.dart';
 
 Future<UserCredential?> signInWithGoogle(context) async {
   try {
@@ -42,12 +40,6 @@ Future<UserCredential?> signInWithGoogle(context) async {
     if (!isSaved) {
       print("Failed to save user data.");
     }
-
-    // Store the user in the UserProvider
-    Provider.of<GUserProvider>(
-      context,
-      listen: false,
-    ).setGoogleUser(googleUser);
 
     return userCredential;
   } catch (e) {
