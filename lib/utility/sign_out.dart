@@ -1,19 +1,23 @@
+import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-Future<void> signOutUser() async {
+Future<void> signOutUser(BuildContext context) async {
   try {
+    // Sign out from Google
+    await GoogleSignIn().signOut();
+
     // Sign out from Firebase
     await FirebaseAuth.instance.signOut();
 
-    // Sign out from Google
-    final GoogleSignIn googleSignIn = GoogleSignIn();
-    if (await googleSignIn.isSignedIn()) {
-      await googleSignIn.signOut();
-    }
-
-    print("User signed out successfully");
+    // Navigate to the sign-in page
+    Navigator.pushReplacementNamed(
+      context,
+      '/auth',
+    ); // Replace '/auth' with your sign-in route
   } catch (e) {
-    print("Sign out error: $e");
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text("Error signing out: $e")));
   }
 }

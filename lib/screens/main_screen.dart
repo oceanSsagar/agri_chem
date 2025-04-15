@@ -1,7 +1,6 @@
 import 'package:agri_chem/screens/notification_screen.dart';
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_dotenv/flutter_dotenv.dart'; // for later-> dotenv package
 
 //screens
 import 'package:agri_chem/screens/application_screens/home_screen.dart';
@@ -13,14 +12,12 @@ class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
   @override
-  State<StatefulWidget> createState() {
-    return _MainScreenState();
-  }
+  State<StatefulWidget> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
-  String _title = "Agri Chem"; //default
+  String _title = "Agri Chem";
 
   _onItemTapped(int index) {
     setState(() {
@@ -42,7 +39,6 @@ class _MainScreenState extends State<MainScreen> {
     });
   }
 
-  // as list of screens for bottomnavigationbar
   final List<Widget> _screens = [
     HomeScreen(),
     FeedScreen(),
@@ -53,48 +49,56 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE8F5E9), // Soft green background
       appBar: AppBar(
-        //AppBar Name
-        title: Text(_title),
-        backgroundColor: Theme.of(context).colorScheme.surface,
+        title: Text(
+          _title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: const Color(0xFF388E3C), // Rich green
+        elevation: 2,
+        iconTheme: const IconThemeData(color: Colors.white),
         actions: [
-          Container(
-            height: 8,
-            width: 8,
-            child: IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NotificationScreen()),
-                );
-              },
-              icon: Icon(Icons.notifications),
-            ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.notifications),
+            tooltip: "Notifications",
           ),
         ],
       ),
-      //App Drawer
-      drawer: AppDrawer(),
-      //Bottom Navigatio Bar (ofcourse for navigation in app)
+
+      drawer: const AppDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        enableFeedback: true, //haptics
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        fixedColor: Theme.of(context).colorScheme.onPrimary,
+        backgroundColor: const Color(0xFFD0E8D0), // Slightly darker green
+        selectedItemColor: const Color(0xFF5D4037), // Earthy brown
+        unselectedItemColor: const Color(0xFF795548).withOpacity(0.6),
+        selectedFontSize: 14,
+        unselectedFontSize: 13,
+        showUnselectedLabels: true,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: const <BottomNavigationBarItem>[
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.newspaper_rounded),
-            label: 'feed',
+            label: 'Feeds',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Modules'),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         ],
       ),
-      body:
-          _screens[_selectedIndex], //using the index to toggle btw the screens
+      body: _screens[_selectedIndex],
     );
   }
 }

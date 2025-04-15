@@ -51,22 +51,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBuABRbSkQRe_4RMb6hg32E3h8k8Os6AVY',
-    appId: '1:156206724245:android:c9714f556c26ab0b2fd79c',
+    appId: '1:156206724245:android:1b048de82aa601ea2fd79c',
     messagingSenderId: '156206724245',
     projectId: 'interns25-saffronedge-samarth',
-    databaseURL: 'https://interns25-saffronedge-samarth-default-rtdb.firebaseio.com',
+    databaseURL:
+        'https://interns25-saffronedge-samarth-default-rtdb.firebaseio.com',
     storageBucket: 'interns25-saffronedge-samarth.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDfQme0F6UhbUDhXgEIGHCH333XsVVXBYc',
-    appId: '1:156206724245:ios:44ee15815cc268c72fd79c',
-    messagingSenderId: '156206724245',
-    projectId: 'interns25-saffronedge-samarth',
-    databaseURL: 'https://interns25-saffronedge-samarth-default-rtdb.firebaseio.com',
-    storageBucket: 'interns25-saffronedge-samarth.firebasestorage.app',
-    androidClientId: '156206724245-40gpk7sidv81fv6obhofur6pieb8rb9j.apps.googleusercontent.com',
-    iosClientId: '156206724245-frlvdn47hd9ti85bd9onhf2ok5rfhnc0.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBh4aIxOtWGadD7q9DXIsxVJ9qJmvgBv84',
+    appId: '1:853999405886:ios:611810822f82f16a723a6f',
+    messagingSenderId: '853999405886',
+    projectId: 'project-agrichem',
+    storageBucket: 'project-agrichem.firebasestorage.app',
     iosBundleId: 'com.example.agriChem',
   );
 
