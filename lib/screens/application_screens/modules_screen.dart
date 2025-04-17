@@ -57,21 +57,6 @@ class _ModulesScreenState extends State<ModulesScreen> {
                           ),
                         );
                       },
-                      // ListTile(
-                      //   title: Text(module.title ?? 'Untitled'),
-                      //   subtitle: Text(module.description ?? 'No description'),
-                      //   trailing: Icon(Icons.arrow_forward_ios),
-                      //   onTap: () {
-                      //     Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(
-                      //         builder:
-                      //             (_) =>
-                      //                 CourseModuleDetailsScreen(module: module),
-                      //       ),
-                      //     );
-                      //   },
-                      // ),
                     ),
                   );
                 },

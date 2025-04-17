@@ -132,57 +132,65 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
               child:
                   _results.isEmpty && !_isLoading
                       ? Center(child: Text('No chemicals found.'))
-                      : ListView.builder(
-                        controller: _scrollController,
-                        itemCount: _results.length + 1,
-                        itemBuilder: (context, index) {
-                          if (index == _results.length) {
-                            return _isLoading
-                                ? Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Center(
-                                    child: CircularProgressIndicator(),
-                                  ),
-                                )
-                                : SizedBox.shrink();
-                          }
-
-                          final chem =
-                              _results[index].data() as Map<String, dynamic>;
-                          final status =
-                              (chem['status'] ?? 'unknown') as String;
-
-                          return Container(
-                            margin: EdgeInsets.symmetric(
-                              vertical: 5,
-                              horizontal: 5,
-                            ),
-                            child: ListTile(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              tileColor: getStatusColor(status),
-                              title: Text(
-                                chem['name'],
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              subtitle: Text(
-                                "Status: ${chem['status'] ?? 'N/A'}",
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder:
-                                        (context) => ChemicalDetailScreen(
-                                          chemical: chem,
-                                        ),
-                                  ),
-                                );
-                              },
-                            ),
+                      : RefreshIndicator(
+                        onRefresh: () async {
+                          _searchChemicals(
+                            widget._search.text.trim(),
+                            isNewSearch: true,
                           );
                         },
+                        child: ListView.builder(
+                          controller: _scrollController,
+                          itemCount: _results.length + 1,
+                          itemBuilder: (context, index) {
+                            if (index == _results.length) {
+                              return _isLoading
+                                  ? Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Center(
+                                      child: CircularProgressIndicator(),
+                                    ),
+                                  )
+                                  : SizedBox.shrink();
+                            }
+
+                            final chem =
+                                _results[index].data() as Map<String, dynamic>;
+                            final status =
+                                (chem['status'] ?? 'unknown') as String;
+
+                            return Container(
+                              margin: EdgeInsets.symmetric(
+                                vertical: 5,
+                                horizontal: 5,
+                              ),
+                              child: ListTile(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                tileColor: getStatusColor(status),
+                                title: Text(
+                                  chem['name'],
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                subtitle: Text(
+                                  "Status: ${chem['status'] ?? 'N/A'}",
+                                ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => ChemicalDetailScreen(
+                                            chemical: chem,
+                                          ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                        ),
                       ),
             ),
           ],

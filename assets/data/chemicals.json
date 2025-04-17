@@ -1,93 +1,2545 @@
 [
-    {
-      "name": "Urea",
-      "name_lower": "urea",
-      "usageGuidelines": "Apply as a nitrogen source during the vegetative growth stage.",
-      "safetyRating": "Low",
-      "soilImpact": "Enhances nitrogen content but may lead to leaching if overused.",
-      "compatibleCrops": ["Wheat", "Rice", "Maize", "Sugarcane"],
-      "status": "Allowed"
-    },
-    {
-      "name": "Di-Ammonium Phosphate (DAP)",
-      "name_lower": "di-ammonium phosphate (dap)",
-      "usageGuidelines": "Apply during sowing to supply phosphorus and nitrogen.",
-      "safetyRating": "Low",
-      "soilImpact": "Improves root development; excessive use can cause phosphorus buildup.",
-      "compatibleCrops": ["Wheat", "Rice", "Pulses"],
-      "status": "Allowed"
-    },
-    {
-      "name": "Potash (Muriate of Potash - MOP)",
-      "name_lower": "potash (muriate of potash - mop)",
-      "usageGuidelines": "Apply during soil preparation to enhance potassium levels.",
-      "safetyRating": "Low",
-      "soilImpact": "Improves drought resistance; overuse may affect soil structure.",
-      "compatibleCrops": ["Cotton", "Sugarcane", "Potato"],
-      "status": "Allowed"
-    },
-    {
-      "name": "Glyphosate",
-      "name_lower": "glyphosate",
-      "usageGuidelines": "Use as a non-selective herbicide for weed control before planting.",
-      "safetyRating": "Moderate",
-      "soilImpact": "Minimal residual activity; overuse can affect microbial balance.",
-      "compatibleCrops": ["Tea", "Rubber", "Non-crop areas"],
+  {
+    "name": "Urea",
+    "name_lower": "urea",
+    "usageGuidelines": "Apply as a nitrogen source during the vegetative growth stage.",
+    "safetyRating": "low",
+    "soilImpact": "Enhances nitrogen content but may lead to leaching if overused.",
+    "compatibleCrops": [
+      "Wheat",
+      "Rice",
+      "Maize",
+      "Sugarcane"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Glyphosate",
+    "name_lower": "glyphosate",
+    "usageGuidelines": "Glyphosate needs to be applied to fresh, actively growing green vegetation with sufficient leaf area to absorb enough chemical to kill the whole plant.",
+    "safetyRating": "low",
+    "soilImpact": "Glyphosate has been thought safe for the environment because it is inactivated quickly after spraying as it is absorbed onto soil particles. It is also broken down by soil- micro-organisms, such as bacteria and fungi, that use glyphosate as a food source.",
+    "compatibleCrops": [
+      "Soybean",
+      "Corn",
+      "Cotton",
+      "sugar beets",
+      "cotton",
+      "maize",
+      "alfalfa"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Atrazine",
+    "name_lower": "atrazine",
+    "usageGuidelines": "The maximum acceptable concentration (MAC) for atrazine in drinking water is 0.005 mg/L (5 µg/L)",
+    "safetyRating": "high",
+    "soilImpact": "It can disrupt nutrient cycling, decrease microbial diversity, and affect soil enzyme activity.",
+    "compatibleCrops": [
+      "sweet corn",
+      "field corn",
+      "guava",
+      "hay",
+      "macadamia nuts",
+      "grasses"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "DDT",
+    "name_lower": "ddt",
+    "usageGuidelines": "Historically used as an insecticide, now largely banned due to environmental persistence.",
+    "safetyRating": "high",
+    "soilImpact": "Highly persistent in soil, accumulates in the food chain, and has detrimental effects on wildlife.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Neem Oil",
+    "name_lower": "neem oil",
+    "usageGuidelines": "Apply as a natural insecticide and fungicide, dilute with water as per instructions.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil, may have some impact on non-target insects.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Potassium Chloride (MOP)",
+    "name_lower": "potassium chloride (mop)",
+    "usageGuidelines": "Apply as a source of potassium, essential for plant growth and disease resistance.",
+    "safetyRating": "low",
+    "soilImpact": "Increases potassium levels, high concentrations may affect soil salinity.",
+    "compatibleCrops": [
+      "Potato",
+      "Tomato",
+      "Banana",
+      "Sugarcane"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Malathion",
+    "name_lower": "malathion",
+    "usageGuidelines": "Apply as an insecticide for a broad range of pests, follow label instructions for dosage and timing.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil invertebrates, but generally degrades relatively quickly.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Copper Sulfate",
+    "name_lower": "copper sulfate",
+    "usageGuidelines": "Used as a fungicide and algaecide, apply carefully to avoid copper buildup in soil.",
+    "safetyRating": "moderate",
+    "soilImpact": "Excessive use can lead to copper toxicity in soil, affecting microbial activity and plant growth.",
+    "compatibleCrops": [
+      "Grapes",
+      "Potatoes",
+      "Citrus"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Diatomaceous Earth",
+    "name_lower": "diatomaceous earth",
+    "usageGuidelines": "Apply as a natural insecticide by creating a physical barrier against pests.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil, may improve soil aeration.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "2,4-D",
+    "name_lower": "2,4-d",
+    "usageGuidelines": "A selective herbicide used to control broadleaf weeds in cereal crops and grasslands.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect non-target broadleaf plants and may have short-term impacts on soil microbial communities.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Rice",
+      "Corn"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Metribuzin",
+    "name_lower": "metribuzin",
+    "usageGuidelines": "A selective herbicide used to control broadleaf weeds and some grasses.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months, potential for runoff and impact on water quality.",
+    "compatibleCrops": [
+      "Soybean",
+      "Potato",
+      "Tomato",
+      "Sugarcane"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Pendimethalin",
+    "name_lower": "pendimethalin",
+    "usageGuidelines": "A pre-emergent herbicide used to control annual grasses and some broadleaf weeds.",
+    "safetyRating": "low",
+    "soilImpact": "Low mobility in soil, primarily stays in the upper layers, can affect soil microorganisms at high concentrations.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Cotton",
+      "Rice"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Bacillus thuringiensis (Bt)",
+    "name_lower": "bacillus thuringiensis (bt)",
+    "usageGuidelines": "A biological insecticide that targets specific insect larvae, apply as a spray.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil and non-target organisms.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Corn",
+      "Cotton"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Imidacloprid",
+    "name_lower": "imidacloprid",
+    "usageGuidelines": "A systemic insecticide used to control sucking insects, can be applied as a soil drench or foliar spray.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil and water, potential negative impacts on non-target insects, particularly pollinators.",
+    "compatibleCrops": [
+      "Rice",
+      "Cotton",
+      "Vegetables",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Mancozeb",
+    "name_lower": "mancozeb",
+    "usageGuidelines": "A broad-spectrum fungicide used to control various fungal diseases, apply as a spray.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil microbial activity at high concentrations, potential for runoff.",
+    "compatibleCrops": [
+      "Potato",
+      "Tomato",
+      "Grapes",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Carbofuran",
+    "name_lower": "carbofuran",
+    "usageGuidelines": "A broad-spectrum insecticide and nematicide, highly toxic, use with extreme caution.",
+    "safetyRating": "high",
+    "soilImpact": "Highly toxic to soil organisms, persistent in the environment, potential for water contamination.",
+    "compatibleCrops": [
+      "Rice",
+      "Sugarcane",
+      "Corn"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Lindane",
+    "name_lower": "lindane",
+    "usageGuidelines": "An organochlorine insecticide, use is highly restricted or banned in many countries due to toxicity and persistence.",
+    "safetyRating": "high",
+    "soilImpact": "Persistent in soil, bioaccumulates in the food chain, toxic to a wide range of organisms.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Paraquat",
+    "name_lower": "paraquat",
+    "usageGuidelines": "A non-selective contact herbicide, highly toxic, use requires strict safety precautions.",
+    "safetyRating": "high",
+    "soilImpact": "Rapidly inactivated upon contact with soil, but highly toxic to humans and other organisms.",
+    "compatibleCrops": [
+      "Cotton",
+      "Soybean",
+      "Orchards"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Propoxur",
+    "name_lower": "propoxur",
+    "usageGuidelines": "A carbamate insecticide used to control various pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil invertebrates, relatively short persistence in soil.",
+    "compatibleCrops": [
+      "Rice",
+      "Cocoa",
+      "Forestry"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Thiram",
+    "name_lower": "thiram",
+    "usageGuidelines": "A fungicide and seed treatment.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil microbial activity at high concentrations.",
+    "compatibleCrops": [
+      "Seeds",
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Aldicarb",
+    "name_lower": "aldicarb",
+    "usageGuidelines": "A highly toxic carbamate insecticide, acaricide, and nematicide, use is restricted in many regions.",
+    "safetyRating": "high",
+    "soilImpact": "Highly toxic to soil organisms, potential for water contamination.",
+    "compatibleCrops": [
+      "Cotton",
+      "Potato",
+      "Sugarcane"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Chlordane",
+    "name_lower": "chlordane",
+    "usageGuidelines": "An organochlorine insecticide, use is banned in many countries due to persistence and toxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Highly persistent in soil, bioaccumulates in the food chain, toxic to various organisms.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Heptachlor",
+    "name_lower": "heptachlor",
+    "usageGuidelines": "An organochlorine insecticide, use is banned in many countries due to persistence and toxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Persistent in soil, bioaccumulates, toxic to wildlife.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Methoxychlor",
+    "name_lower": "methoxychlor",
+    "usageGuidelines": "An organochlorine insecticide, less persistent than DDT but still with environmental concerns.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several months, toxic to some aquatic organisms.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Endosulfan",
+    "name_lower": "endosulfan",
+    "usageGuidelines": "A broad-spectrum insecticide, use is being phased out globally due to toxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Persistent in the environment, toxic to aquatic life and beneficial insects.",
+    "compatibleCrops": [
+      "Cotton",
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Fipronil",
+    "name_lower": "fipronil",
+    "usageGuidelines": "A broad-spectrum insecticide, used in agriculture and pest control.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil, toxic to some beneficial insects and aquatic invertebrates.",
+    "compatibleCrops": [
+      "Rice",
+      "Corn",
+      "Sugarcane"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Chlorpyrifos",
+    "name_lower": "chlorpyrifos",
+    "usageGuidelines": "An organophosphate insecticide, use is restricted or banned in some regions due to neurotoxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Can persist in soil for several weeks, toxic to beneficial insects and aquatic life.",
+    "compatibleCrops": [
+      "Cotton",
+      "Corn",
+      "Fruits"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Cypermethrin",
+    "name_lower": "cypermethrin",
+    "usageGuidelines": "A synthetic pyrethroid insecticide, used to control a wide range of pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, but highly toxic to aquatic organisms and bees.",
+    "compatibleCrops": [
+      "Cotton",
+      "Vegetables",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Deltamethrin",
+    "name_lower": "deltamethrin",
+    "usageGuidelines": "A synthetic pyrethroid insecticide, effective against a variety of pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, highly toxic to aquatic life and bees.",
+    "compatibleCrops": [
+      "Cereals",
+      "Vegetables",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Lambda-cyhalothrin",
+    "name_lower": "lambda-cyhalothrin",
+    "usageGuidelines": "A synthetic pyrethroid insecticide with a broad spectrum of activity.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, toxic to aquatic organisms and bees.",
+    "compatibleCrops": [
+      "Cotton",
+      "Cereals",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Abamectin",
+    "name_lower": "abamectin",
+    "usageGuidelines": "An insecticide and acaricide used to control mites and insect pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly degrades in soil, low mobility, toxic to some beneficial insects and aquatic invertebrates.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cotton"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Spinosad",
+    "name_lower": "spinosad",
+    "usageGuidelines": "A biological insecticide derived from soil bacteria.",
+    "safetyRating": "low",
+    "soilImpact": "Low persistence in soil, generally considered safe for non-target organisms when used according to label.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Thiacloprid",
+    "name_lower": "thiacloprid",
+    "usageGuidelines": "A neonicotinoid insecticide used to control sucking insects.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil, potential negative impacts on pollinators.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Oilseed rape"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Acetamiprid",
+    "name_lower": "acetamiprid",
+    "usageGuidelines": "A neonicotinoid insecticide used to control various insect pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil, potential negative impacts on pollinators.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Tea"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Clothianidin",
+    "name_lower": "clothianidin",
+    "usageGuidelines": "A neonicotinoid insecticide used as a seed treatment and soil application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil and water, significant negative impacts on pollinators.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Oilseed rape"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Dinocap",
+    "name_lower": "dinocap",
+    "usageGuidelines": "A fungicide used to control powdery mildew and other fungal diseases.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degrades in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Captan",
+    "name_lower": "captan",
+    "usageGuidelines": "A broad-spectrum fungicide used as a seed treatment and foliar spray.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, can affect soil microorganisms at high concentrations.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Maneb",
+    "name_lower": "maneb",
+    "usageGuidelines": "A broad-spectrum fungicide used to control various fungal diseases.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil microbial activity.",
+    "compatibleCrops": [
+      "Potato",
+      "Tomato",
+      "Cereals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Zineb",
+    "name_lower": "zineb",
+    "usageGuidelines": "A broad-spectrum fungicide used to control various fungal diseases.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil microbial activity.",
+    "compatibleCrops": [
+      "Potato",
+      "Tomato",
+      "Cereals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Ziram",
+    "name_lower": "ziram",
+    "usageGuidelines": "A fungicide used for the control of various fungal diseases in fruits, vegetables, and ornamentals.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can have some impact on soil microbial populations.",
+    "compatibleCrops": [
+      "Apples",
+      "Pears",
+      "Stone Fruits",
+      "Tomatoes"
+    ],
+    "status": "Restricted"
+  },
+  
+  {
+    "name": "Glyphosate",
+    "name_lower": "glyphosate",
+    "usageGuidelines": "Apply as a non-selective post-emergent herbicide to actively growing weeds. Effectiveness is reduced if applied to stressed or dormant weeds. Allow sufficient time for translocation to the roots before tillage. Avoid contact with desirable plants as it is non-selective.",
+    "safetyRating": "low",
+    "soilImpact": "Generally binds tightly to soil particles and is considered to have low mobility, reducing the risk of leaching. Primarily broken down by soil microorganisms. Some studies have raised concerns about long-term impacts on soil microbial communities, but these are still under investigation. Minimal impact on soil structure.",
+    "compatibleCrops": [
+      "Soybean (Roundup Ready)",
+      "Corn (Roundup Ready)",
+      "Cotton (Roundup Ready)",
+      "Canola (Roundup Ready)",
+      "Orchards (directed spray)",
+      "Vineyards (directed spray)"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Atrazine",
+    "name_lower": "atrazine",
+    "usageGuidelines": "Apply as a selective pre-emergent or early post-emergent herbicide to control broadleaf weeds and some grasses in specific crops. Application rates are regulated and vary depending on soil type and crop. Avoid application near water bodies due to runoff potential.",
+    "safetyRating": "high",
+    "soilImpact": "Can persist in soil for several months, with the potential for carryover injury to sensitive rotational crops. Moderately mobile in soil, posing a risk of leaching and groundwater contamination. Can negatively impact soil microbial diversity and activity, affecting nutrient cycling.",
+    "compatibleCrops": [
+      "Corn",
+      "Sorghum",
+      "Sugarcane"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "2,4-D",
+    "name_lower": "2,4-d",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control broadleaf weeds in cereal crops, pastures, and non-crop areas. Use appropriate formulations to minimize drift, as it can damage sensitive broadleaf plants. Apply during active weed growth.",
+    "safetyRating": "moderate",
+    "soilImpact": "Generally degrades relatively quickly in soil through microbial action. Low to moderate mobility in soil, with a moderate risk of runoff, especially if heavy rainfall occurs shortly after application. Some studies suggest potential short-term impacts on soil microbial communities.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Oats",
+      "Corn",
+      "Rice",
+      "Pastures"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Metolachlor",
+    "name_lower": "metolachlor",
+    "usageGuidelines": "Apply as a selective pre-emergent herbicide to control annual grasses and some broadleaf weeds in various crops. Can be applied alone or in tank mixtures. Incorporation into the soil may improve effectiveness under dry conditions.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderately mobile in soil, posing a risk of leaching and potential groundwater contamination in vulnerable areas. Can have transient effects on soil microbial activity.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Sorghum",
+      "Cotton",
+      "Peanuts",
+      "Sugarcane"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Pendimethalin",
+    "name_lower": "pendimethalin",
+    "usageGuidelines": "Apply as a selective pre-emergent herbicide to control annual grasses and certain broadleaf weeds in a wide range of crops. Requires incorporation by tillage or rainfall/irrigation for activation. Forms a vapor barrier at the soil surface.",
+    "safetyRating": "low",
+    "soilImpact": "Low mobility in soil, primarily remains in the upper few centimeters, reducing the risk of leaching. Degrades through microbial and photochemical processes. Can have short-term inhibitory effects on some soil microorganisms at high concentrations, but overall impact is considered relatively low.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Cotton",
+      "Rice",
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Imidacloprid",
+    "name_lower": "imidacloprid",
+    "usageGuidelines": "Apply as a systemic insecticide through soil drench, seed treatment, or foliar spray to control sucking insects like aphids, whiteflies, and thrips. Dosage rates vary depending on the application method and target pest.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months, depending on soil type and environmental conditions. Moderately mobile in soil, with a potential risk of leaching and runoff into water bodies. Concerns exist regarding its potential negative impacts on non-target insects, particularly pollinators like bees.",
+    "compatibleCrops": [
+      "Rice",
+      "Cotton",
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Chlorpyrifos",
+    "name_lower": "chlorpyrifos",
+    "usageGuidelines": "Apply as a broad-spectrum organophosphate insecticide to control a wide range of chewing and sucking insects. Application methods include foliar spray and soil incorporation. Use is increasingly restricted due to neurotoxicity concerns.",
+    "safetyRating": "high",
+    "soilImpact": "Can persist in soil for several weeks to months, with degradation rates influenced by soil moisture and temperature. Moderately mobile in soil, posing a risk of runoff. Highly toxic to beneficial insects, earthworms, and aquatic organisms, disrupting soil biodiversity.",
+    "compatibleCrops": [
+      "Cotton",
+      "Corn",
+      "Soybean",
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Cypermethrin",
+    "name_lower": "cypermethrin",
+    "usageGuidelines": "Apply as a synthetic pyrethroid insecticide for rapid knockdown of various insect pests on a wide range of crops. Apply as a foliar spray, ensuring good coverage. Avoid application during bee foraging hours due to toxicity to bees.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, rapidly broken down by microorganisms and sunlight. Low mobility in soil, minimizing leaching risk. Highly toxic to aquatic organisms and bees through direct contact and spray drift. Can negatively impact populations of beneficial insects.",
+    "compatibleCrops": [
+      "Cotton",
+      "Vegetables",
+      "Fruits",
+      "Cereals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Deltamethrin",
+    "name_lower": "deltamethrin",
+    "usageGuidelines": "Apply as a synthetic pyrethroid insecticide effective against a broad spectrum of insect pests. Used as a foliar spray with good coverage. Similar to other pyrethroids, avoid application when bees are active.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, degrades relatively quickly. Low mobility in soil. Highly toxic to aquatic life and bees. Can affect beneficial insect populations.",
+    "compatibleCrops": [
+      "Cereals",
+      "Oilseed Rape",
+      "Vegetables",
+      "Fruits",
+      "Cotton"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Lambda-cyhalothrin",
+    "name_lower": "lambda-cyhalothrin",
+    "usageGuidelines": "Apply as a synthetic pyrethroid insecticide with a broad range of activity against many insect pests. Foliar application ensuring thorough coverage is recommended. Exercise caution around water bodies and during bee activity.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low persistence in soil, degrades relatively quickly. Low mobility in soil. Highly toxic to aquatic organisms and bees. Can impact beneficial insect populations.",
+    "compatibleCrops": [
+      "Cotton",
+      "Cereals",
+      "Vegetables",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Abamectin",
+    "name_lower": "abamectin",
+    "usageGuidelines": "Apply as an insecticide and acaricide to control mites, leafminers, and certain other insect pests. Acts primarily through ingestion and contact. Ensure good coverage of foliage. Avoid runoff.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly degrades in soil through microbial action and photolysis. Low mobility in soil. Toxic to some beneficial insects and aquatic invertebrates if directly exposed.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cotton",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Spinosad",
+    "name_lower": "spinosad",
+    "usageGuidelines": "Apply as a biological insecticide derived from soil bacteria to control a wide range of chewing and sucking insects. Effective through ingestion and contact. Can be used in organic farming.",
+    "safetyRating": "low",
+    "soilImpact": "Low persistence in soil, rapidly degraded by sunlight and microorganisms. Low mobility in soil. Generally considered safe for most beneficial insects and mammals when used according to label instructions, but can be toxic to bees if sprayed directly.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals",
+      "Cotton"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Thiacloprid",
+    "name_lower": "thiacloprid",
+    "usageGuidelines": "Apply as a systemic neonicotinoid insecticide to control sucking insects like aphids and whiteflies. Can be applied as a foliar spray or soil drench.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months. Moderately mobile in soil, with potential for leaching. Concerns exist regarding its potential negative impacts on pollinators, particularly bees, through systemic uptake in plants and residues in nectar and pollen.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Oilseed Rape"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Acetamiprid",
+    "name_lower": "acetamiprid",
+    "usageGuidelines": "Apply as a systemic neonicotinoid insecticide to control various sucking and chewing insect pests. Can be applied as a foliar spray or soil application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks. Moderately mobile in soil. Similar concerns to other neonicotinoids regarding potential negative impacts on pollinators.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Tea",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Clothianidin",
+    "name_lower": "clothianidin",
+    "usageGuidelines": "Primarily used as a neonicotinoid insecticide for seed treatment to provide systemic protection against early-season pests. Can also be applied as a soil drench.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil and water for extended periods. Systemic uptake by plants leads to residues in pollen and nectar, posing a significant risk to pollinators like bees. Restrictions on its use are in place in many regions.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Oilseed Rape",
+      "Sugar Beets"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Flumioxazin",
+    "name_lower": "flumioxazin",
+    "usageGuidelines": "Apply as a pre-emergent or early post-emergent contact herbicide to control broadleaf weeds. Requires thorough coverage for post-emergent activity. Can be used in reduced or no-tillage systems.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil, with minimal risk of leaching under normal conditions. Can cause temporary discoloration of soil surface.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Peanuts",
+      "Orchards",
+      "Vineyards"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Glufosinate",
+    "name_lower": "glufosinate",
+    "usageGuidelines": "Apply as a non-selective post-emergent herbicide to control a broad spectrum of broadleaf weeds and grasses. Effective on contact, so thorough coverage is essential. Used in glufosinate-tolerant crops.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly inactivated upon contact with soil. Low mobility in soil, minimizing leaching risk. Broken down by soil microorganisms. Generally considered to have minimal long-term impact on soil health.",
+    "compatibleCrops": [
+      "Corn (LibertyLink)",
+      "Soybean (LibertyLink)",
+      "Cotton (LibertyLink)",
+      "Canola (LibertyLink)",
+      "Orchards (directed spray)"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Dicamba",
+    "name_lower": "dicamba",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control broadleaf weeds in specific crops and pastures. Formulations with reduced volatility are preferred to minimize off-target movement. Application timing is critical.",
+    "safetyRating": "moderate",
+    "soilImpact": "Degrades relatively quickly in soil through microbial action. Moderate mobility in soil, with a potential risk of runoff. Volatilization can lead to off-target damage to sensitive broadleaf plants.",
+    "compatibleCrops": [
+      "Corn",
+      "Sorghum",
+      "Soybean (Dicamba-tolerant)",
+      "Wheat",
+      "Pastures"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Fipronil",
+    "name_lower": "fipronil",
+    "usageGuidelines": "Apply as a broad-spectrum insecticide through soil application, seed treatment, or foliar spray to control various soil-dwelling and foliar pests.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months. Moderately mobile in soil, with potential for runoff. Toxic to some beneficial insects, earthworms, and aquatic invertebrates.",
+    "compatibleCrops": [
+      "Rice",
+      "Corn",
+      "Sugarcane",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Bifenthrin",
+    "name_lower": "bifenthrin",
+    "usageGuidelines": "Apply as a synthetic pyrethroid insecticide and acaricide to control a wide range of insect and mite pests. Primarily used as a contact poison with some residual activity.",
+    "safetyRating": "moderate",
+    "soilImpact": "Low mobility in soil, binds tightly to soil particles. Low persistence in soil under aerobic conditions. Highly toxic to aquatic organisms and bees. Can affect beneficial insect populations.",
+    "compatibleCrops": [
+      "Cotton",
+      "Corn",
+      "Soybean",
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Phorate",
+    "name_lower": "phorate",
+    "usageGuidelines": "Apply as a highly toxic organophosphate insecticide and nematicide, typically as a soil-incorporated granular formulation at planting. Extreme caution is required during handling and application.",
+    "safetyRating": "high",
+    "soilImpact": "Moderately persistent in soil, with degradation influenced by soil conditions. Moderate mobility in soil, posing a risk of runoff. Highly toxic to a wide range of non-target organisms, including birds and mammals.",
+    "compatibleCrops": [
+      "Corn",
+      "Cotton",
+      "Potatoes",
+      "Peanuts"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Terbufos",
+    "name_lower": "terbufos",
+    "usageGuidelines": "Apply as a highly toxic organophosphate insecticide and nematicide, usually as a soil-applied granular formulation at planting. Requires careful handling and application due to its toxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Moderately persistent in soil. Moderate mobility in soil, with potential for runoff. Highly toxic to birds, mammals, and aquatic organisms.",
+    "compatibleCrops": [
+      "Corn",
+      "Sorghum",
+      "Sugar Beets"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Aldicarb",
+    "name_lower": "aldicarb",
+    "usageGuidelines": "Apply as a highly toxic carbamate insecticide, acaricide, and nematicide, typically as a granular formulation applied to the soil. Use is highly restricted or banned in many regions due to its extreme toxicity.",
+    "safetyRating": "high",
+    "soilImpact": "Moderately persistent in soil. High mobility in soil, posing a significant risk of groundwater contamination. Extremely toxic to a wide range of organisms, including mammals, birds, and beneficial insects.",
+    "compatibleCrops": [
+      "Cotton",
+      "Potatoes",
+      "Sugarcane"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Methomyl",
+    "name_lower": "methomyl",
+    "usageGuidelines": "Apply as a carbamate insecticide for the control of various foliar and soil-borne pests. Can be applied as a foliar spray or soil drench. Highly toxic, requiring careful handling and application according to label instructions.",
+    "safetyRating": "high",
+    "soilImpact": "Relatively short persistence in soil, typically degrading within days to weeks. Moderate mobility in soil, with a potential risk of leaching under certain conditions. Highly toxic to beneficial insects, bees, and aquatic organisms.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Cotton",
+      "Soybean"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Oxamyl",
+    "name_lower": "oxamyl",
+    "usageGuidelines": "Apply as a carbamate insecticide and nematicide, available in granular and liquid formulations for soil and foliar application. Highly toxic, requiring strict adherence to safety guidelines.",
+    "safetyRating": "high",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. High mobility in soil, posing a significant risk of groundwater contamination. Highly toxic to beneficial insects, birds, and aquatic life.",
+    "compatibleCrops": [
+      "Potatoes",
+      "Vegetables",
+      "Fruits",
+      "Tobacco"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Carbofuran",
+    "name_lower": "carbofuran",
+    "usageGuidelines": "Apply as a broad-spectrum carbamate insecticide and nematicide, typically as a granular formulation applied to the soil at planting. Highly toxic, with use restricted or banned in many countries.",
+    "safetyRating": "high",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Moderate to high mobility in soil, posing a risk of leaching and runoff. Highly toxic to birds, mammals, and aquatic organisms.",
+    "compatibleCrops": [
+      "Rice",
+      "Sugarcane",
+      "Corn",
+      "Soybean"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Propoxur",
+    "name_lower": "propoxur",
+    "usageGuidelines": "Apply as a carbamate insecticide for controlling various household, public health, and agricultural pests. Can be formulated as sprays, baits, and dusts.",
+    "safetyRating": "moderate",
+    "soilImpact": "Relatively short persistence in soil, degrading within days to weeks. Low to moderate mobility in soil. Toxic to beneficial insects, including bees.",
+    "compatibleCrops": [
+      "Rice",
+      "Cocoa",
+      "Forestry"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Diazinon",
+    "name_lower": "diazinon",
+    "usageGuidelines": "Apply as an organophosphate insecticide for controlling a wide range of sucking and chewing insects and mites. Available in various formulations for foliar and soil application. Use is increasingly restricted.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. Moderate mobility in soil, with potential for runoff. Toxic to birds, bees, and aquatic organisms.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Malathion",
+    "name_lower": "malathion",
+    "usageGuidelines": "Apply as a broad-spectrum organophosphate insecticide for controlling various insect pests on fruits, vegetables, and ornamentals. Relatively short residual activity.",
+    "safetyRating": "moderate",
+    "soilImpact": "Relatively short persistence in soil, degrading within days. Low mobility in soil. Toxic to bees and aquatic organisms.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Dimethoate",
+    "name_lower": "dimethoate",
+    "usageGuidelines": "Apply as a systemic organophosphate insecticide and acaricide for controlling sucking insects and mites on various crops. Can be applied as a foliar spray or soil drench.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. Moderate mobility in soil. Toxic to bees and beneficial insects.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cereals",
+      "Cotton"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Fenitrothion",
+    "name_lower": "fenitrothion",
+    "usageGuidelines": "Apply as a broad-spectrum organophosphate insecticide used in agriculture, forestry, and public health. Primarily a contact and stomach poison.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. Low to moderate mobility in soil. Toxic to bees, birds, and aquatic organisms.",
+    "compatibleCrops": [
+      "Rice",
+      "Cereals",
+      "Fruits",
+      "Forestry"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Pirimicarb",
+    "name_lower": "pirimicarb",
+    "usageGuidelines": "Apply as a selective carbamate insecticide primarily used to control aphids on various crops. Relatively short residual activity.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil. Considered relatively safe to bees when not sprayed directly on them.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Cereals",
+      "Hops"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Thiamethoxam",
+    "name_lower": "thiamethoxam",
+    "usageGuidelines": "Apply as a systemic neonicotinoid insecticide used as a seed treatment, soil drench, or foliar spray to control sucking and chewing insects.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months. Systemic uptake by plants can lead to residues in pollen and nectar, posing a risk to pollinators.",
+    "compatibleCrops": [
+      "Corn",
+      "Soybean",
+      "Cotton",
+      "Vegetables",
+      "Fruits"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Dinotefuran",
+    "name_lower": "dinotefuran",
+    "usageGuidelines": "Apply as a systemic neonicotinoid insecticide used to control a wide range of sucking and chewing insects. Highly water-soluble and can be applied as a foliar spray, soil drench, or seed treatment.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can persist in soil for several weeks to months. High water solubility increases the potential for runoff and leaching. Concerns exist regarding its impact on pollinators.",
+    "compatibleCrops": [
+      "Rice",
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Indoxacarb",
+    "name_lower": "indoxacarb",
+    "usageGuidelines": "Apply as an oxadiazine insecticide for controlling lepidopteran pests (caterpillars) and some other chewing insects. Acts primarily through ingestion.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. Low mobility in soil. Considered relatively safe to many beneficial insects and mammals when used according to label.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Cotton"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Emamectin Benzoate",
+    "name_lower": "emamectin benzoate",
+    "usageGuidelines": "Apply as a semi-synthetic insecticide derived from naturally occurring avermectins, used to control lepidopteran pests in various crops. Acts primarily through ingestion.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly degraded in soil by sunlight and microorganisms. Low mobility in soil. Generally considered safe to many beneficial insects and mammals when used according to label.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Cotton"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Tefluthrin",
+    "name_lower": "tefluthrin",
+    "usageGuidelines": "Apply as a synthetic pyrethroid insecticide primarily used as a soil treatment at planting to control soil-borne insects.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil. Low mobility in soil. Highly toxic to aquatic organisms.",
+    "compatibleCrops": [
+      "Corn",
+      "Sugar Beets",
+      "Potatoes"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Chlormequat Chloride",
+    "name_lower": "chlormequat chloride",
+    "usageGuidelines": "Apply as a plant growth regulator to reduce lodging in cereals and improve yield. Foliar application at specific growth stages.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Oats",
+      "Rye"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Ethephon",
+    "name_lower": "ethephon",
+    "usageGuidelines": "Apply as a plant growth regulator to promote fruit ripening, flowering, and abscission in various crops. Foliar application at specific growth stages.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degrades in soil and plants. Low mobility in soil.",
+    "compatibleCrops": [
+      "Cotton",
+      "Pineapple",
+      "Tomato",
+      "Rubber"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Paclobutrazol",
+    "name_lower": "paclobutrazol",
+    "usageGuidelines": "Apply as a plant growth regulator to inhibit gibberellin biosynthesis, leading to reduced vegetative growth and increased flowering and fruiting. Can be applied as a soil drench or foliar spray.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from months to years depending on soil conditions. Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Ornamentals",
+      "Rice"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Trinexapac-ethyl",
+    "name_lower": "trinexapac-ethyl",
+    "usageGuidelines": "Apply as a plant growth regulator to reduce stem elongation in cereals and turfgrass, improving lodging resistance and turf density. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Rye",
+      "Turfgrass"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Prohexadione-calcium",
+    "name_lower": "prohexadione-calcium",
+    "usageGuidelines": "Apply as a plant growth regulator to inhibit gibberellin biosynthesis, used to control vegetative growth in fruits, rice, and turfgrass. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Apples",
+      "Pears",
+      "Rice",
+      "Turfgrass"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Quizalofop-p-ethyl",
+    "name_lower": "quizalofop-p-ethyl",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control annual and perennial grass weeds in broadleaf crops. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Oilseed Rape",
+      "Sugar Beets",
+      "Vegetables"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Clethodim",
+    "name_lower": "clethodim",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control annual and perennial grass weeds in broadleaf crops. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Oilseed Rape",
+      "Sugar Beets",
+      "Vegetables"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Sethoxydim",
+    "name_lower": "sethoxydim",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control annual and perennial grass weeds in broadleaf crops. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Oilseed Rape",
+      "Sugar Beets",
+      "Vegetables"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Haloxyfop-p-methyl",
+    "name_lower": "haloxyfop-p-methyl",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control annual and perennial grass weeds in broadleaf crops. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Oilseed Rape",
+      "Sugar Beets",
+      "Vegetables"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Propanil",
+    "name_lower": "propanil",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control grass weeds and some broadleaf weeds in rice. Contact action.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life of several days to weeks. Low mobility in soil. Toxic to some aquatic organisms.",
+    "compatibleCrops": [
+      "Rice"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Bensulfuron-methyl",
+    "name_lower": "bensulfuron-methyl",
+    "usageGuidelines": "Apply as a selective pre- and post-emergent sulfonylurea herbicide to control broadleaf weeds and some sedges in rice.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Low to moderate mobility in soil.",
+    "compatibleCrops": [
+      "Rice"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Cyhalofop-butyl",
+    "name_lower": "cyhalofop-butyl",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control grass weeds in rice. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Rice"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Bispyribac-sodium",
+    "name_lower": "bispyribac-sodium",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide to control a broad range of broadleaf weeds, grasses, and sedges in rice.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Moderate mobility in soil.",
+    "compatibleCrops": [
+      "Rice"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Flazasulfuron",
+    "name_lower": "flazasulfuron",
+    "usageGuidelines": "Apply as a selective pre- and post-emergent sulfonylurea herbicide for broadleaf and grass weed control in sugarcane and other crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Moderate mobility in soil.",
+    "compatibleCrops": [
+      "Sugarcane",
+      "Grapevines",
+      "Citrus"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Imazapyr",
+    "name_lower": "imazapyr",
+    "usageGuidelines": "Apply as a non-selective systemic herbicide for the control of a wide range of broadleaf weeds, grasses, and woody plants in non-crop areas and forestry.",
+    "safetyRating": "moderate",
+    "soilImpact": "Highly persistent in soil, with a half-life ranging from months to years. Moderately mobile in soil, with potential for runoff and leaching. Can affect sensitive rotational crops.",
+    "compatibleCrops": [
+      "Non-crop areas",
+      "Forestry"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Imazethapyr",
+    "name_lower": "imazethapyr",
+    "usageGuidelines": "Apply as a selective pre- and post-emergent imidazolinone herbicide for broadleaf and grass weed control in soybean and other leguminous crops. Can be applied pre-plant incorporated, pre-emergence, or post-emergence.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil pH and moisture. Moderate mobility in soil, with potential for carryover injury to sensitive rotational crops.",
+    "compatibleCrops": [
+      "Soybean",
+      "Peanut",
+      "Dry Bean",
+      "Pea",
+      "Alfalfa"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Clopyralid",
+    "name_lower": "clopyralid",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide for the control of broadleaf weeds in the composite (Asteraceae) and legume families, as well as some other troublesome weeds. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. High mobility in soil, with a significant potential for carryover injury to sensitive rotational crops like tomatoes, potatoes, and lettuce.",
+    "compatibleCrops": [
+      "Sugar Beets",
+      "Oilseed Rape",
+      "Cereals",
+      "Grass Seed Crops",
+      "Non-crop areas"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Fluroxypyr",
+    "name_lower": "fluroxypyr",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide for the control of broadleaf weeds, particularly those in the composite (Asteraceae) and knotweed (Polygonaceae) families. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Moderate mobility in soil, with potential for carryover injury to sensitive broadleaf crops.",
+    "compatibleCrops": [
+      "Cereals",
+      "Maize",
+      "Sugarcane",
+      "Orchards",
+      "Pastures",
+      "Non-crop areas"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Triclopyr",
+    "name_lower": "triclopyr",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide for the control of woody plants and broadleaf weeds in forests, pastures, and non-crop areas. Systemic action.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Moderate mobility in soil, with potential for runoff, especially on sloped terrain.",
+    "compatibleCrops": [
+      "Forestry",
+      "Pastures",
+      "Non-crop areas"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Metsulfuron-methyl",
+    "name_lower": "metsulfuron-methyl",
+    "usageGuidelines": "Apply as a selective pre- and post-emergent sulfonylurea herbicide for broadleaf weed control in cereals, pastures, and non-crop areas. Low application rates due to high potency.",
+    "safetyRating": "low",
+    "soilImpact": "Highly persistent in soil, with a half-life ranging from months to years depending on soil pH and moisture. Moderate to high mobility in soil, with a significant potential for carryover injury to sensitive rotational crops.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Oats",
+      "Rye",
+      "Pastures",
+      "Non-crop areas"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Sulfosulfuron",
+    "name_lower": "sulfosulfuron",
+    "usageGuidelines": "Apply as a selective pre- and post-emergent sulfonylurea herbicide for broadleaf and grass weed control in wheat and sugarcane.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderate mobility in soil.",
+    "compatibleCrops": [
+      "Wheat",
+      "Sugarcane"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Nicosulfuron",
+    "name_lower": "nicosulfuron",
+    "usageGuidelines": "Apply as a selective post-emergent sulfonylurea herbicide for grass and broadleaf weed control in corn.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderate mobility in soil.",
+    "compatibleCrops": [
+      "Corn"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Rimsulfuron",
+    "name_lower": "rimsulfuron",
+    "usageGuidelines": "Apply as a selective post-emergent sulfonylurea herbicide for grass and broadleaf weed control in corn, potatoes, and tomatoes.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderate mobility in soil.",
+    "compatibleCrops": [
+      "Corn",
+      "Potatoes",
+      "Tomatoes"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Thifensulfuron-methyl",
+    "name_lower": "thifensulfuron-methyl",
+    "usageGuidelines": "Apply as a selective post-emergent sulfonylurea herbicide for broadleaf weed control in soybean and cereals.",
+    "safetyRating": "low",
+    "soilImpact": "Relatively short persistence in soil, with a half-life of several days to weeks. Low to moderate mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Wheat",
+      "Barley",
+      "Oats"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Tribenuron-methyl",
+    "name_lower": "tribenuron-methyl",
+    "usageGuidelines": "Apply as a selective post-emergent sulfonylurea herbicide for broadleaf weed control in cereals.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Low to moderate mobility in soil.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley",
+      "Oats"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Pinoxaden",
+    "name_lower": "pinoxaden",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide for the control of annual grass weeds in wheat and barley. Systemic action.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Wheat",
+      "Barley"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Fenoxaprop-p-ethyl",
+    "name_lower": "fenoxaprop-p-ethyl",
+    "usageGuidelines": "Apply as a selective post-emergent herbicide for the control of annual and perennial grass weeds in various broadleaf crops and rice.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": [
+      "Soybean",
+      "Cotton",
+      "Oilseed Rape",
+      "Sugar Beets",
+      "Vegetables",
+      "Rice"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Cyazofamid",
+    "name_lower": "cyazofamid",
+    "usageGuidelines": "Apply as a protective fungicide used to control oomycete diseases like downy mildew and Phytophthora blight in various crops. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Potatoes",
+      "Tobacco"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Dimethomorph",
+    "name_lower": "dimethomorph",
+    "usageGuidelines": "Apply as a systemic fungicide used to control oomycete diseases, particularly downy mildew and late blight. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low to moderate mobility in soil.",
+    "compatibleCrops": [
+      "Grapes",
+      "Potatoes",
+      "Tomatoes",
+      "Vegetables"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Mefenoxam",
+    "name_lower": "mefenoxam",
+    "usageGuidelines": "Apply as a systemic fungicide used to control oomycete diseases through seed treatment, soil application, or foliar spray. More active isomer of metalaxyl.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderate mobility in soil, with potential for leaching.",
+    "compatibleCrops": [
+      "Soybean",
+      "Potatoes",
+      "Vegetables",
+      "Tobacco"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Metalaxyl",
+    "name_lower": "metalaxyl",
+    "usageGuidelines": "Apply as a systemic fungicide used to control oomycete diseases through seed treatment, soil application, or foliar spray.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months depending on soil conditions. Moderate mobility in soil, with potential for leaching.",
+    "compatibleCrops": [
+      "Potatoes",
+      "Vegetables",
+      "Tobacco",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Propamocarb",
+    "name_lower": "propamocarb",
+    "usageGuidelines": "Apply as a systemic fungicide used to control oomycete diseases in various crops, often applied through soil drench or foliar spray.",
+    "safetyRating": "low",
+    "soilImpact": "Relatively short persistence in soil, with a half-life of several days to weeks. High mobility in soil, with potential for leaching.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Ornamentals",
+      "Turfgrass"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Azoxystrobin",
+    "name_lower": "azoxystrobin",
+    "usageGuidelines": "Apply as a broad-spectrum strobilurin fungicide with systemic and translaminar activity, used to control various fungal diseases through foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Cereals",
+      "Rice",
+      "Fruits",
+      "Vegetables",
+      "Soybean",
+      "Corn"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Pyraclostrobin",
+    "name_lower": "pyraclostrobin",
+    "usageGuidelines": "Apply as a broad-spectrum strobilurin fungicide with systemic and translaminar activity, used to control various fungal diseases through foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Cereals",
+      "Fruits",
+      "Vegetables",
+      "Soybean",
+      "Corn"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Trifloxystrobin",
+    "name_lower": "trifloxystrobin",
+    "usageGuidelines": "Apply as a broad-spectrum strobilurin fungicide with mesostemic and translaminar activity, used to control various fungal diseases through foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cereals",
+      "Grapes"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Boscalid",
+    "name_lower": "boscalid",
+    "usageGuidelines": "Apply as a carboxamide fungicide used to control a range of fungal diseases in various crops through foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Soybean",
+      "Peanuts",
+      "Grapes"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Fluopyram",
+    "name_lower": "fluopyram",
+    "usageGuidelines": "Apply as a pyridinyl-ethylbenzamide fungicide used to control various fungal diseases and nematodes in a range of crops through foliar application or soil treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low to moderate mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Soybean",
+      "Corn",
+      "Potatoes"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Tebuconazole",
+    "name_lower": "tebuconazole",
+    "usageGuidelines": "Apply as a systemic triazole fungicide used to control a broad range of fungal diseases in various crops through foliar application and seed treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Cereals",
+      "Fruits",
+      "Vegetables",
+      "Oilseed Rape",
+      "Soybean",
+      "Corn"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Propiconazole",
+    "name_lower": "propiconazole",
+    "usageGuidelines": "Apply as a systemic triazole fungicide used to control a broad range of fungal diseases in various crops through foliar application and seed treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Cereals",
+      "Rice",
+      "Fruits",
+      "Vegetables",
+      "Turfgrass"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Difenoconazole",
+    "name_lower": "difenoconazole",
+    "usageGuidelines": "Apply as a systemic triazole fungicide with protectant and curative activity against a wide range of fungal diseases in various crops through foliar application and seed treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cereals",
+      "Oilseed Rape",
+      "Soybean"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Myclobutanil",
+    "name_lower": "myclobutanil",
+    "usageGuidelines": "Apply as a systemic triazole fungicide with protectant, curative, and eradicant activity against various fungal diseases in fruits, vegetables, and ornamentals through foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Grapes",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Chlorothalonil",
+    "name_lower": "chlorothalonil",
+    "usageGuidelines": "Apply as a broad-spectrum protectant fungicide used to control a wide range of fungal diseases in various crops through foliar application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Toxic to aquatic organisms.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Cereals",
+      "Turfgrass",
+      "Ornamentals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Mancozeb",
+    "name_lower": "mancozeb",
+    "usageGuidelines": "Apply as a broad-spectrum protectant fungicide used to control various fungal diseases in a wide range of crops through foliar application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Can affect soil microbial activity at high concentrations.",
+    "compatibleCrops": [
+      "Potatoes",
+      "Tomatoes",
+      "Grapes",
+      "Fruits",
+      "Cereals",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Captan",
+    "name_lower": "captan",
+    "usageGuidelines": "Apply as a broad-spectrum protectant fungicide used as a seed treatment and foliar spray to control various fungal diseases in fruits and vegetables.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from days to weeks. Low mobility in soil. Can affect soil microorganisms at high concentrations.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Seeds"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Thiram",
+    "name_lower": "thiram",
+    "usageGuidelines": "Apply as a broad-spectrum protectant fungicide used primarily as a seed treatment to control seed-borne diseases and damping-off.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from days to weeks. Low mobility in soil. Can affect soil microbial activity at high concentrations.",
+    "compatibleCrops": [
+      "Seeds",
+      "Fruits",
+      "Vegetables"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Zineb",
+    "name_lower": "zineb",
+    "usageGuidelines": "Apply as a broad-spectrum protectant fungicide used to control various fungal diseases in fruits, vegetables, and field crops through foliar application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from days to weeks. Low mobility in soil. Can affect soil microbial activity.",
+    "compatibleCrops": [
+      "Potatoes",
+      "Tomatoes",
+      "Fruits",
+      "Vegetables",
+      "Cereals"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Copper Sulfate",
+    "name_lower": "copper sulfate",
+    "usageGuidelines": "Apply as a fungicide and algaecide to control various fungal and bacterial diseases and algae growth in various crops and water bodies. Use carefully to avoid copper buildup.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can accumulate in soil with repeated use, leading to copper toxicity, which can negatively impact soil microbial activity and plant growth. Low mobility in soil.",
+    "compatibleCrops": [
+      "Grapes",
+      "Potatoes",
+      "Citrus",
+      "Algae control in water"
+    ],
+    "status": "Restricted"
+  },
+  {
+    "name": "Sulfur",
+    "name_lower": "sulfur",
+    "usageGuidelines": "Apply as a protectant fungicide and acaricide used to control powdery mildew, rusts, and certain mites in various crops. Available in dust and wettable powder formulations.",
+    "safetyRating": "low",
+    "soilImpact": "Elemental sulfur is converted to sulfate in the soil, which is a plant nutrient. Excessive application can lower soil pH (increase acidity). Low mobility in soil.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Grapes",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Lime Sulfur",
+    "name_lower": "lime sulfur",
+    "usageGuidelines": "Apply as a broad-spectrum fungicide and insecticide used as a dormant spray to control overwintering pests and diseases on fruit trees and ornamentals. Highly alkaline and corrosive.",
+    "safetyRating": "high",
+    "soilImpact": "Can significantly increase soil pH (make it more alkaline). Repeated use can lead to imbalances in soil nutrients and microbial activity. Low mobility in soil.",
+    "compatibleCrops": [
+      "Dormant fruit trees",
+      "Ornamentals"
+    ],
+    "status": "Banned"
+  },
+  {
+    "name": "Bacillus thuringiensis (Bt)",
+    "name_lower": "bacillus thuringiensis (bt)",
+    "usageGuidelines": "Apply as a biological insecticide containing naturally occurring bacteria that produce toxins specific to certain insect larvae. Available in various strains targeting different insect groups. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil and non-target organisms. The Bt toxins break down relatively quickly in the environment. Minimal impact on soil microbial communities.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Corn",
+      "Cotton",
+      "Forestry"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Neem Oil",
+    "name_lower": "neem oil",
+    "usageGuidelines": "Apply as a broad-spectrum organic insecticide, fungicide, and miticide derived from the neem tree. Effective against various pests and diseases through multiple modes of action. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil and beneficial organisms when used as directed. Can have some short-term effects on certain non-target insects. Biodegradable.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Spinosad",
+    "name_lower": "spinosad",
+    "usageGuidelines": "Apply as a biological insecticide derived from soil bacteria, effective against a wide range of chewing and sucking insects. Acts through ingestion and contact. Can be used in organic farming.",
+    "safetyRating": "low",
+    "soilImpact": "Low persistence in soil, rapidly degraded by sunlight and microorganisms. Low mobility in soil. Generally considered safe for most beneficial insects and mammals when used according to label.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals",
+      "Cotton"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Beauveria bassiana",
+    "name_lower": "beauveria bassiana",
+    "usageGuidelines": "Apply as a biological insecticide containing a naturally occurring fungus that infects various insect pests. Spores contact the insect and germinate, leading to death. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil and non-target organisms. The fungus requires specific humidity conditions to infect insects. Minimal long-term impact on soil.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Metarhizium anisopliae",
+    "name_lower": "metarhizium anisopliae",
+    "usageGuidelines": "Apply as a biological insecticide containing a naturally occurring fungus that infects various insect pests, particularly soil-dwelling insects and ticks. Spores contact the insect and germinate. Soil or foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil and non-target organisms. The fungus can persist in the soil and provide long-term control under favorable conditions.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals",
+      "Turfgrass"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Diatomaceous Earth",
+    "name_lower": "diatomaceous earth",
+    "usageGuidelines": "Apply as a natural insecticide and abrasive dust made from fossilized diatoms. Damages the exoskeleton of insects, leading to dehydration. Can be used as a dust or in a slurry.",
+    "safetyRating": "low",
+    "soilImpact": "Generally considered safe for soil. May improve soil aeration and water retention. Can harm beneficial insects if they come into direct contact with the dust.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals",
+      "Grain storage"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Insecticidal Soap",
+    "name_lower": "insecticidal soap",
+    "usageGuidelines": "Apply as a contact insecticide made from potassium salts of fatty acids. Effective against soft-bodied insects like aphids, whiteflies, and spider mites. Requires direct contact with the pest.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly breaks down in the environment. Generally considered safe for soil and most beneficial insects, although direct spray can harm them temporarily.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Horticultural Oil",
+    "name_lower": "horticultural oil",
+    "usageGuidelines": "Apply as a contact insecticide and miticide made from highly refined petroleum or vegetable oils. Suffocates insects and mites by blocking their breathing pores. Can also disrupt virus transmission by aphids.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly breaks down in the environment. Generally considered safe for soil. Can harm beneficial insects if sprayed directly.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Iron Phosphate",
+    "name_lower": "iron phosphate",
+    "usageGuidelines": "Apply as a molluscicide to control slugs and snails in gardens and agricultural fields. Acts as a stomach poison when ingested.",
+    "safetyRating": "low",
+    "soilImpact": "Iron and phosphate are essential plant nutrients and are naturally found in soil. Considered safe for non-target organisms, although excessive amounts of phosphate can lead to nutrient imbalances.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Copper Octanoate",
+    "name_lower": "copper octanoate",
+    "usageGuidelines": "Apply as an organic fungicide and bactericide used to control various diseases on fruits, vegetables, and ornamentals. Copper is toxic to many fungi and bacteria.",
+    "safetyRating": "low",
+    "soilImpact": "Copper can accumulate in soil with repeated use, potentially leading to toxicity for soil organisms and plants in the long term. Use with caution.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Potassium Bicarbonate",
+    "name_lower": "potassium bicarbonate",
+    "usageGuidelines": "Apply as an organic fungicide used to control powdery mildew and certain other fungal diseases on various crops. Works by altering pH and disrupting fungal cell membranes.",
+    "safetyRating": "low",
+    "soilImpact": "Potassium is an essential plant nutrient. Bicarbonate can slightly increase soil pH temporarily. Generally considered safe for soil and beneficial organisms.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Acetic Acid (Vinegar)",
+    "name_lower": "acetic acid (vinegar)",
+    "usageGuidelines": "Apply as an organic herbicide for spot treatment of small weeds and as a cleaning agent. Diluted solutions are less harmful to desirable plants but can still cause damage.",
+    "safetyRating": "low",
+    "soilImpact": "Breaks down quickly in the soil. High concentrations can temporarily lower soil pH and may harm soil organisms if applied directly in large quantities.",
+    "compatibleCrops": [
+      "Spot treatment around various crops"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Citric Acid",
+    "name_lower": "citric acid",
+    "usageGuidelines": "Used in some organic pest control formulations and as a cleaning agent. Can have some insecticidal and fungicidal properties.",
+    "safetyRating": "low",
+    "soilImpact": "Breaks down quickly in the soil. Can temporarily lower soil pH if applied in large quantities.",
+    "compatibleCrops": [
+      "Various (as part of formulations)"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Ethanol",
+    "name_lower": "ethanol",
+    "usageGuidelines": "Used in some organic pest control sprays, often in combination with other ingredients, to desiccate insects or disrupt their cell membranes.",
+    "safetyRating": "low",
+    "soilImpact": "Breaks down quickly in the soil. High concentrations can be harmful to soil organisms.",
+    "compatibleCrops": [
+      "Various (as part of formulations)"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Hydrogen Peroxide",
+    "name_lower": "hydrogen peroxide",
+    "usageGuidelines": "Used as an organic fungicide and bactericide, and sometimes as a soil amendment to increase oxygen levels. Diluted solutions are used for plant treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Breaks down rapidly into water and oxygen in the soil. Can temporarily affect soil microbial populations at high concentrations.",
+    "compatibleCrops": [
+      "Various (as a treatment)"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Mineral Oil",
+    "name_lower": "mineral oil",
+    "usageGuidelines": "Similar to horticultural oil, used as a contact insecticide and miticide to suffocate pests. Highly refined petroleum oil.",
+    "safetyRating": "low",
+    "soilImpact": "Breaks down relatively quickly. Generally considered safe for soil, but direct spraying can harm beneficial insects.",
+    "compatibleCrops": [
+      "Fruits",
+      "Vegetables",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },
+  {
+    "name": "Pyrethrins",
+    "name_lower": "pyrethrins",
+    "usageGuidelines": "Apply as a natural insecticide derived from chrysanthemum flowers. Provides rapid knockdown of various insect pests. Contact action.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly breaks down in the environment, especially in sunlight. Low persistence in soil. Can be toxic to beneficial insects if sprayed directly.",
+    "compatibleCrops": [
+      "Vegetables",
+      "Fruits",
+      "Ornamentals"
+    ],
+    "status": "Allowed"
+  },{
+    "name": "Rotenone",
+    "name_lower": "rotenone",
+    "usageGuidelines": "Apply as a natural insecticide derived from the roots of certain plants. Effective against a variety of insect pests through contact and ingestion. Use is becoming increasingly restricted due to toxicity concerns.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from days to weeks. Low mobility in soil. Toxic to fish and other aquatic life. Can also be toxic to beneficial insects and mammals.",
+    "compatibleCrops": ["Vegetables", "Fruits"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Ryania",
+    "name_lower": "ryania",
+    "usageGuidelines": "Apply as a natural insecticide derived from the stem and root of the Ryania speciosa plant. Primarily effective against lepidopteran larvae (caterpillars).",
+    "safetyRating": "low",
+    "soilImpact": "Relatively low persistence in soil. Low mobility in soil. Considered less toxic to beneficial insects and mammals compared to some synthetic insecticides.",
+    "compatibleCrops": ["Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Sabadilla",
+    "name_lower": "sabadilla",
+    "usageGuidelines": "Apply as a natural insecticide derived from the seeds of the Schoenocaulon officinale plant. Effective against various insect pests, including thrips and caterpillars. Can be irritating to skin and mucous membranes.",
+    "safetyRating": "moderate",
+    "soilImpact": "Relatively low persistence in soil. Low mobility in soil. Can be toxic to bees and some beneficial insects.",
+    "compatibleCrops": ["Vegetables", "Fruits"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Kaolin Clay",
+    "name_lower": "kaolin clay",
+    "usageGuidelines": "Apply as a particle film insecticide and protectant. Forms a physical barrier on plant surfaces, deterring insects and reducing sun scald. Mixed with water and sprayed.",
+    "safetyRating": "low",
+    "soilImpact": "Inert and naturally occurring clay mineral. Considered safe for soil and beneficial organisms. Can improve water retention in some soils.",
+    "compatibleCrops": ["Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Silica Gel",
+    "name_lower": "silica gel",
+    "usageGuidelines": "Apply as a desiccant insecticide. Absorbs the waxy outer layer of insects, leading to dehydration. Effective in dry environments.",
+    "safetyRating": "low",
+    "soilImpact": "Inert and naturally occurring compound. Considered safe for soil. Can be abrasive to some beneficial insects if they come into direct contact.",
+    "compatibleCrops": ["Stored grains", "Crack and crevice treatment"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Borax (Sodium Borate)",
+    "name_lower": "borax (sodium borate)",
+    "usageGuidelines": "Used as an insecticide, particularly against ants and cockroaches. Also used as a micronutrient fertilizer for boron-deficient soils (in very small amounts).",
+    "safetyRating": "moderate",
+    "soilImpact": "Boron is an essential micronutrient, but excessive amounts can be toxic to plants and soil organisms. Can accumulate in soil with repeated use.",
+    "compatibleCrops": ["Ant control", "Boron amendment (very low rates)"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Ferrous Sulfate (Iron Sulfate)",
+    "name_lower": "ferrous sulfate (iron sulfate)",
+    "usageGuidelines": "Used as an iron fertilizer to correct iron chlorosis in plants. Also has some herbicidal properties against moss and broadleaf weeds, and can be used as a soil acidifier.",
+    "safetyRating": "low",
+    "soilImpact": "Iron is an essential plant nutrient. Can lower soil pH. Excessive amounts can lead to iron toxicity.",
+    "compatibleCrops": ["Various (for iron deficiency)", "Turfgrass (moss control)"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Magnesium Sulfate (Epsom Salt)",
+    "name_lower": "magnesium sulfate (epsom salt)",
+    "usageGuidelines": "Used as a magnesium and sulfur fertilizer to correct deficiencies in plants. Can be applied as a foliar spray or soil amendment.",
+    "safetyRating": "low",
+    "soilImpact": "Magnesium and sulfur are essential plant nutrients. Generally considered safe for soil when used at recommended rates. High concentrations can affect soil salinity.",
+    "compatibleCrops": ["Various (for magnesium or sulfur deficiency)"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Calcium Chloride",
+    "name_lower": "calcium chloride",
+    "usageGuidelines": "Used as a source of calcium for plants, particularly to prevent blossom-end rot in tomatoes and bitter pit in apples. Can be applied as a foliar spray.",
+    "safetyRating": "low",
+    "soilImpact": "Calcium is an essential plant nutrient and can improve soil structure. High concentrations can increase soil salinity.",
+    "compatibleCrops": ["Tomatoes", "Apples", "Other calcium-deficient crops"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Potassium Nitrate",
+    "name_lower": "potassium nitrate",
+    "usageGuidelines": "Used as a nitrogen and potassium fertilizer, particularly in hydroponic systems and as a foliar feed. Highly soluble.",
+    "safetyRating": "low",
+    "soilImpact": "Provides nitrogen and potassium. High solubility means it can leach if overused. Can increase soil salinity.",
+    "compatibleCrops": ["Vegetables", "Fruits", "Hydroponics"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Monoammonium Phosphate (MAP)",
+    "name_lower": "monoammonium phosphate (map)",
+    "usageGuidelines": "Used as a phosphorus and nitrogen fertilizer, often applied at planting. Provides readily available nutrients for early plant growth.",
+    "safetyRating": "low",
+    "soilImpact": "Provides phosphorus and nitrogen. Can slightly lower soil pH over time. Low mobility in soil, so placement near roots is important.",
+    "compatibleCrops": ["Various field and horticultural crops"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Diammonium Phosphate (DAP)",
+    "name_lower": "diammonium phosphate (dap)",
+    "usageGuidelines": "Used as a phosphorus and nitrogen fertilizer, similar to MAP but with a higher nitrogen content. Can increase soil pH slightly upon initial application.",
+    "safetyRating": "low",
+    "soilImpact": "Provides phosphorus and nitrogen. Can temporarily increase soil pH. Low mobility in soil.",
+    "compatibleCrops": ["Various field and horticultural crops"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Potassium Sulfate (SOP)",
+    "name_lower": "potassium sulfate (sop)",
+    "usageGuidelines": "Used as a potassium and sulfur fertilizer, particularly for crops sensitive to chloride. Lower salt index than MOP.",
+    "safetyRating": "low",
+    "soilImpact": "Provides potassium and sulfur. Lower impact on soil salinity compared to MOP.",
+    "compatibleCrops": ["Tobacco", "Potatoes", "Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Calcium Nitrate",
+    "name_lower": "calcium nitrate",
+    "usageGuidelines": "Used as a nitrogen and calcium fertilizer, particularly in situations where readily available nitrate nitrogen and calcium are needed. Highly soluble.",
+    "safetyRating": "low",
+    "soilImpact": "Provides nitrogen and calcium. Can slightly increase soil pH. High solubility means it can leach if overused.",
+    "compatibleCrops": ["Vegetables", "Fruits", "Hydroponics"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Elemental Phosphorus",
+    "name_lower": "elemental phosphorus",
+    "usageGuidelines": "Not directly used as a fertilizer due to its reactivity and safety concerns. Phosphorus fertilizers are typically in phosphate forms.",
+    "safetyRating": "high",
+    "soilImpact": "Highly reactive and can be a fire hazard. Not intended for soil application in elemental form.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Elemental Potassium",
+    "name_lower": "elemental potassium",
+    "usageGuidelines": "Not directly used as a fertilizer due to its reactivity and safety concerns. Potassium fertilizers are typically in salt forms like chloride or sulfate.",
+    "safetyRating": "high",
+    "soilImpact": "Highly reactive and can react violently with water. Not intended for soil application in elemental form.",
+    "compatibleCrops": [],
+    "status": "Banned"
+  },
+  {
+    "name": "Formaldehyde",
+    "name_lower": "formaldehyde",
+    "usageGuidelines": "Used as a soil sterilant in some specialized agricultural applications to control soilborne diseases and pests. Highly toxic and requires strict safety precautions.",
+    "safetyRating": "high",
+    "soilImpact": "Can sterilize the soil, killing both beneficial and harmful microorganisms. Can negatively impact soil health and nutrient cycling. Potential for soil and water contamination.",
+    "compatibleCrops": ["Specialized greenhouse applications"],
+    "status": "Banned"
+  },
+  {
+    "name": "Methyl Bromide",
+    "name_lower": "methyl bromide",
+    "usageGuidelines": "Used as a broad-spectrum fumigant for soil sterilization to control pests, diseases, and weeds before planting high-value crops. Ozone-depleting substance with restricted use.",
+    "safetyRating": "high",
+    "soilImpact": "Can sterilize the soil, killing a wide range of soil organisms. Contributes to ozone depletion. Residues can persist in soil.",
+    "compatibleCrops": ["High-value crops in enclosed environments"],
+    "status": "Banned"
+  },
+  {
+    "name": "Chloropicrin",
+    "name_lower": "chloropicrin",
+    "usageGuidelines": "Used as a soil fumigant to control soilborne diseases, nematodes, and insects. Often used in combination with methyl bromide or other fumigants. Lachrymatory agent (tear gas).",
+    "safetyRating": "high",
+    "soilImpact": "Can significantly reduce soil microbial populations. Potential for soil and water contamination. Requires strict safety precautions during application.",
+    "compatibleCrops": ["High-value crops in enclosed environments"],
+    "status": "Restricted"
+  },
+  {
+    "name": "1,3-Dichloropropene",
+    "name_lower": "1,3-dichloropropene",
+    "usageGuidelines": "Used as a soil fumigant primarily to control nematodes, but also some soilborne diseases and insects. Liquid injected into the soil.",
+    "safetyRating": "high",
+    "soilImpact": "Can reduce soil microbial populations. Potential for soil and water contamination. Requires strict safety precautions during application.",
+    "compatibleCrops": ["Various high-value crops"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Metam Sodium",
+    "name_lower": "metam sodium",
+    "usageGuidelines": "A broad-spectrum soil fumigant that decomposes in the soil to methyl isothiocyanate (MITC), which controls soilborne pests, diseases, and weeds. Applied as a liquid drench or injection.",
+    "safetyRating": "high",
+    "soilImpact": "Can significantly reduce soil microbial populations. MITC can volatilize and pose risks to applicators and nearby areas. Soil recovery period is needed before planting.",
+    "compatibleCrops": ["Various high-value crops"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Calcium Polysulfide",
+    "name_lower": "calcium polysulfide",
+    "usageGuidelines": "Similar to lime sulfur, used as a dormant spray fungicide and insecticide. Highly alkaline and corrosive.",
+    "safetyRating": "high",
+    "soilImpact": "Can significantly increase soil pH. Repeated use can lead to imbalances in soil nutrients and microbial activity. Low mobility in soil.",
+    "compatibleCrops": ["Dormant fruit trees", "Ornamentals"],
+    "status": "Banned"
+  },
+  {
+    "name": "Streptomycin",
+    "name_lower": "streptomycin",
+    "usageGuidelines": "An antibiotic used in agriculture to control certain bacterial diseases in fruits, vegetables, and ornamentals. Foliar application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil bacterial populations, potentially including beneficial bacteria. Concerns about the development of antibiotic resistance.",
+    "compatibleCrops": ["Apples", "Pears", "Potatoes", "Tobacco", "Ornamentals"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Tetracycline",
+    "name_lower": "tetracycline",
+    "usageGuidelines": "Another antibiotic used in agriculture to control certain bacterial diseases, primarily in fruits and ornamentals. Foliar application.",
+    "safetyRating": "moderate",
+    "soilImpact": "Can affect soil bacterial populations and contribute to the development of antibiotic resistance.",
+    "compatibleCrops": ["Citrus", "Pears", "Ornamentals"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Gibberellic Acid (GA3)",
+    "name_lower": "gibberellic acid (ga3)",
+    "usageGuidelines": "Apply as a plant growth regulator to promote cell elongation, flowering, fruit set, and other physiological processes in various crops. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone. Breaks down relatively quickly in the environment. Minimal impact on soil.",
+    "compatibleCrops": ["Grapes", "Citrus", "Rice", "Vegetables", "Ornamentals"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Indole-3-Acetic Acid (IAA)",
+    "name_lower": "indole-3-acetic acid (iaa)",
+    "usageGuidelines": "A naturally occurring auxin plant hormone used to promote root development and cell elongation, often in rooting powders and tissue culture.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone. Breaks down relatively quickly. Minimal impact on soil at typical application rates.",
+    "compatibleCrops": ["Rooting of cuttings", "Tissue culture"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Kinetin",
+    "name_lower": "kinetin",
+    "usageGuidelines": "A cytokinin plant hormone used to promote cell division and differentiation, often in tissue culture and sometimes in foliar sprays to enhance growth.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone analog. Breaks down relatively quickly. Minimal impact on soil at typical application rates.",
+    "compatibleCrops": ["Tissue culture", "Some horticultural applications"],
+    "status": "Allowed"
+  },{
+    "name": "Gibberellic Acid (GA3)",
+    "name_lower": "gibberellic acid (ga3)",
+    "usageGuidelines": "Apply as a plant growth regulator to promote cell elongation, flowering, fruit set, and other physiological processes in various crops. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone. Breaks down relatively quickly in the environment. Minimal impact on soil.",
+    "compatibleCrops": ["Grapes", "Citrus", "Rice", "Vegetables", "Ornamentals"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Indole-3-Acetic Acid (IAA)",
+    "name_lower": "indole-3-acetic acid (iaa)",
+    "usageGuidelines": "A naturally occurring auxin plant hormone used to promote root development and cell elongation, often in rooting powders and tissue culture.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone. Breaks down relatively quickly. Minimal impact on soil at typical application rates.",
+    "compatibleCrops": ["Rooting of cuttings", "Tissue culture"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Kinetin",
+    "name_lower": "kinetin",
+    "usageGuidelines": "A cytokinin plant hormone used to promote cell division and differentiation, often in tissue culture and sometimes in foliar sprays to enhance growth.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone analog. Breaks down relatively quickly. Minimal impact on soil at typical application rates.",
+    "compatibleCrops": ["Tissue culture", "Some horticultural applications"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Abscisic Acid (ABA)",
+    "name_lower": "abscisic acid (aba)",
+    "usageGuidelines": "A naturally occurring plant hormone involved in stress responses, dormancy, and stomatal closure. Used in some applications to improve drought tolerance.",
+    "safetyRating": "low",
+    "soilImpact": "Naturally occurring plant hormone. Breaks down relatively quickly. Minimal impact on soil at typical application rates.",
+    "compatibleCrops": ["Stress management in various crops"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Ethephon",
+    "name_lower": "ethephon",
+    "usageGuidelines": "Apply as a plant growth regulator that releases ethylene, promoting fruit ripening, flowering, and abscission in various crops. Foliar application at specific growth stages.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degrades in soil and plants. Low mobility in soil.",
+    "compatibleCrops": ["Cotton", "Pineapple", "Tomato", "Rubber"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Paclobutrazol",
+    "name_lower": "paclobutrazol",
+    "usageGuidelines": "Apply as a plant growth regulator to inhibit gibberellin biosynthesis, leading to reduced vegetative growth and increased flowering and fruiting. Can be applied as a soil drench or foliar spray.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from months to years depending on soil conditions. Low mobility in soil.",
+    "compatibleCrops": ["Fruits", "Ornamentals", "Rice"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Chlormequat Chloride",
+    "name_lower": "chlormequat chloride",
+    "usageGuidelines": "Apply as a plant growth regulator to reduce lodging in cereals and improve yield. Foliar application at specific growth stages.",
+    "safetyRating": "moderate",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": ["Wheat", "Barley", "Oats", "Rye"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Trinexapac-ethyl",
+    "name_lower": "trinexapac-ethyl",
+    "usageGuidelines": "Apply as a plant growth regulator to reduce stem elongation in cereals and turfgrass, improving lodging resistance and turf density. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": ["Wheat", "Barley", "Rye", "Turfgrass"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Prohexadione-calcium",
+    "name_lower": "prohexadione-calcium",
+    "usageGuidelines": "Apply as a plant growth regulator to inhibit gibberellin biosynthesis, used to control vegetative growth in fruits, rice, and turfgrass. Foliar application.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degraded in soil by microorganisms. Low mobility in soil.",
+    "compatibleCrops": ["Apples", "Pears", "Rice", "Turfgrass"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Fosetyl-al",
+    "name_lower": "fosetyl-al",
+    "usageGuidelines": "Apply as a systemic fungicide used to control oomycete diseases like downy mildew and Phytophthora. Acts by stimulating plant defense mechanisms.",
+    "safetyRating": "low",
+    "soilImpact": "Rapidly degrades in soil. High mobility in plants.",
+    "compatibleCrops": ["Grapes", "Potatoes", "Vegetables", "Ornamentals"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Iprodione",
+    "name_lower": "iprodione",
+    "usageGuidelines": "Apply as a protectant and curative dicarboximide fungicide used to control various fungal diseases in fruits, vegetables, and ornamentals.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Toxic to some aquatic organisms.",
+    "compatibleCrops": ["Fruits", "Vegetables", "Ornamentals"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Procymidone",
+    "name_lower": "procymidone",
+    "usageGuidelines": "Apply as a protectant and curative dicarboximide fungicide used to control Botrytis and other fungal diseases in various crops.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Toxic to some aquatic organisms.",
+    "compatibleCrops": ["Grapes", "Fruits", "Vegetables", "Ornamentals"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Vinclozolin",
+    "name_lower": "vinclozolin",
+    "usageGuidelines": "Apply as a protectant and curative dicarboximide fungicide used to control Botrytis and Sclerotinia diseases in various crops.",
+    "safetyRating": "moderate",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Endocrine disruptor concerns.",
+    "compatibleCrops": ["Grapes", "Fruits", "Vegetables", "Ornamentals"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Fludioxonil",
+    "name_lower": "fludioxonil",
+    "usageGuidelines": "Apply as a broad-spectrum fungicide with protectant and contact activity, used as a seed treatment and foliar spray.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil. Low toxicity to mammals and birds.",
+    "compatibleCrops": ["Cereals", "Fruits", "Vegetables", "Oilseed Rape"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Cyprodinil",
+    "name_lower": "cyprodinil",
+    "usageGuidelines": "Apply as a systemic anilinopyrimidine fungicide used to control various fungal diseases in cereals, fruits, and vegetables.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Fruits", "Vegetables", "Grapes"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Pyrimethanil",
+    "name_lower": "pyrimethanil",
+    "usageGuidelines": "Apply as a systemic anilinopyrimidine fungicide used to control Botrytis and other fungal diseases in various crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Fruits", "Vegetables", "Grapes"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Triticonazole",
+    "name_lower": "triticonazole",
+    "usageGuidelines": "Apply as a systemic triazole fungicide used primarily as a seed treatment to control various seed-borne and early seedling diseases in cereals.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Wheat", "Barley", "Oats", "Rye"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Epoxiconazole",
+    "name_lower": "epoxiconazole",
+    "usageGuidelines": "Apply as a systemic triazole fungicide used to control a broad range of fungal diseases in cereals, oilseed rape, and sugar beets.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Oilseed Rape", "Sugar Beets"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Isopyrazam",
+    "name_lower": "isopyrazam",
+    "usageGuidelines": "Apply as a carboxamide fungicide used to control various fungal diseases in cereals, oilseed rape, and other crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Oilseed Rape"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Fluxapyroxad",
+    "name_lower": "fluxapyroxad",
+    "usageGuidelines": "Apply as a broad-spectrum pyrazole-carboxamide fungicide used to control various fungal diseases in a wide range of crops through foliar application and seed treatment.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Soybean", "Corn", "Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Sedaxane",
+    "name_lower": "sedaxane",
+    "usageGuidelines": "Apply as a succinate dehydrogenase inhibitor (SDHI) fungicide used primarily as a seed treatment to control soilborne and seedborne diseases in cereals and other crops, and also has nematicidal activity.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low to moderate mobility in soil.",
+    "compatibleCrops": ["Cereals", "Corn", "Soybean", "Potatoes"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Bixafen",
+    "name_lower": "bixafen",
+    "usageGuidelines": "Apply as a pyrazole-carboxamide fungicide used to control various fungal diseases in cereals, oilseed rape, and other crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Oilseed Rape"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Picoxystrobin",
+    "name_lower": "picoxystrobin",
+    "usageGuidelines": "Apply as a broad-spectrum strobilurin fungicide with systemic and translaminar activity, used to control various fungal diseases in cereals and other crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Cereals", "Rice"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Fenpropidin",
+    "name_lower": "fenpropidin",
+    "usageGuidelines": "Apply as a systemic amine fungicide used to control powdery mildew in cereals.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Wheat", "Barley", "Rye"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Spiroxamine",
+    "name_lower": "spiroxamine",
+    "usageGuidelines": "Apply as a systemic fungicide used to control powdery mildew and scab in grapes and other crops.",
+    "safetyRating": "low",
+    "soilImpact": "Moderately persistent in soil, with a half-life ranging from weeks to months. Low mobility in soil.",
+    "compatibleCrops": ["Grapes", "Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Tebuconazole + Triadimenol",
+    "name_lower": "tebuconazole + triadimenol",
+    "usageGuidelines": "Apply as a mixture of two systemic triazole fungicides for broad-spectrum disease control in cereals and other crops. Follow label instructions for application rates and timing.",
+    "safetyRating": "low",
+    "soilImpact": "Persistence and mobility in soil will be influenced by the individual components. Generally moderately persistent with low mobility.",
+    "compatibleCrops": ["Cereals", "Oilseed Rape"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Propiconazole + Tebuconazole",
+    "name_lower": "propiconazole + tebuconazole",
+    "usageGuidelines": "Apply as a mixture of two systemic triazole fungicides for broad-spectrum disease control in cereals, fruits, and other crops. Follow label instructions.",
+    "safetyRating": "low",
+    "soilImpact": "Persistence and mobility in soil will be influenced by the individual components. Generally moderately persistent with low mobility.",
+    "compatibleCrops": ["Cereals", "Fruits", "Vegetables"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Azoxystrobin + Difenoconazole",
+    "name_lower": "azoxystrobin + difenoconazole",
+    "usageGuidelines": "Apply as a mixture of a strobilurin and a triazole fungicide for broad-spectrum disease control in various crops. Follow label instructions.",
+    "safetyRating": "low",
+    "soilImpact": "Persistence and mobility in soil will be influenced by the individual components. Generally moderately persistent with low mobility.",
+    "compatibleCrops": ["Cereals", "Fruits", "Vegetables", "Soybean", "Corn"],
+    "status": "Allowed"
+  },
+  {
+    "name": "Thiamethoxam + Clothianidin",
+    "name_lower": "thiamethoxam + clothianidin",
+    "usageGuidelines": "Apply as a mixture of two neonicotinoid insecticides, often as a seed treatment, for broad-spectrum control of early-season sucking and chewing pests. Use is restricted in some regions.",
+    "safetyRating": "moderate",
+    "soilImpact": "Persistence and mobility in soil will be influenced by the individual components. Can persist in soil and water, with potential negative impacts on pollinators.",
+    "compatibleCrops": ["Corn", "Soybean", "Oilseed Rape"],
+    "status": "Restricted"
+  },
+  {
+    "name": "Imidacloprid + Cyfluthrin",
+    "name_lower": "imidacloprid + cyfluthrin",
+    "usageGuidelines": "Apply as a mixture of a neonicotinoid and a pyrethroid insecticide for broad-spectrum control of sucking and chewing pests. Follow label instructions.",
+    "safetyRating": "moderate",
+    "soilImpact": "Persistence and mobility in soil will be influenced by the individual components. Potential negative impacts on pollinators and aquatic life.",
+    "compatibleCrops": ["Cotton", "Vegetables", "Fruits"],
+    "status": "Restricted"
+  },{
+      "name": "Glyphosate + Dicamba",
+      "name_lower": "glyphosate + dicamba",
+      "usageGuidelines": "Apply as a mixture of a non-selective and a selective herbicide for broad-spectrum weed control in dicamba-tolerant crops. Follow label instructions carefully to minimize drift.",
+      "safetyRating": "moderate",
+      "soilImpact": "The soil impact will be a combination of the individual components. Glyphosate has low mobility and is broken down by microbes. Dicamba degrades relatively quickly but has moderate mobility and potential for runoff and volatility.",
+      "compatibleCrops": ["Soybean (Roundup Ready 2 Xtend)", "Cotton (Roundup Ready 2 Xtend)", "Corn (various dicamba-tolerant varieties)"],
       "status": "Restricted"
     },
     {
-      "name": "Chlorpyrifos",
-      "name_lower": "chlorpyrifos",
-      "usageGuidelines": "Apply to control a wide range of insect pests.",
-      "safetyRating": "High",
-      "soilImpact": "Persistent in soil; toxic to non-target organisms.",
-      "compatibleCrops": ["Rice", "Cotton", "Maize"],
+      "name": "Paraquat + Diquat",
+      "name_lower": "paraquat + diquat",
+      "usageGuidelines": "Apply as a mixture of two non-selective contact herbicides for rapid burndown of a wide range of broadleaf weeds and grasses. Highly toxic and requires strict safety precautions.",
+      "safetyRating": "high",
+      "soilImpact": "Paraquat is rapidly inactivated upon soil contact. Diquat is strongly adsorbed to soil particles and has low mobility. Both are primarily broken down by microorganisms.",
+      "compatibleCrops": ["Pre-plant burndown in various crops", "Directed spray in orchards and vineyards"],
       "status": "Restricted"
     },
     {
-      "name": "Monocrotophos",
-      "name_lower": "monocrotophos",
-      "usageGuidelines": "Use for controlling sucking and chewing insects.",
-      "safetyRating": "Very High",
-      "soilImpact": "Highly toxic; poses risks to humans and wildlife.",
-      "compatibleCrops": ["Cotton", "Paddy", "Sugarcane"],
+      "name": "Atrazine + Simazine",
+      "name_lower": "atrazine + simazine",
+      "usageGuidelines": "Apply as a mixture of two selective triazine herbicides for pre-emergent control of broadleaf weeds and grasses in specific crops. Application rates are regulated.",
+      "safetyRating": "high",
+      "soilImpact": "Both are persistent in soil and have the potential for carryover injury to sensitive rotational crops. Moderately mobile in soil, posing a risk of leaching and groundwater contamination.",
+      "compatibleCrops": ["Corn", "Sorghum", "Sugarcane"],
       "status": "Banned"
     },
     {
-      "name": "Imidacloprid",
-      "name_lower": "imidacloprid",
-      "usageGuidelines": "Apply to manage sucking pests like aphids and whiteflies.",
-      "safetyRating": "Moderate",
-      "soilImpact": "Low persistence; potential impact on pollinators.",
-      "compatibleCrops": ["Rice", "Cotton", "Vegetables"],
-      "status": "Allowed"
-    },
-    {
-      "name": "Mancozeb",
-      "name_lower": "mancozeb",
-      "usageGuidelines": "Use as a protective fungicide against fungal diseases.",
-      "safetyRating": "Low",
-      "soilImpact": "Non-systemic; minimal soil impact.",
-      "compatibleCrops": ["Potato", "Tomato", "Grapes"],
-      "status": "Allowed"
-    },
-    {
-      "name": "Carbendazim",
-      "name_lower": "carbendazim",
-      "usageGuidelines": "Apply to control a broad spectrum of fungal diseases.",
-      "safetyRating": "Moderate",
-      "soilImpact": "Can persist in soil; overuse may lead to resistance.",
-      "compatibleCrops": ["Wheat", "Rice", "Banana"],
+      "name": "Metolachlor + Atrazine",
+      "name_lower": "metolachlor + atrazine",
+      "usageGuidelines": "Apply as a mixture of a selective grass and broadleaf herbicide for pre-emergent control in corn and sorghum. Follow label instructions for application rates based on soil type.",
+      "safetyRating": "moderate",
+      "soilImpact": "Persistence and mobility in soil will be influenced by both components. Metolachlor is moderately persistent and mobile, while atrazine is more persistent and mobile, with risks of leaching.",
+      "compatibleCrops": ["Corn", "Sorghum"],
       "status": "Restricted"
     },
     {
-      "name": "2,4-D",
-      "name_lower": "2,4-d",
-      "usageGuidelines": "Use as a selective herbicide for broadleaf weed control.",
-      "safetyRating": "Moderate",
-      "soilImpact": "Low persistence; potential for drift to non-target plants.",
-      "compatibleCrops": ["Wheat", "Maize", "Sugarcane"],
+      "name": "Pendimethalin + Trifluralin",
+      "name_lower": "pendimethalin + trifluralin",
+      "usageGuidelines": "Apply as a mixture of two selective pre-emergent herbicides for control of annual grasses and some broadleaf weeds in various crops. Requires incorporation into the soil.",
+      "safetyRating": "low",
+      "soilImpact": "Both have low mobility in soil and primarily remain in the upper layers. Pendimethalin has moderate persistence, while trifluralin can be more persistent under certain conditions. Low impact on soil microorganisms at typical rates.",
+      "compatibleCrops": ["Soybean", "Cotton", "Vegetables"],
       "status": "Allowed"
+    },
+    {
+      "name": "2,4-D + MCPA",
+      "name_lower": "2,4-d + mcpa",
+      "usageGuidelines": "Apply as a mixture of two selective post-emergent herbicides for broadleaf weed control in cereals and grasslands. Use formulations with low volatility to minimize drift.",
+      "safetyRating": "moderate",
+      "soilImpact": "Both herbicides degrade relatively quickly in soil. Moderate mobility with a risk of runoff. Potential short-term impacts on soil microbial communities.",
+      "compatibleCrops": ["Wheat", "Barley", "Oats", "Rye", "Pastures"],
+      "status": "Restricted"
+    },
+    {
+      "name": "Dicamba + 2,4-D",
+      "name_lower": "dicamba + 2,4-d",
+      "usageGuidelines": "Apply as a mixture of two selective post-emergent herbicides for broadleaf weed control in corn, sorghum, and pastures. Use low-volatility formulations and follow label guidelines to prevent off-target movement.",
+      "safetyRating": "moderate",
+      "soilImpact": "Both herbicides degrade relatively quickly in soil. Moderate mobility with a risk of runoff and volatility.",
+      "compatibleCrops": ["Corn", "Sorghum", "Pastures"],
+      "status": "Restricted"
+    },
+    {
+      "name": "Quizalofop-p-ethyl + Fluazifop-p-butyl",
+      "name_lower": "quizalofop-p-ethyl + fluazifop-p-butyl",
+      "usageGuidelines": "Apply as a mixture of two selective post-emergent grass herbicides for broadleaf crops. Provides control of both annual and perennial grasses.",
+      "safetyRating": "low",
+      "soilImpact": "Both herbicides are rapidly degraded in soil with low mobility.",
+      "compatibleCrops": ["Soybean", "Cotton", "Oilseed Rape", "Sugar Beets", "Vegetables"],
+      "status": "Allowed"
+    },
+    {
+      "name": "Acetamiprid + Bifenthrin",
+      "name_lower": "acetamiprid + bifenthrin",
+      "usageGuidelines": "Apply as a mixture of a neonicotinoid and a pyrethroid insecticide for broad-spectrum control of sucking and chewing pests. Follow label instructions regarding application timing and rates.",
+      "safetyRating": "moderate",
+      "soilImpact": "Acetamiprid has moderate persistence and mobility, while bifenthrin has low mobility and persistence. Potential negative impacts on pollinators and aquatic life.",
+      "compatibleCrops": ["Fruits", "Vegetables", "Cotton"],
+      "status": "Restricted"
+    },
+    {
+      "name": "Imidacloprid + Thiodicarb",
+      "name_lower": "imidacloprid + thiodicarb",
+      "usageGuidelines": "Apply as a mixture of a neonicotinoid and a carbamate insecticide for systemic control of sucking and chewing pests in various crops, including cotton.",
+      "safetyRating": "moderate",
+      "soilImpact": "Imidacloprid has moderate persistence and mobility. Thiodicarb has moderate persistence and can affect beneficial insects. Potential risks to pollinators.",
+      "compatibleCrops": ["Cotton", "Vegetables"],
+      "status": "Restricted"
     }
-  ]
-  
+]
