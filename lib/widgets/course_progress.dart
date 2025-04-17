@@ -22,6 +22,8 @@ class CourseProgress extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
+                errorBuilder:
+                    (context, error, stackTrace) => Icon(Icons.broken_image),
                 'assets/courses/course1/course1.png',
                 height: 70,
                 width: 70,

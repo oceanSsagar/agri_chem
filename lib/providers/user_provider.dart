@@ -9,8 +9,9 @@ class UserProvider with ChangeNotifier {
   UserInfoModel? get user => _user;
 
   Future<void> loadUser() async {
-    final currentUser = FirebaseAuth.instance.currentUser;
+    if (_user != null) return; // ✅ Already loaded
 
+    final currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null) {
       final doc =
           await FirebaseFirestore.instance
@@ -24,7 +25,6 @@ class UserProvider with ChangeNotifier {
           'email': currentUser.email,
           'phoneNumber': currentUser.phoneNumber,
           'avatarUrl': doc['avatarUrl'],
-          'backgroundUrl': doc['backgroundUrl'],
           'username': doc['username'],
           'userType': doc['userType'],
           'languagePreference': doc['languagePreference'],

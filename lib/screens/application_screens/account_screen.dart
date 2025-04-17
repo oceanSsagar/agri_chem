@@ -20,110 +20,128 @@ class AccountScreen extends StatelessWidget {
       body:
           user == null
               ? const Center(child: CircularProgressIndicator())
-              : Column(
-                children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      // Background Banner
-                      SizedBox(
-                        height: 180,
-                        width: double.infinity,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Colors.green[100]!, Colors.green[300]!],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
+              : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        // Background Banner
+                        SizedBox(
+                          height: 180,
+                          width: double.infinity,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.green[100]!,
+                                  Colors.green[300]!,
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        bottom: 40,
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Colors.white,
-                          child: ClipOval(
-                            child:
-                                user.avatarUrl != null
-                                    ? CachedNetworkImage(
-                                      imageUrl: user.avatarUrl!,
-                                      width: 96,
-                                      height: 96,
-                                      fit: BoxFit.cover,
-                                      placeholder:
-                                          (context, url) =>
-                                              const CircularProgressIndicator(),
-                                      errorWidget:
-                                          (context, url, error) => const Image(
-                                            image: AssetImage(
-                                              'assets/images/default_avatar.jpg',
+                        Positioned(
+                          bottom: 40,
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Colors.white,
+                            child: ClipOval(
+                              child:
+                                  user.avatarUrl != null
+                                      ? CachedNetworkImage(
+                                        imageUrl: user.avatarUrl!,
+                                        width: 96,
+                                        height: 96,
+                                        fit: BoxFit.cover,
+                                        placeholder:
+                                            (context, url) =>
+                                                const CircularProgressIndicator(),
+                                        errorWidget:
+                                            (
+                                              context,
+                                              url,
+                                              error,
+                                            ) => const Image(
+                                              image: AssetImage(
+                                                'assets/images/default_avatar.jpg',
+                                              ),
+                                              fit: BoxFit.cover,
+                                              width: 96,
+                                              height: 96,
                                             ),
-                                            fit: BoxFit.cover,
-                                            width: 96,
-                                            height: 96,
-                                          ),
-                                    )
-                                    : const Image(
-                                      image: AssetImage(
-                                        'assets/images/default_avatar.jpg',
+                                      )
+                                      : const Image(
+                                        image: AssetImage(
+                                          'assets/images/default_avatar.jpg',
+                                        ),
+                                        fit: BoxFit.cover,
+                                        width: 96,
+                                        height: 96,
                                       ),
-                                      fit: BoxFit.cover,
-                                      width: 96,
-                                      height: 96,
-                                    ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 60),
-                  Text(
-                    user.username ?? "Anonymous",
-                    style: const TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: 10),
-                  _infoCard(Icons.email, "Email", user.email ?? "Not provided"),
-                  _infoCard(
-                    Icons.phone,
-                    "Phone Number",
-                    user.phoneNumber ?? "Not provided",
-                  ),
-                  _infoCard(Icons.person, "User Type", user.userType ?? "N/A"),
-                  _infoCard(
-                    Icons.language,
-                    "Language",
-                    user.languagePreference ?? "English",
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const EditProfileScreen(),
+                    const SizedBox(height: 10),
+                    Text(
+                      user.username ?? "Anonymous",
+                      style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    _infoCard(
+                      Icons.email,
+                      "Email",
+                      user.email ?? "Not provided",
+                    ),
+                    _infoCard(
+                      Icons.phone,
+                      "Phone Number",
+                      user.phoneNumber ?? "Not provided",
+                    ),
+                    _infoCard(
+                      Icons.person,
+                      "User Type",
+                      user.userType ?? "N/A",
+                    ),
+                    _infoCard(
+                      Icons.language,
+                      "Language",
+                      user.languagePreference ?? "English",
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const EditProfileScreen(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.edit),
+                      label: const Text("Edit Profile"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green[600],
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 12,
+                          horizontal: 20,
                         ),
-                      );
-                    },
-                    icon: const Icon(Icons.edit),
-                    label: const Text("Edit Profile"),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green[600],
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 12,
-                        horizontal: 20,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 30),
+                  ],
+                ),
               ),
     );
   }

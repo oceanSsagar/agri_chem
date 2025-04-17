@@ -1,0 +1,242 @@
+[
+  {
+    "id": "mod011",
+    "title": "Understanding Pesticide Labels",
+    "description": "Learn how to read and interpret pesticide labels for safe and effective use.",
+    "imageUrl": "https://dummyimage.com/600x400/00704a/ffffff&text=Pesticide+Labels",
+    "estimateTime": "30 mins",
+    "category": "Pesticide Safety",
+    "content": [
+      {
+        "id": "c011-1",
+        "title": "Why Labels Matter",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Labels provide essential safety and usage information."
+      },
+      {
+        "id": "c011-2",
+        "title": "Label Sections Breakdown",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://dummyimage.com/400x200/000/fff&text=Label+Sections"
+      }
+    ]
+  },
+  {
+    "id": "mod012",
+    "title": "Organic Fertilizers 101",
+    "description": "An introduction to natural and compost-based fertilizers.",
+    "imageUrl": "https://dummyimage.com/600x400/006600/ffffff&text=Organic+Fertilizers",
+    "estimateTime": "25 mins",
+    "category": "Soil & Fertilizers",
+    "content": [
+      {
+        "id": "c012-1",
+        "title": "Compost Basics",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Compost enriches soil with organic matter and microbes."
+      },
+      {
+        "id": "c012-2",
+        "title": "Vermicomposting",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://dummyimage.com/400x200/333/eee&text=Vermicompost"
+      }
+    ]
+  },
+  {
+    "id": "mod013",
+    "title": "Herbicide Application Techniques",
+    "description": "Learn safe and effective methods for herbicide use.",
+    "imageUrl": "https://dummyimage.com/600x400/4a7b00/ffffff&text=Herbicide+Use",
+    "estimateTime": "35 mins",
+    "category": "Crop Protection",
+    "content": [
+      {
+        "id": "c013-1",
+        "title": "Pre-Emergent vs Post-Emergent",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Understand when and how to apply different herbicides."
+      },
+      {
+        "id": "c013-2",
+        "title": "Spray Equipment Safety",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://dummyimage.com/400x200/000/fff&text=Sprayer+Safety"
+      }
+    ]
+  },
+  {
+    "id": "mod014",
+    "title": "Integrated Pest Management (IPM)",
+    "description": "Sustainable pest control strategies combining biological and chemical methods.",
+    "imageUrl": "https://dummyimage.com/600x400/ff9900/fff&text=IPM",
+    "estimateTime": "45 mins",
+    "category": "Eco-Farming",
+    "content": [
+      {
+        "id": "c014-1",
+        "title": "What is IPM?",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "IPM uses multiple strategies to control pests sustainably."
+      },
+      {
+        "id": "c014-2",
+        "title": "Beneficial Insects",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://dummyimage.com/400x200/fff/333&text=Ladybugs+%26+More"
+      }
+    ]
+  },
+  {
+    "id": "mod015",
+    "title": "Micronutrients in Agriculture",
+    "description": "Understand the role of micronutrients like Zinc, Boron, and Iron.",
+    "imageUrl": "https://dummyimage.com/600x400/00557f/ffffff&text=Micronutrients",
+    "estimateTime": "20 mins",
+    "category": "Soil & Fertilizers",
+    "content": [
+      {
+        "id": "c015-1",
+        "title": "Zinc Deficiency Symptoms",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Zinc deficiency causes stunted growth and yellowing in leaves."
+      },
+      {
+        "id": "c015-2",
+        "title": "How to Apply Micronutrients",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Foliar spraying and soil amendment are effective methods."
+      }
+    ]
+  },
+  {
+    "id": "mod016",
+    "title": "Neem-Based Biopesticides",
+    "description": "Learn how neem oil is used to repel pests organically.",
+    "imageUrl": "https://dummyimage.com/600x400/008040/ffffff&text=Neem+Power",
+    "estimateTime": "30 mins",
+    "category": "Biological Inputs",
+    "content": [
+      {
+        "id": "c016-1",
+        "title": "Neem's Mode of Action",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Neem disrupts insect hormones and feeding behavior."
+      },
+      {
+        "id": "c016-2",
+        "title": "DIY Neem Spray",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Mix 5ml neem oil with 1L water and 1-2 drops of soap."
+      }
+    ]
+  },
+  {
+    "id": "mod017",
+    "title": "Safe Agrochemical Storage",
+    "description": "Best practices to store agrochemicals away from children, water, and food.",
+    "imageUrl": "https://dummyimage.com/600x400/cc0000/fff&text=Safe+Storage",
+    "estimateTime": "15 mins",
+    "category": "Pesticide Safety",
+    "content": [
+      {
+        "id": "c017-1",
+        "title": "Storage Guidelines",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Always store in original containers with labels intact."
+      },
+      {
+        "id": "c017-2",
+        "title": "Storage Room Setup",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://dummyimage.com/400x200/000/fff&text=Storage+Room"
+      }
+    ]
+  },
+  {
+    "id": "mod018",
+    "title": "Balanced Fertilizer Application",
+    "description": "Avoid overuse and underuse by understanding NPK balance.",
+    "imageUrl": "https://dummyimage.com/600x400/ffcc00/000&text=NPK+Balance",
+    "estimateTime": "20 mins",
+    "category": "Soil & Fertilizers",
+    "content": [
+      {
+        "id": "c018-1",
+        "title": "NPK Ratios Explained",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Understand the ratio of Nitrogen, Phosphorus, and Potassium."
+      },
+      {
+        "id": "c018-2",
+        "title": "Choosing the Right Blend",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Match NPK ratios with crop stage and soil test results."
+      }
+    ]
+  },
+  {
+    "id": "mod019",
+    "title": "Personal Protective Equipment (PPE)",
+    "description": "Protect yourself when handling chemicals and fertilizers.",
+    "imageUrl": "https://dummyimage.com/600x400/3333cc/ffffff&text=PPE+for+Farmers",
+    "estimateTime": "15 mins",
+    "category": "Pesticide Safety",
+    "content": [
+      {
+        "id": "c019-1",
+        "title": "Essential PPE Items",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Use gloves, masks, boots, and coveralls when spraying."
+      },
+      {
+        "id": "c019-2",
+        "title": "Cleaning and Reuse",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Wash PPE after each use and store in a clean place."
+      }
+    ]
+  },
+  {
+    "id": "mod020",
+    "title": "Water-Soluble Fertilizers",
+    "description": "How to use drip and foliar systems to apply nutrients.",
+    "imageUrl": "https://dummyimage.com/600x400/0088cc/ffffff&text=WSF+Fertilizer",
+    "estimateTime": "25 mins",
+    "category": "Modern Techniques",
+    "content": [
+      {
+        "id": "c020-1",
+        "title": "Benefits of WSF",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Quick absorption and lower wastage through fertigation."
+      },
+      {
+        "id": "c020-2",
+        "title": "How to Prepare WSF",
+        "type": "lesson",
+        "contentType": "text",
+        "content": "Dissolve exact grams in water as per crop requirements."
+      }
+    ]
+  }
+]

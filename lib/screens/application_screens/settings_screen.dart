@@ -8,20 +8,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Settings")),
-      body: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            TextButton(
-              child: Text("Upload Chemicals"),
-              onPressed: () async {
-                await uploadChemicalsToFirestore();
-              },
-            ),
-          ],
-        ),
-      ),
+      body: Center(child: Text("Settings Screen")),
     );
   }
 }

@@ -143,7 +143,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     if (_avatarImageFile != null)
                       Image.file(_avatarImageFile!, height: 100)
                     else if (user.avatarUrl != null)
-                      Image.network(user.avatarUrl!, height: 100),
+                      Image.network(
+                        user.avatarUrl!,
+                        height: 100,
+                        errorBuilder:
+                            (context, error, stackTrace) =>
+                                Icon(Icons.broken_image),
+                      ),
 
                     const SizedBox(height: 30),
                     ElevatedButton.icon(

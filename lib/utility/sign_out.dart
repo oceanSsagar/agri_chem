@@ -1,3 +1,4 @@
+import 'package:agri_chem/authentication/authentication_gate.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -11,9 +12,9 @@ Future<void> signOutUser(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
 
     // Navigate to the sign-in page
-    Navigator.pushReplacementNamed(
+    Navigator.pushReplacement(
       context,
-      '/auth',
+      MaterialPageRoute(builder: (_) => const AuthenticationGate()),
     ); // Replace '/auth' with your sign-in route
   } catch (e) {
     ScaffoldMessenger.of(

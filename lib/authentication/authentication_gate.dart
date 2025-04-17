@@ -1,3 +1,4 @@
+import 'package:agri_chem/authentication/phone_auth_screen.dart';
 import 'package:agri_chem/onboarding/onboarding_screen.dart';
 import 'package:agri_chem/screens/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -54,6 +55,8 @@ class AuthenticationGateState extends State<AuthenticationGate> {
                     style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
+
+                  /// Google Sign-In Button
                   _isLoading
                       ? const CircularProgressIndicator()
                       : SignInButton(
@@ -71,6 +74,33 @@ class AuthenticationGateState extends State<AuthenticationGate> {
                           }
                         },
                       ),
+
+                  const SizedBox(height: 12),
+
+                  /// Phone Number Sign-In Button
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                        horizontal: 20,
+                      ),
+                    ),
+                    icon: const Icon(Icons.phone),
+                    label: const Text("Sign in with Phone Number"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const PhoneAuthScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

@@ -14,6 +14,8 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
   List<DocumentSnapshot> _results = [];
   bool _isLoading = false;
   bool _hasMore = true;
+  bool _isSearching = false;
+
   DocumentSnapshot? _lastDoc;
   final int _limit = 10;
   final ScrollController _scrollController = ScrollController();
@@ -21,6 +23,8 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
   @override
   void initState() {
     super.initState();
+
+    _searchChemicals("", isNewSearch: true); // fetch initial 10
 
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >=
@@ -33,15 +37,6 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
   }
 
   void _searchChemicals(String query, {bool isNewSearch = false}) async {
-    if (query.isEmpty) {
-      setState(() {
-        _results = [];
-        _lastDoc = null;
-        _hasMore = true;
-      });
-      return;
-    }
-
     if (isNewSearch) {
       setState(() {
         _results.clear();
@@ -52,14 +47,24 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
 
     if (!_hasMore) return;
 
-    setState(() => _isLoading = true);
+    setState(() {
+      _isLoading = true;
+      _isSearching = query.isNotEmpty;
+    });
 
     Query queryRef = FirebaseFirestore.instance
         .collection('agri_chemicals')
-        .where('name_lower', isGreaterThanOrEqualTo: query)
-        .where('name_lower', isLessThanOrEqualTo: query + '\uf8ff')
         .orderBy('name_lower')
         .limit(_limit);
+
+    if (_isSearching) {
+      queryRef = FirebaseFirestore.instance
+          .collection('agri_chemicals')
+          .where('name_lower', isGreaterThanOrEqualTo: query)
+          .where('name_lower', isLessThanOrEqualTo: query + '\uf8ff')
+          .orderBy('name_lower')
+          .limit(_limit);
+    }
 
     if (_lastDoc != null) {
       queryRef = (queryRef as Query<Map<String, dynamic>>).startAfterDocument(
@@ -71,12 +76,18 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
 
     if (snapshot.docs.isNotEmpty) {
       _lastDoc = snapshot.docs.last;
-      _results.addAll(snapshot.docs);
+      setState(() {
+        _results.addAll(snapshot.docs);
+      });
     } else {
-      _hasMore = false;
+      setState(() {
+        _hasMore = false;
+      });
     }
 
-    setState(() => _isLoading = false);
+    setState(() {
+      _isLoading = false;
+    });
   }
 
   @override
@@ -115,6 +126,7 @@ class _ChemicalSearchScreenState extends State<ChemicalSearchScreen> {
               keyboardType: TextInputType.name,
               elevation: WidgetStateProperty.all(5.0),
             ),
+
             SizedBox(height: 15),
             Expanded(
               child:

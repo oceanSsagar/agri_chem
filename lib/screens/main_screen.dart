@@ -1,3 +1,4 @@
+import 'package:agri_chem/providers/user_provider.dart';
 import 'package:agri_chem/screens/notification_screen.dart';
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:agri_chem/screens/application_screens/home_screen.dart';
 import 'package:agri_chem/screens/application_screens/chemical_search_screen.dart';
 import 'package:agri_chem/screens/application_screens/modules_screen.dart';
-import 'package:agri_chem/screens/application_screens/chat_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:agri_chem/chat_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,23 +21,19 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   String _title = "Agri Chem";
 
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(() {
+      Provider.of<UserProvider>(context, listen: false).loadUser();
+    });
+  }
+
   _onItemTapped(int index) {
+    final titles = ["Home", "Chemical Search", "Modules", "Chat"];
     setState(() {
       _selectedIndex = index;
-      switch (_selectedIndex) {
-        case 0:
-          _title = "Home";
-          break;
-        case 1:
-          _title = "Chemical Search";
-          break;
-        case 2:
-          _title = "Modules";
-          break;
-        case 3:
-          _title = "Chat";
-          break;
-      }
+      _title = titles[index];
     });
   }
 
@@ -82,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
         type: BottomNavigationBarType.fixed,
         backgroundColor: const Color(0xFFD0E8D0), // Slightly darker green
         selectedItemColor: const Color(0xFF5D4037), // Earthy brown
-        unselectedItemColor: const Color(0xFF795548).withOpacity(0.6),
+        unselectedItemColor: const Color(0xFF795548).withAlpha(170),
         selectedFontSize: 14,
         unselectedFontSize: 13,
         showUnselectedLabels: true,
@@ -95,7 +93,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
         ],
       ),
-      body: _screens[_selectedIndex],
+      body: IndexedStack(
+        index: _selectedIndex.clamp(0, _screens.length - 1),
+        children: _screens,
+      ),
     );
   }
 }
