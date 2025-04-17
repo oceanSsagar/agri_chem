@@ -23,26 +23,39 @@ class AppDrawer extends StatelessWidget {
 
     return Drawer(
       child: ListView(
+        padding: EdgeInsets.zero,
         children: [
-          UserAccountsDrawerHeader(
-            accountName: Text(
-              user.username ?? "User Name",
-              style: const TextStyle(color: kFont),
+          Container(
+            color: Colors.orange,
+            padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 50, // Larger size
+                  backgroundImage:
+                      user.avatarUrl != null && user.avatarUrl!.isNotEmpty
+                          ? CachedNetworkImageProvider(user.avatarUrl!)
+                          : const AssetImage('assets/images/default_avatar.png')
+                              as ImageProvider,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  user.username ?? "User Name",
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: kFont,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  user.email ?? "useremail@example.com",
+                  style: const TextStyle(fontSize: 14, color: kFont),
+                ),
+              ],
             ),
-            accountEmail: Text(
-              user.email ?? "useremail@example.com",
-              style: const TextStyle(color: kFont),
-            ),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage:
-                  user.avatarUrl != null && user.avatarUrl!.isNotEmpty
-                      ? CachedNetworkImageProvider(user.avatarUrl!)
-                      : const AssetImage('assets/images/default_avatar.png')
-                          as ImageProvider,
-            ),
-            decoration: const BoxDecoration(color: Colors.greenAccent),
           ),
 
+          // Menu Items
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text("Account"),

@@ -8,7 +8,7 @@ import 'package:agri_chem/screens/application_screens/home_screen.dart';
 import 'package:agri_chem/screens/application_screens/chemical_search_screen.dart';
 import 'package:agri_chem/screens/application_screens/modules_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:agri_chem/chat_screen.dart';
+import 'package:agri_chem/screens/application_screens/chat_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -56,10 +56,11 @@ class _MainScreenState extends State<MainScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: const Color(0xFF388E3C), // Rich green
+        backgroundColor: Colors.orange, // Rich green
         elevation: 2,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.qr_code)),
           IconButton(
             onPressed: () {
               Navigator.push(
@@ -78,9 +79,9 @@ class _MainScreenState extends State<MainScreen> {
       drawer: const AppDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFFD0E8D0), // Slightly darker green
-        selectedItemColor: const Color(0xFF5D4037), // Earthy brown
-        unselectedItemColor: const Color(0xFF795548).withAlpha(170),
+        backgroundColor: Colors.white, // Slightly darker green
+        selectedItemColor: Colors.orange, // Earthy brown
+        unselectedItemColor: Colors.black.withAlpha(150),
         selectedFontSize: 14,
         unselectedFontSize: 13,
         showUnselectedLabels: true,
