@@ -1,5 +1,4 @@
 import 'package:agri_chem/models/course_module.dart';
-import 'package:agri_chem/themes/my_colors.dart';
 import 'package:flutter/material.dart';
 
 class CourseItem extends StatelessWidget {
@@ -10,18 +9,16 @@ class CourseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double progress = course.progress ?? 0.0;
-
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(20),
-      splashColor: kAccent.withOpacity(0.2),
+      splashColor: Colors.blue.withOpacity(0.2),
       child: Container(
         height: 250,
         width: 250,
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         decoration: BoxDecoration(
-          color: kPrimaryLight,
+          color: Colors.blueAccent.withOpacity(0.1),
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
@@ -33,7 +30,7 @@ class CourseItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Image + Overlay + Badge + Icon
+            // Image and title section
             Expanded(
               flex: 2,
               child: Stack(
@@ -43,7 +40,7 @@ class CourseItem extends StatelessWidget {
                       top: Radius.circular(20),
                     ),
                     child: Hero(
-                      tag: 'course-image-${course.id}-${course.title}',
+                      tag: 'course-image-${course.id}',
                       child:
                           course.imageUrl != null
                               ? Image.network(
@@ -66,8 +63,6 @@ class CourseItem extends StatelessWidget {
                               ),
                     ),
                   ),
-
-                  // Title Overlay
                   Positioned(
                     bottom: 0,
                     left: 0,
@@ -100,45 +95,10 @@ class CourseItem extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  // Category Badge
-                  if (course.category != null)
-                    Positioned(
-                      top: 10,
-                      left: 10,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Text(
-                          course.category!,
-                          style: TextStyle(color: Colors.white, fontSize: 12),
-                        ),
-                      ),
-                    ),
-
-                  // Content Type Icon
-                  if (course.content != null && course.content!.isNotEmpty)
-                    Positioned(
-                      top: 10,
-                      right: 10,
-                      child: Icon(
-                        _getContentTypeIcon(
-                          course.content!.first.contentType,
-                        ), // Corrected access
-                        color: Colors.white,
-                      ),
-                    ),
                 ],
               ),
             ),
-
-            // Course Info & Progress
+            // Course info section
             Expanded(
               flex: 1,
               child: Padding(
@@ -146,35 +106,24 @@ class CourseItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 4),
                     Row(
                       children: [
-                        Icon(Icons.schedule, size: 16, color: kFontLight),
+                        Icon(Icons.schedule, size: 16, color: Colors.grey),
                         SizedBox(width: 5),
                         Text(
                           course.estimateTime ?? 'Unknown duration',
-                          style: TextStyle(fontSize: 13, color: kFontLight),
+                          style: TextStyle(fontSize: 13, color: Colors.grey),
                         ),
                       ],
                     ),
-                    SizedBox(height: 6),
-                    LinearProgressIndicator(
-                      value: progress,
-                      backgroundColor: Colors.grey.shade300,
-                      valueColor: AlwaysStoppedAnimation<Color>(kAccent),
-                      minHeight: 6,
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      '${(progress * 100).toStringAsFixed(0)}% completed',
-                      style: TextStyle(fontSize: 12, color: kFontLight),
-                    ),
-                    SizedBox(height: 4),
+                    SizedBox(height: 8),
                     Text(
                       "Tap to start",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: kAccent,
+                        color: Colors.blueAccent,
                       ),
                     ),
                   ],
@@ -185,20 +134,5 @@ class CourseItem extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  IconData _getContentTypeIcon(String? type) {
-    switch (type) {
-      case 'text':
-        return Icons.description;
-      case 'image':
-        return Icons.image;
-      case 'quiz':
-        return Icons.quiz;
-      case 'video':
-        return Icons.play_circle_fill;
-      default:
-        return Icons.book;
-    }
   }
 }

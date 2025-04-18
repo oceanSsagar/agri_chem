@@ -8,29 +8,41 @@ class UserProvider with ChangeNotifier {
 
   UserInfoModel? get user => _user;
 
-  Future<void> loadUser() async {
-    if (_user != null) return; // ✅ Already loaded
+  /// Loads user data from Firestore. Set [forceReload] to true to reload even if already loaded.
+  Future<void> loadUser({bool forceReload = false}) async {
+    if (_user != null && !forceReload) return;
 
     final currentUser = FirebaseAuth.instance.currentUser;
-    if (currentUser != null) {
-      final doc =
-          await FirebaseFirestore.instance
-              .collection('agri_users')
-              .doc(currentUser.uid)
-              .get();
+    if (currentUser == null) return;
 
-      if (doc.exists) {
-        _user = UserInfoModel.fromMap({
-          'uid': currentUser.uid,
-          'email': currentUser.email,
-          'phoneNumber': currentUser.phoneNumber,
-          'avatarUrl': doc['avatarUrl'],
-          'username': doc['username'],
-          'userType': doc['userType'],
-          'languagePreference': doc['languagePreference'],
-        });
-        notifyListeners();
-      }
+    final doc =
+        await FirebaseFirestore.instance
+            .collection('agri_users')
+            .doc(currentUser.uid)
+            .get();
+
+    if (doc.exists) {
+      final data = doc.data()!;
+      _user = UserInfoModel.fromMap({
+        'uid': currentUser.uid,
+        'email': currentUser.email,
+        'phoneNumber': currentUser.phoneNumber,
+        'avatarUrl': data['avatarUrl'],
+        'username': data['username'],
+        'userType': data['userType'],
+        'languagePreference': data['languagePreference'],
+        'firstName': data['firstName'] ?? '',
+        'lastName': data['lastName'] ?? '',
+        'gender': data['gender'] ?? '',
+        'profileCompleted': data['profileCompleted'] ?? false,
+        'createdAt': data['createdAt'],
+      });
+      notifyListeners();
     }
+  }
+
+  void clearUser() {
+    _user = null;
+    notifyListeners();
   }
 }

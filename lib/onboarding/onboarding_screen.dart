@@ -38,7 +38,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       if (user == null) throw Exception("No authenticated user found.");
 
       final username = _usernameController.text.trim();
-
       if (username.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Username cannot be empty.")),
@@ -46,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         return;
       }
 
-      // Check if the username is already taken
+      // Check for unique username
       final usernameTaken = await _isUsernameTaken(username);
       if (usernameTaken) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -59,27 +58,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         return;
       }
 
-      // Get email from FirebaseAuth (no need for email input now)
-      final email = user.email;
-
-      // Proceed to save user data
-      await FirebaseFirestore.instance.collection('agri_users').doc(user.uid).set({
-        'username': username,
+      final userData = {
+        'uid': user.uid,
+        'email': user.email ?? "",
+        'phoneNumber': _phoneNumberController.text.trim(),
         'firstName': _firstNameController.text.trim(),
         'lastName': _lastNameController.text.trim(),
-        'email': email, // Use the email from FirebaseAuth
+        'username': username,
         'gender': _gender,
         'userType': _userType,
+        'languagePreference': _languagePreference,
         'avatarUrl':
             "https://firebasestorage.googleapis.com/v0/b/interns25-saffronedge-samarth.firebasestorage.app/o/agrichem%2Fimages%2Favatar%2Fdefault_avatar.png?alt=media&token=f55da4c2-d273-4154-a27b-d81081d5b10e",
-        'uid': user.uid,
-        'languagePreference': _languagePreference,
-        'phoneNumber': _phoneNumberController.text.trim(),
         'profileCompleted': true,
         'createdAt': FieldValue.serverTimestamp(),
-      });
+      };
 
-      // Display success message and navigate
+      await FirebaseFirestore.instance
+          .collection('agri_users')
+          .doc(user.uid)
+          .set(userData);
+
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Profile created successfully!")),
       );

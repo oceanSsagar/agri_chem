@@ -22,7 +22,7 @@ class _ModulesScreenState extends State<ModulesScreen> {
   }
 
   // Load course modules from Firestore
-  void _loadCourseModules() async {
+  Future<void> _loadCourseModules() async {
     FirebaseService firebaseService = FirebaseService();
     List<CourseModule> modules = await firebaseService.fetchCourseModules();
 
@@ -33,34 +33,45 @@ class _ModulesScreenState extends State<ModulesScreen> {
     });
   }
 
+  // Refresh function to reload course modules
+  Future<void> _refreshModules() async {
+    setState(() {
+      isLoading = true;
+    });
+    await _loadCourseModules(); // This will now work because _loadCourseModules returns Future<void>
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-          isLoading
-              ? Center(child: CircularProgressIndicator())
-              : ListView.builder(
-                itemCount: courseModules.length,
-                itemBuilder: (context, index) {
-                  final module = courseModules[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: CourseItem(
-                      course: module,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder:
-                                (_) =>
-                                    CourseModuleDetailsScreen(module: module),
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
+      body: RefreshIndicator(
+        onRefresh: _refreshModules, // onRefresh expects a Future<void>
+        child:
+            isLoading
+                ? Center(child: CircularProgressIndicator())
+                : ListView.builder(
+                  itemCount: courseModules.length,
+                  itemBuilder: (context, index) {
+                    final module = courseModules[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: CourseItem(
+                        course: module,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (_) =>
+                                      CourseModuleDetailsScreen(course: module),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                ),
+      ),
     );
   }
 }

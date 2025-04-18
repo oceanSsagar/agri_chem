@@ -48,7 +48,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     try {
       final storageRef = FirebaseStorage.instance
           .ref()
-          .child('user_images')
+          .child('agrichem')
+          .child("images")
           .child(path);
       await storageRef.putFile(file);
       return await storageRef.getDownloadURL();

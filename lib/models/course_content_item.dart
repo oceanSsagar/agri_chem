@@ -1,25 +1,28 @@
 class CourseContentItem {
-  final String id;
-  final String title;
-  final String type;
-  final String contentType; // e.g., "text", "image", "quiz"
-  final dynamic content; // can be text, URL, etc.
+  final String? id;
+  final String? title;
+  final String? description;
+  final String? contentType;
+  final String? content; // Content data (text, image URL, etc.)
+  bool isCompleted;
 
   CourseContentItem({
-    required this.id,
-    required this.title,
-    required this.type,
-    required this.contentType,
-    required this.content,
+    this.id,
+    this.title,
+    this.description,
+    this.contentType,
+    this.content,
+    this.isCompleted = false,
   });
 
   factory CourseContentItem.fromJson(Map<String, dynamic> json) {
     return CourseContentItem(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      type: json['type'] as String,
-      contentType: json['contentType'] as String,
-      content: json['content'], // content could be text, URL, etc.
+      id: json['id'] as String?,
+      title: json['title'] as String?,
+      description: json['description'] as String?,
+      contentType: json['contentType'] as String?,
+      content: json['content'] as String?, // Now we store content here
+      isCompleted: json['isCompleted'] ?? false,
     );
   }
 
@@ -27,9 +30,10 @@ class CourseContentItem {
     return {
       'id': id,
       'title': title,
-      'type': type,
+      'description': description,
       'contentType': contentType,
-      'content': content,
+      'content': content, // Ensure content is serialized correctly
+      'isCompleted': isCompleted,
     };
   }
 }

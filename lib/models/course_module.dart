@@ -8,7 +8,6 @@ class CourseModule {
   final String? estimateTime;
   final String? category;
   final List<CourseContentItem>? content;
-  final double? progress; // Added progress field
 
   CourseModule({
     this.id,
@@ -18,7 +17,6 @@ class CourseModule {
     this.estimateTime,
     this.category,
     this.content,
-    this.progress,
   });
 
   factory CourseModule.fromJson(Map<String, dynamic> json) {
@@ -35,10 +33,6 @@ class CourseModule {
                 (e) => CourseContentItem.fromJson(e as Map<String, dynamic>),
               )
               .toList(),
-      progress:
-          (json['progress'] != null)
-              ? (json['progress'] as num).toDouble()
-              : null,
     );
   }
 
@@ -51,7 +45,6 @@ class CourseModule {
       'estimateTime': estimateTime,
       'category': category,
       'content': content?.map((e) => e.toJson()).toList(),
-      'progress': progress,
     };
   }
 }
