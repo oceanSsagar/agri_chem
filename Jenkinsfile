@@ -18,9 +18,11 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
-        flutter --version
-        flutter pub get
-        sh 'flutter pub get'
+        sh '''#!/bin/bash
+                    flutter --version
+                    flutter pub get
+                    flutter build apk --release
+                '''
       }
     }
     //flutter
