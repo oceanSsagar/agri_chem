@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -92,92 +93,95 @@ class _CourseModuleDetailsScreenState extends State<CourseModuleDetailsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(course.title ?? 'Course Details')),
-      body: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(16),
-            color: Colors.green[50],
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                LinearProgressIndicator(
-                  value: progress,
-                  minHeight: 8,
-                  backgroundColor: Colors.grey[300],
-                  color: Colors.green,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  '${(progress * 100).toStringAsFixed(1)}% Completed',
-                  style: const TextStyle(fontSize: 16),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: RefreshIndicator(
-              onRefresh: _loadCompletedProgress,
-              child: ListView.builder(
-                itemCount: course.content?.length ?? 0,
-                itemBuilder: (context, index) {
-                  final contentItem = course.content![index];
-                  final isCompleted = completedContentIds.contains(
-                    contentItem.id,
-                  );
-
-                  return Card(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 6,
-                    ),
-                    child: ListTile(
-                      leading: Icon(
-                        isCompleted
-                            ? Icons.check_circle
-                            : Icons.radio_button_unchecked,
-                        color: isCompleted ? Colors.green : Colors.grey,
-                        size: 32, // Increased icon size for better visibility
-                      ),
-                      title: Text(contentItem.title ?? 'Untitled'),
-                      subtitle: Text(
-                        contentItem.description ?? 'No description',
-                      ),
-                      onTap: () async {
-                        // Navigate to the content screen and wait until user returns
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder:
-                                (_) => LessonViewerScreen(item: contentItem),
-                          ),
-                        );
-
-                        // After returning, mark it as completed in the background
-                        if (!completedContentIds.contains(contentItem.id)) {
-                          toggleContentCompletion(contentItem.id!);
-                        }
-                      },
-
-                      trailing: IconButton(
-                        icon: Icon(
-                          isCompleted ? Icons.close : Icons.done,
-                          color: isCompleted ? Colors.red : Colors.blueAccent,
-                        ),
-                        tooltip:
-                            isCompleted
-                                ? 'Mark as not completed'
-                                : 'Mark as completed',
-                        onPressed: () async {
-                          await toggleContentCompletion(contentItem.id!);
-                        },
+      body: RefreshIndicator(
+        onRefresh: _loadCompletedProgress,
+        child: ListView(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 5),
+              width: double.infinity,
+              height: 200,
+              child: CachedNetworkImage(
+                imageUrl: course.imageUrl ?? '',
+                fit: BoxFit.cover,
+                placeholder:
+                    (context, url) =>
+                        const Center(child: CircularProgressIndicator()),
+                errorWidget:
+                    (context, url, error) => const Center(
+                      child: Icon(
+                        Icons.broken_image,
+                        size: 64,
+                        color: Colors.grey,
                       ),
                     ),
-                  );
-                },
               ),
             ),
-          ),
-        ],
+            Container(
+              padding: const EdgeInsets.all(16),
+              color: Colors.green[50],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 8,
+                    backgroundColor: Colors.grey[300],
+                    color: Colors.green,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '${(progress * 100).toStringAsFixed(1)}% Completed',
+                    style: const TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+            ...List.generate(course.content?.length ?? 0, (index) {
+              final contentItem = course.content![index];
+              final isCompleted = completedContentIds.contains(contentItem.id);
+
+              return Card(
+                margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                child: ListTile(
+                  leading: Icon(
+                    isCompleted
+                        ? Icons.check_circle
+                        : Icons.radio_button_unchecked,
+                    color: isCompleted ? Colors.green : Colors.grey,
+                    size: 32,
+                  ),
+                  title: Text(contentItem.title ?? 'Untitled'),
+                  subtitle: Text(contentItem.description ?? 'No description'),
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => LessonViewerScreen(item: contentItem),
+                      ),
+                    );
+                    if (!completedContentIds.contains(contentItem.id)) {
+                      toggleContentCompletion(contentItem.id!);
+                    }
+                  },
+                  trailing: IconButton(
+                    icon: Icon(
+                      isCompleted ? Icons.close : Icons.done,
+                      color: isCompleted ? Colors.red : Colors.blueAccent,
+                    ),
+                    tooltip:
+                        isCompleted
+                            ? 'Mark as not completed'
+                            : 'Mark as completed',
+                    onPressed: () async {
+                      await toggleContentCompletion(contentItem.id!);
+                    },
+                  ),
+                ),
+              );
+            }),
+          ],
+        ),
       ),
     );
   }
