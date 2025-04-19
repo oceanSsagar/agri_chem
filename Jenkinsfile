@@ -5,9 +5,9 @@ pipeline {
     PATH = "/usr/local/flutter/bin:$PATH"
   }
 
-  tools {
-    flutter 'flutter' // Make sure this is configured under Jenkins > Global Tool Configuration
-  }
+  // tools {
+  //   flutter 'flutter' // Make sure this is configured under Jenkins > Global Tool Configuration
+  // }
 
   stages {
     stage('Checkout') {
