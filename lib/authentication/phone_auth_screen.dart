@@ -54,9 +54,16 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
 
     try {
       await _auth.signInWithCredential(credential);
+
+      // ✅ Show success message (optional)
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(const SnackBar(content: Text("Phone number verified!")));
+
+      // ✅ Pop this screen to return to AuthenticationGate
+      if (mounted) {
+        Navigator.pop(context);
+      }
     } catch (e) {
       ScaffoldMessenger.of(
         context,

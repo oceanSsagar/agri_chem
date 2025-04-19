@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "/usr/local/flutter/bin:$PATH"
+    PATH = "home/sagar/Development/flutter/bin"
   }
 
   tools {
