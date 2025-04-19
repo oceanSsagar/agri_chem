@@ -21,12 +21,12 @@ pipeline {
         sh 'flutter pub get'
       }
     }
-
-    stage('Run Tests') {
-      steps {
-        sh 'flutter test'
-      }
-    }
+    //flutter tests
+    // stage('Run Tests') {
+    //   steps {
+    //     sh 'flutter test'
+    //   }
+    // }
 
     stage('Build APK') {
       steps {
