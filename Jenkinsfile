@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "home/sagar/Development/flutter/bin"
+    PATH = "/usr/local/flutter/bin:$PATH"
   }
 
   tools {
@@ -18,10 +18,12 @@ pipeline {
 
     stage('Install Dependencies') {
       steps {
+        flutter --version
+        flutter pub get
         sh 'flutter pub get'
       }
     }
-    //flutter tests
+    //flutter
     // stage('Run Tests') {
     //   steps {
     //     sh 'flutter test'
