@@ -10,6 +10,8 @@ buildscript {
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22")
         // Add other required classpaths like Google Services or Firebase
+
+        classpath("com.google.gms:google-services:4.4.0")
     }
 }
 
