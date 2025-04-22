@@ -25,6 +25,13 @@ class DevScreen extends StatelessWidget {
               },
               child: Text('Upload Modules to Firestore'),
             ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () async {
+                await uploadProductsJsonToFirestore();
+              },
+              child: Text('Upload Products to Firestore'),
+            ),
           ],
         ),
       ),

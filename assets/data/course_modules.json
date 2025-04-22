@@ -1,241 +1,139 @@
 [
   {
-    "id": "mod011",
-    "title": "Understanding Pesticide Labels",
-    "description": "Learn how to read and interpret pesticide labels for safe and effective use.",
-    "imageUrl": "https://dummyimage.com/600x400/00704a/ffffff&text=Pesticide+Labels",
-    "estimateTime": "30 mins",
-    "category": "Pesticide Safety",
-    "content": [
-      {
-        "id": "c011-1",
-        "title": "Why Labels Matter",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Labels provide essential safety and usage information."
-      },
-      {
-        "id": "c011-2",
-        "title": "Label Sections Breakdown",
-        "type": "lesson",
-        "contentType": "image",
-        "content": "https://dummyimage.com/400x200/000/fff&text=Label+Sections"
-      }
-    ]
-  },
-  {
-    "id": "mod012",
-    "title": "Organic Fertilizers 101",
-    "description": "An introduction to natural and compost-based fertilizers.",
-    "imageUrl": "https://dummyimage.com/600x400/006600/ffffff&text=Organic+Fertilizers",
-    "estimateTime": "25 mins",
-    "category": "Soil & Fertilizers",
-    "content": [
-      {
-        "id": "c012-1",
-        "title": "Compost Basics",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Compost enriches soil with organic matter and microbes."
-      },
-      {
-        "id": "c012-2",
-        "title": "Vermicomposting",
-        "type": "lesson",
-        "contentType": "image",
-        "content": "https://dummyimage.com/400x200/333/eee&text=Vermicompost"
-      }
-    ]
-  },
-  {
-    "id": "mod013",
-    "title": "Herbicide Application Techniques",
-    "description": "Learn safe and effective methods for herbicide use.",
-    "imageUrl": "https://dummyimage.com/600x400/4a7b00/ffffff&text=Herbicide+Use",
-    "estimateTime": "35 mins",
-    "category": "Crop Protection",
-    "content": [
-      {
-        "id": "c013-1",
-        "title": "Pre-Emergent vs Post-Emergent",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Understand when and how to apply different herbicides."
-      },
-      {
-        "id": "c013-2",
-        "title": "Spray Equipment Safety",
-        "type": "lesson",
-        "contentType": "image",
-        "content": "https://dummyimage.com/400x200/000/fff&text=Sprayer+Safety"
-      }
-    ]
-  },
-  {
-    "id": "mod014",
-    "title": "Integrated Pest Management (IPM)",
-    "description": "Sustainable pest control strategies combining biological and chemical methods.",
-    "imageUrl": "https://dummyimage.com/600x400/ff9900/fff&text=IPM",
-    "estimateTime": "45 mins",
-    "category": "Eco-Farming",
-    "content": [
-      {
-        "id": "c014-1",
-        "title": "What is IPM?",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "IPM uses multiple strategies to control pests sustainably."
-      },
-      {
-        "id": "c014-2",
-        "title": "Beneficial Insects",
-        "type": "lesson",
-        "contentType": "image",
-        "content": "https://dummyimage.com/400x200/fff/333&text=Ladybugs+%26+More"
-      }
-    ]
-  },
-  {
-    "id": "mod015",
-    "title": "Micronutrients in Agriculture",
-    "description": "Understand the role of micronutrients like Zinc, Boron, and Iron.",
-    "imageUrl": "https://dummyimage.com/600x400/00557f/ffffff&text=Micronutrients",
+    "id": "mod001",
+    "title": "Introduction to Agrochemicals",
+    "description": "Agrochemicals are chemical products used in agriculture to enhance crop production and protect plants from pests, diseases, and weeds. These include fertilizers, pesticides, herbicides, fungicides, and soil conditioners.",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiwmWqLBaTL26omPTPzhDUpT5x74hN5WmQXw&s",
     "estimateTime": "20 mins",
-    "category": "Soil & Fertilizers",
+    "category": "Introduction",
     "content": [
       {
-        "id": "c015-1",
-        "title": "Zinc Deficiency Symptoms",
+        "id": "c001-1",
+        "title": "What are Agrochemicals",
         "type": "lesson",
         "contentType": "text",
-        "content": "Zinc deficiency causes stunted growth and yellowing in leaves."
+        "content": "<!DOCTYPE html><html><head><style>body { font-family: Arial, sans-serif; padding: 16px; } h2 { color: #2e7d32; } p { line-height: 1.6; }</style></head><body><h2>What are Agrochemicals?</h2><p>Agrochemicals are chemical substances used in agriculture to improve crop yields and protect crops from pests, diseases, and weeds. They include:</p><ul><li><strong>Fertilizers</strong>: Supply essential nutrients to plants.</li><li><strong>Pesticides</strong>: Protect plants from insect pests.</li><li><strong>Herbicides</strong>: Eliminate unwanted weeds.</li><li><strong>Fungicides</strong>: Control fungal infections.</li><li><strong>Soil Conditioners</strong>: Enhance soil structure and fertility.</li></ul><p>Proper usage of agrochemicals plays a key role in sustainable agriculture, but they must be used responsibly to minimize environmental impact and health risks.</p></body></html>",
+        "description": "An overview of agrochemicals and their role in agriculture."
       },
       {
-        "id": "c015-2",
-        "title": "How to Apply Micronutrients",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Foliar spraying and soil amendment are effective methods."
-      }
-    ]
-  },
-  {
-    "id": "mod016",
-    "title": "Neem-Based Biopesticides",
-    "description": "Learn how neem oil is used to repel pests organically.",
-    "imageUrl": "https://dummyimage.com/600x400/008040/ffffff&text=Neem+Power",
-    "estimateTime": "30 mins",
-    "category": "Biological Inputs",
-    "content": [
-      {
-        "id": "c016-1",
-        "title": "Neem's Mode of Action",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Neem disrupts insect hormones and feeding behavior."
-      },
-      {
-        "id": "c016-2",
-        "title": "DIY Neem Spray",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Mix 5ml neem oil with 1L water and 1-2 drops of soap."
-      }
-    ]
-  },
-  {
-    "id": "mod017",
-    "title": "Safe Agrochemical Storage",
-    "description": "Best practices to store agrochemicals away from children, water, and food.",
-    "imageUrl": "https://dummyimage.com/600x400/cc0000/fff&text=Safe+Storage",
-    "estimateTime": "15 mins",
-    "category": "Pesticide Safety",
-    "content": [
-      {
-        "id": "c017-1",
-        "title": "Storage Guidelines",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Always store in original containers with labels intact."
-      },
-      {
-        "id": "c017-2",
-        "title": "Storage Room Setup",
+        "id": "c001-2",
+        "title": "Types of Agrochemicals",
         "type": "lesson",
         "contentType": "image",
-        "content": "https://dummyimage.com/400x200/000/fff&text=Storage+Room"
-      }
-    ]
-  },
-  {
-    "id": "mod018",
-    "title": "Balanced Fertilizer Application",
-    "description": "Avoid overuse and underuse by understanding NPK balance.",
-    "imageUrl": "https://dummyimage.com/600x400/ffcc00/000&text=NPK+Balance",
-    "estimateTime": "20 mins",
-    "category": "Soil & Fertilizers",
-    "content": [
-      {
-        "id": "c018-1",
-        "title": "NPK Ratios Explained",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Understand the ratio of Nitrogen, Phosphorus, and Potassium."
+        "content": "https://www.researchgate.net/publication/354682883/figure/fig1/AS:11431281120253234@1676430617943/Types-of-agrochemicals-and-major-examples.png",
+        "description": "A visual guide to different types of agrochemicals."
       },
       {
-        "id": "c018-2",
-        "title": "Choosing the Right Blend",
+        "id": "c001-3",
+        "title": "Introduction to Agriculture Pesticides and Herbicides",
         "type": "lesson",
-        "contentType": "text",
-        "content": "Match NPK ratios with crop stage and soil test results."
+        "contentType": "video",
+        "content": "https://youtu.be/kc_Z_itn7Bs?si=B6uyalgRtZxmX5Cr",
+        "description": "This Video Helps you to understand the basic concepts of Agriculture Pesticides and Herbicides."
       }
     ]
   },
   {
-    "id": "mod019",
-    "title": "Personal Protective Equipment (PPE)",
-    "description": "Protect yourself when handling chemicals and fertilizers.",
-    "imageUrl": "https://dummyimage.com/600x400/3333cc/ffffff&text=PPE+for+Farmers",
-    "estimateTime": "15 mins",
-    "category": "Pesticide Safety",
-    "content": [
-      {
-        "id": "c019-1",
-        "title": "Essential PPE Items",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Use gloves, masks, boots, and coveralls when spraying."
-      },
-      {
-        "id": "c019-2",
-        "title": "Cleaning and Reuse",
-        "type": "lesson",
-        "contentType": "text",
-        "content": "Wash PPE after each use and store in a clean place."
-      }
-    ]
-  },
-  {
-    "id": "mod020",
-    "title": "Water-Soluble Fertilizers",
-    "description": "How to use drip and foliar systems to apply nutrients.",
-    "imageUrl": "https://dummyimage.com/600x400/0088cc/ffffff&text=WSF+Fertilizer",
+    "id": "mod002",
+    "title": "Soil Health and Fertility",
+    "description": "Understanding soil health and fertility is crucial for sustainable agriculture. Fertile soil leads to healthy crops and higher yields.",
+    "imageUrl": "https://cropaia.com/wp-content/uploads/Soil-fertility.jpg",
     "estimateTime": "25 mins",
-    "category": "Modern Techniques",
+    "category": "Soil Health",
     "content": [
       {
-        "id": "c020-1",
-        "title": "Benefits of WSF",
+        "id": "c002-1",
+        "title": "What is Soil Fertility?",
         "type": "lesson",
         "contentType": "text",
-        "content": "Quick absorption and lower wastage through fertigation."
+        "content": "<h2>Soil Fertility</h2><p><strong>Soil fertility</strong> refers to the ability of soil to provide essential nutrients to plants in sufficient quantity and appropriate balance for healthy growth. It is a key factor in determining the productivity of agricultural land.</p><h3>Key Characteristics of Fertile Soil:</h3><ul><li>Rich in <strong>essential nutrients</strong> like nitrogen (N), phosphorus (P), and potassium (K).</li><li>Contains adequate levels of <strong>micronutrients</strong> such as zinc, iron, copper, and manganese.</li><li>Maintains a balanced <strong>pH level</strong> (typically between 6.0 and 7.5 for most crops).</li><li>Has good <strong>soil structure</strong> and <strong>texture</strong>, promoting water retention and aeration.</li><li>Supports a healthy population of <strong>soil microbes</strong> and <strong>organic matter</strong>.</li></ul><h3>Factors Affecting Soil Fertility:</h3><ol><li><strong>Soil Organic Matter:</strong> Improves nutrient availability and moisture retention.</li><li><strong>Soil pH:</strong> Influences the availability of nutrients.</li><li><strong>Farming Practices:</strong> Overuse of chemical fertilizers or poor crop rotation can degrade fertility.</li><li><strong>Irrigation:</strong> Proper water management supports nutrient uptake by plants.</li></ol><h3>Improving Soil Fertility:</h3><p>Soil fertility can be enhanced by integrating the following practices:</p><ul><li>Using <strong>organic fertilizers</strong> such as compost or manure.</li><li>Applying <strong>balanced chemical fertilizers</strong> based on soil test results.</li><li>Practicing <strong>crop rotation</strong> and <strong>intercropping</strong> to maintain nutrient balance.</li><li>Adding <strong>green manure</strong> crops like legumes to fix nitrogen naturally.</li></ul><p><em>Healthy and fertile soil is the foundation of sustainable agriculture and food security.</em></p>",
+        "description": "Learn about soil fertility and its importance in agriculture."
       },
       {
-        "id": "c020-2",
-        "title": "How to Prepare WSF",
+        "id": "c002-2",
+        "title": "Soil Nutrients",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://www.komeco.nl/Komeco/uploads/2019/06/Komeco-Flevoland-Fertisol_plantenvoedingEN.png",
+        "description": "A diagram showing essential soil nutrients and their roles in plant growth."
+      },
+      {
+        "id": "c002-3",
+        "title": "How to Improve Soil Fertility",
+        "type": "lesson",
+        "contentType": "video",
+        "content": "https://youtu.be/L14woJZEJnk?si=cOxQVzoNTICeCZ3H",
+        "description": "Learn techniques to improve soil fertility for better crop yields."
+      }
+    ]
+  },
+  {
+    "id": "mod003",
+    "title": "Pest and Disease Management",
+    "description": "Effective pest and disease management strategies are essential for protecting crops and ensuring high productivity.",
+    "imageUrl": "https://www.protectedcultivation.com/uploads/blogs/84.jpg",
+    "estimateTime": "30 mins",
+    "category": "Pests & Diseases",
+    "content": [
+      {
+        "id": "c003-1",
+        "title": "Common Agricultural Pests",
         "type": "lesson",
         "contentType": "text",
-        "content": "Dissolve exact grams in water as per crop requirements."
+        "description": "An overview of common agricultural pests.",
+        "content": "<h2>Common Agricultural Pests</h2><p>Agricultural pests are organisms that harm crops by feeding on them, spreading diseases, or damaging their structure. Understanding these pests and how to manage them is essential for protecting crop yield and ensuring food security.</p><h3>Types of Common Pests:</h3><ul><li><strong>Aphids:</strong> Small, soft-bodied insects that suck plant sap, causing yellowing and stunted growth. They can also transmit plant viruses.</li><li><strong>Caterpillars:</strong> Larval stage of moths and butterflies. They chew on leaves and fruits, causing major crop damage.</li><li><strong>Mites:</strong> Tiny arthropods that feed on plant juices, often causing stippling, curling, and leaf drop.</li><li><strong>Whiteflies:</strong> Winged insects that feed on the underside of leaves, secreting honeydew which promotes sooty mold.</li><li><strong>Stem Borers:</strong> Insects that tunnel into stems and disrupt nutrient flow, leading to wilted or dead plants.</li></ul><h3>Impact of Pests:</h3><ul><li>Reduced crop yield and quality.</li><li>Increased production costs due to pest control measures.</li><li>Potential transmission of plant diseases.</li></ul><h3>Pest Management Strategies:</h3><ol><li><strong>Cultural Control:</strong> Crop rotation, proper spacing, and sanitation to reduce pest habitats.</li><li><strong>Biological Control:</strong> Using natural predators such as ladybugs, parasitoid wasps, or fungi to control pests.</li><li><strong>Mechanical Control:</strong> Hand-picking, traps, or barriers to prevent pest infestation.</li><li><strong>Chemical Control:</strong> Application of pesticides and insecticides. Should be used judiciously to avoid resistance and ecological harm.</li><li><strong>Integrated Pest Management (IPM):</strong> Combines all control methods in a sustainable, environmentally friendly approach.</li></ol><p><em>Effective pest management protects crops, reduces losses, and ensures safer agricultural practices.</em></p>"
+      }
+,      
+      {
+        "id": "c003-2",
+        "title": "Fungal and Bacterial Diseases",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-33-4543-0_55/MediaObjects/499664_1_En_55_Fig3_HTML.png",
+        "description": "A chart showing some common fungal and bacterial plant diseases."
+      },
+      {
+        "id": "c003-3",
+        "title": "Biological Control of Pests",
+        "type": "lesson",
+        "contentType": "video",
+        "content": "https://youtu.be/g6LMw9I6rxU?si=7U-D2ASk85STNTLC",
+        "description": "Learn about biological control methods, including the use of natural predators for pest management."
+      }
+    ]
+  },
+  {
+    "id": "mod004",
+    "title": "Eco-friendly Farming Practices",
+    "description": "Explore sustainable and eco-friendly farming techniques that minimize environmental impact and promote biodiversity.",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7F_IK9LNwHnFQvYQcvGoEKH5gDPQFzYr62g&s",
+    "estimateTime": "20 mins",
+    "category": "Sustainability",
+    "content": [
+      {
+        "id": "c004-1",
+        "title": "What is Eco-friendly Farming?",
+        "type": "lesson",
+        "contentType": "text",
+        "description": "Learn about eco-friendly farming practices and their benefits.",
+        "content": "<h2>What is Eco-friendly Farming?</h2><p><strong>Eco-friendly farming</strong>, also known as sustainable or green farming, refers to agricultural practices that minimize environmental impact, enhance soil health, and protect biodiversity. It focuses on long-term sustainability rather than short-term productivity.</p><h3>Core Principles of Eco-friendly Farming:</h3><ul><li><strong>Reducing chemical inputs:</strong> Limiting the use of synthetic fertilizers and pesticides to prevent soil and water pollution.</li><li><strong>Soil conservation:</strong> Using cover crops, reduced tillage, and organic amendments to maintain soil structure and fertility.</li><li><strong>Water conservation:</strong> Implementing efficient irrigation systems like drip or sprinkler irrigation to minimize water usage.</li><li><strong>Biodiversity promotion:</strong> Encouraging natural predators, pollinators, and diverse plant species to create a balanced ecosystem.</li><li><strong>Waste reduction:</strong> Recycling organic waste through composting and avoiding overproduction.</li></ul><h3>Common Eco-friendly Farming Methods:</h3><ol><li><strong>Organic Farming:</strong> Avoids synthetic inputs and emphasizes natural processes for crop and livestock production.</li><li><strong>Agroforestry:</strong> Integrates trees and shrubs into agricultural landscapes to improve biodiversity and soil stability.</li><li><strong>Crop Rotation:</strong> Alternating different crops in the same field to improve soil health and reduce pest buildup.</li><li><strong>Natural Pest Management:</strong> Using biological control agents, neem oil, and other eco-safe alternatives to manage pests.</li><li><strong>Permaculture:</strong> Designing farming systems that mimic natural ecosystems to ensure resilience and efficiency.</li></ol><h3>Benefits of Eco-friendly Farming:</h3><ul><li>Improved soil health and structure.</li><li>Reduced environmental pollution.</li><li>Enhanced biodiversity and pollination.</li><li>Long-term productivity and sustainability.</li><li>Better quality and safer food for consumers.</li></ul><p><em>Eco-friendly farming plays a vital role in creating a sustainable future for agriculture and the planet.</em></p>"
+      }
+,      
+      {
+        "id": "c004-2",
+        "title": "Organic Farming",
+        "type": "lesson",
+        "contentType": "image",
+        "content": "https://i.pinimg.com/736x/66/59/d6/6659d6061e3e72ae2d97d60f028c8e7a.jpg",
+        "description": "A visual guide to organic farming practices."
+      },
+      {
+        "id": "c004-3",
+        "title": "Permaculture Principles",
+        "type": "lesson",
+        "contentType": "video",
+        "content": "https://youtu.be/WhOrIUlrnPo?si=FvuCG2Fu5zY878Qx",
+        "description": "An introduction to permaculture principles for sustainable farming."
       }
     ]
   }

@@ -1,8 +1,31 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'package:agri_chem/models/course_module.dart';
+import 'package:flutter/services.dart';
+
+Future<void> uploadProductsJsonToFirestore() async {
+  try {
+    final String jsonString = await rootBundle.loadString(
+      'assets/data/products.json',
+    );
+    final Map<String, dynamic> data = json.decode(jsonString);
+
+    final firestore = FirebaseFirestore.instance;
+    final batch = firestore.batch();
+
+    data.forEach((barcode, productData) {
+      final docRef = firestore.collection('agri_products').doc(barcode);
+      batch.set(docRef, productData);
+    });
+
+    await batch.commit();
+
+    print('✅ Products uploaded to Firestore successfully.');
+  } catch (e) {
+    print('❌ Error uploading products: $e');
+  }
+}
 
 Future<void> uploadCourseModulesFromJsonToFirestore() async {
   try {

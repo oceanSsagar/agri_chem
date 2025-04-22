@@ -1,4 +1,5 @@
 import 'package:agri_chem/providers/user_provider.dart';
+import 'package:agri_chem/screens/application_screens/qr_scan_screen.dart';
 import 'package:agri_chem/screens/notification_screen.dart';
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,15 @@ class _MainScreenState extends State<MainScreen> {
         elevation: 2,
         iconTheme: const IconThemeData(color: Colors.white),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.qr_code)),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const QrScanScreen()),
+              );
+            },
+            icon: Icon(Icons.qr_code),
+          ),
           IconButton(
             onPressed: () {
               Navigator.push(

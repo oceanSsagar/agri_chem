@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:agri_chem/models/course_module.dart';
 import 'package:agri_chem/screens/application_screens/lesson_viewer_screen.dart';
+import 'package:hive_flutter/adapters.dart';
 
 class CourseModuleDetailsScreen extends StatefulWidget {
   final CourseModule course;
@@ -97,44 +98,56 @@ class _CourseModuleDetailsScreenState extends State<CourseModuleDetailsScreen> {
         onRefresh: _loadCompletedProgress,
         child: ListView(
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 5),
-              width: double.infinity,
-              height: 200,
-              child: CachedNetworkImage(
-                imageUrl: course.imageUrl ?? '',
-                fit: BoxFit.cover,
-                placeholder:
-                    (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
-                errorWidget:
-                    (context, url, error) => const Center(
-                      child: Icon(
-                        Icons.broken_image,
-                        size: 64,
-                        color: Colors.grey,
-                      ),
-                    ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 8.0,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Container(
+                  height: 200,
+                  color: Colors.grey[200],
+                  child: CachedNetworkImage(
+                    imageUrl: course.imageUrl ?? '',
+                    fit: BoxFit.cover,
+                    placeholder:
+                        (context, url) =>
+                            const Center(child: CircularProgressIndicator()),
+                    errorWidget:
+                        (context, url, error) => const Center(
+                          child: Icon(
+                            Icons.broken_image,
+                            size: 64,
+                            color: Colors.grey,
+                          ),
+                        ),
+                  ),
+                ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(16),
-              color: Colors.green[50],
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 8,
-                    backgroundColor: Colors.grey[300],
-                    color: Colors.green,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    '${(progress * 100).toStringAsFixed(1)}% Completed',
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                ],
+
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+              child: Container(
+                padding: const EdgeInsets.all(16),
+                color: Colors.green[50],
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    LinearProgressIndicator(
+                      value: progress,
+                      minHeight: 8,
+                      backgroundColor: Colors.grey[300],
+                      color: Colors.green,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      '${(progress * 100).toStringAsFixed(1)}% Completed',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
               ),
             ),
             ...List.generate(course.content?.length ?? 0, (index) {
