@@ -4,12 +4,13 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         sh '''#!/bin/bash -x
-        export PATH=$PATH:/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator
+        export FLUTTER_HOME=/home/sagar/Development/flutter
+        export PATH="$FLUTTER_HOME/bin:$PATH:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator"
         export JAVA_OPTS="-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
-        echo $PATH
-        which flutter
-        flutter --version
-        flutter pub get
+
+        echo "PATH: $PATH"
+        $FLUTTER_HOME/bin/flutter --version
+        $FLUTTER_HOME/bin/flutter pub get
         '''
       }
     }
@@ -17,8 +18,9 @@ pipeline {
     stage('Build APK') {
       steps {
         sh '''#!/bin/bash
-        export PATH=$PATH:/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator
-        flutter build apk --release
+        export FLUTTER_HOME=/home/sagar/Development/flutter
+        export PATH="$FLUTTER_HOME/bin:$PATH:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator"
+        $FLUTTER_HOME/bin/flutter build apk --release
         '''
       }
     }
