@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "/home/sagar/Development/flutter/bin:/home/sagar/Development/flutter/bin/cache/dart-sdk/bin:/home/sagar/Development/flutter/bin/cache/artifacts/engine/linux-x64:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator:$PATH"
+ PATH+EXTRA = "/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator" 
   }
 
   stages {
