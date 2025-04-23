@@ -85,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MainScreen()),
+        MaterialPageRoute(builder: (context) => MainScreen()),
       );
     } catch (e) {
       ScaffoldMessenger.of(

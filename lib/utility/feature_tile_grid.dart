@@ -8,15 +8,10 @@ class FeatureTileGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final features = [
+      _FeatureItem('Chemicals', Icons.science_outlined, 'chemicals'),
       _FeatureItem('Courses', Icons.school, 'courses'),
       _FeatureItem('Chatbot', Icons.chat_bubble_outline, 'chatbot'),
       _FeatureItem('QR Scanner', Icons.qr_code_scanner, 'scanner'),
-      _FeatureItem('Chemicals', Icons.science_outlined, 'chemicals'),
-      _FeatureItem(
-        'Notifications',
-        Icons.notifications_outlined,
-        'notifications',
-      ),
       _FeatureItem('Profile', Icons.person_outline, 'profile'),
     ];
 
@@ -50,7 +45,7 @@ class FeatureTileGrid extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(feature.icon, size: 36, color: Colors.teal),
+                Icon(feature.icon, size: 36, color: Colors.orange),
                 const SizedBox(height: 10),
                 Text(
                   feature.title,

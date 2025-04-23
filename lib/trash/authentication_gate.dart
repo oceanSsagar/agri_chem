@@ -82,7 +82,7 @@ class _AuthenticationGateState extends State<AuthenticationGate> {
           return const Center(child: CircularProgressIndicator());
         }
         if (snapshot.hasData) {
-          return const MainScreen();
+          return MainScreen();
         }
 
         return Scaffold(

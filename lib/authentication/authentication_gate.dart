@@ -36,7 +36,7 @@ class AuthenticationGateState extends State<AuthenticationGate> {
           }
 
           if (_isProfileComplete == true) {
-            return const MainScreen();
+            return MainScreen();
           } else {
             return const OnboardingScreen();
           }

@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:agri_chem/models/course_module.dart';
 import 'package:agri_chem/screens/application_screens/lesson_viewer_screen.dart';
-import 'package:hive_flutter/adapters.dart';
 
 class CourseModuleDetailsScreen extends StatefulWidget {
   final CourseModule course;

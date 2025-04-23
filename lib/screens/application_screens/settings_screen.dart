@@ -1,5 +1,4 @@
 import 'package:agri_chem/screens/application_screens/schedule_reminder_screen.dart';
-import 'package:agri_chem/utility/upload_data_dev.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
