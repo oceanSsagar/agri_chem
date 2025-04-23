@@ -4,17 +4,22 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         sh '''#!/bin/bash -x
-        export PATH=$PATH:/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/
+        export PATH=$PATH:/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator
         export JAVA_OPTS="-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
-          flutter --version
-          flutter pub get
+        echo $PATH
+        which flutter
+        flutter --version
+        flutter pub get
         '''
       }
     }
 
     stage('Build APK') {
       steps {
-        sh 'flutter build apk --release'
+        sh '''#!/bin/bash
+        export PATH=$PATH:/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator
+        flutter build apk --release
+        '''
       }
     }
 
@@ -24,7 +29,5 @@ pipeline {
         archiveArtifacts artifacts: 'build/app/outputs/flutter-apk/app-release.apk', fingerprint: true
       }
     }
-
-    // Optional: Firebase deployment or test stages can go here
   }
 }
