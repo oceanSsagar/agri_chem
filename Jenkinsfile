@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    PATH = "/usr/local/flutter/bin:$PATH"
+    PATH = "‘PATH+EXTRA=/home/sagar/Development/fluter/bin"
   }
 
   // ❗ Removed the 'Checkout' stage since Jenkins does it by default using SCM settings
