@@ -1,6 +1,12 @@
 pipeline {
   agent any
   stages {
+
+    stage('Set Flutter Permissions') {
+    steps {
+        sh 'chmod -R +x /home/sagar/Development/flutter/bin'
+    }
+} 
     stage('Install Dependencies') {
       steps {
         sh '''#!/bin/bash -x
@@ -33,3 +39,4 @@ pipeline {
     }
   }
 }
+a
