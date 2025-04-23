@@ -4,6 +4,7 @@ pipeline {
 
     stage('Set Flutter Permissions') {
     steps {
+      sh'whoami'
         sh 'chmod -R +x /home/sagar/Development/flutter/bin'
     }
 } 
