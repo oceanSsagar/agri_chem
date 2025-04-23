@@ -1,10 +1,5 @@
 pipeline {
   agent any
-
-  environment {
- PATH+EXTRA = "/home/sagar/Development/flutter/bin:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator" 
-  }
-
   stages {
     stage('Install Dependencies') {
       steps {
