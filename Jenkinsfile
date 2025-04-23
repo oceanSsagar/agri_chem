@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   environment {
-    PATH = "‘PATH+EXTRA=/home/sagar/Development/fluter/bin"
-  }
+    PATH = "PATH+EXTRA=/home/sagar/Development/flutter/bin:/home/sagar/Development/flutter/bin/cache/dart-sdk/bin:/home/sagar/Development/flutter/bin/cache/artifacts/engine/linux-x64:/home/sagar/Android/Sdk/platform-tools:/home/sagar/Android/Sdk/tools:/home/sagar/Android/Sdk/emulator"
+}
 
-  // ❗ Removed the 'Checkout' stage since Jenkins does it by default using SCM settings
+  // ❗ Removed the 'Checkout' stage since Jenkins does it by default using SCM settin  gs
 
   stages {
     stage('Install Dependencies') {
