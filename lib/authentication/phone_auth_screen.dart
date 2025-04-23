@@ -61,9 +61,8 @@ class _PhoneAuthScreenState extends State<PhoneAuthScreen> {
       ).showSnackBar(const SnackBar(content: Text("Phone number verified!")));
 
       // ✅ Pop this screen to return to AuthenticationGate
-      if (mounted) {
-        Navigator.pop(context);
-      }
+      if (!mounted) return;
+      Navigator.pop(context);
     } catch (e) {
       ScaffoldMessenger.of(
         context,

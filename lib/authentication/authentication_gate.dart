@@ -1,11 +1,13 @@
 import 'package:agri_chem/authentication/phone_auth_screen.dart';
 import 'package:agri_chem/onboarding/onboarding_screen.dart';
+import 'package:agri_chem/providers/user_provider.dart';
 import 'package:agri_chem/screens/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:agri_chem/utility/sign_in_with_google.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
 
 class AuthenticationGate extends StatefulWidget {
   const AuthenticationGate({super.key});
@@ -120,6 +122,12 @@ class AuthenticationGateState extends State<AuthenticationGate> {
 
       final data = doc.data();
       final isCompleted = data != null && data['profileCompleted'] == true;
+
+      // 👇 Load user into provider
+      await Provider.of<UserProvider>(
+        context,
+        listen: false,
+      ).loadUser(forceReload: true);
 
       setState(() {
         _isProfileComplete = isCompleted;

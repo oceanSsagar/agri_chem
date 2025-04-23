@@ -1,5 +1,4 @@
 import 'package:agri_chem/providers/navigation_provider.dart';
-import 'package:agri_chem/providers/user_provider.dart';
 import 'package:agri_chem/screens/application_screens/qr_scan_screen.dart';
 import 'package:agri_chem/widgets/app_drawer.dart';
 import 'package:flutter/material.dart';

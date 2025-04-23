@@ -14,6 +14,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final _phoneNumberController = TextEditingController();
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
+  final _emailController = TextEditingController(); // Add this
+
   final _usernameController = TextEditingController(); // For custom username
   String _gender = "Male";
   String _userType = "Farmer";
@@ -60,7 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
       final userData = {
         'uid': user.uid,
-        'email': user.email ?? "",
+        'email': _emailController.text.trim(),
         'phoneNumber': _phoneNumberController.text.trim(),
         'firstName': _firstNameController.text.trim(),
         'lastName': _lastNameController.text.trim(),
@@ -91,6 +93,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text("Error saving user data: $e")));
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final user = FirebaseAuth.instance.currentUser;
+    if (user?.email != null) {
+      _emailController.text = user!.email!;
     }
   }
 
@@ -150,6 +161,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     "Phone Number",
                     _phoneNumberController,
                     Icons.phone,
+                  ),
+                  const SizedBox(height: 10),
+                  _buildTextField(
+                    "Email Address",
+                    _emailController,
+                    Icons.email,
                   ),
 
                   const SizedBox(height: 20),
