@@ -23,6 +23,18 @@ class NotificationService {
         );
       },
     );
+
+    const AndroidNotificationChannel channel = AndroidNotificationChannel(
+      'reminder_channel', // ID
+      'Reminders', // Title
+      description: 'Channel for scheduled reminders',
+      importance: Importance.max,
+    );
+    await _notifications
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >()
+        ?.createNotificationChannel(channel);
   }
 
   static Future<void> showNotification({
