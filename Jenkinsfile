@@ -9,6 +9,7 @@ pipeline {
     stage('Install Dependencies') {
       steps {
         sh '''#!/bin/bash -x
+        export JAVA_OPTS="-Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true"
           flutter --version
           flutter pub get
         '''
